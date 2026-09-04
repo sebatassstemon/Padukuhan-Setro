@@ -487,17 +487,26 @@
           rgba(20, 40, 24, .34) 100%);
     }
 
+    /* Blok teks duduk tepat di tengah hero: padding atas-bawah sengaja kembar
+       supaya titik pusatnya tidak tergeser, dan hanya bertugas menjamin jarak
+       aman dari nav di atas serta pita sawah di bawah. */
     .parallax__layer--judul {
       display: flex;
-      align-items: center;
-      padding-bottom: clamp(72px, 13vh, 150px);
+      flex-direction: column;
+      padding-block: clamp(92px, 12vh, 140px);
     }
 
-    /* di layar kecil teksnya lebih tinggi: beri jarak aman dari nav */
+    /* margin auto, bukan align-items:center — kalau ruangnya kurang (layar
+       pendek), margin auto luruh jadi 0 sehingga teks berhenti di batas padding
+       dan tidak menyelinap ke balik nav. */
+    .parallax__layer--judul>* {
+      margin-block: auto;
+    }
+
+    /* di layar kecil teksnya lebih tinggi: jarak amannya dirampingkan, tetap kembar */
     @media (max-width:640px) {
       .parallax__layer--judul {
-        padding-top: 88px;
-        padding-bottom: 56px;
+        padding-block: clamp(80px, 9vh, 100px);
       }
     }
 
@@ -5859,9 +5868,29 @@
       }
       window.addEventListener('resize', () => { if (!galeri.hidden) imbangkan(); });
 
-      // klik di mana saja menutup galeri; hanya kemudi korselnya yang dikecualikan
+      // Klik di mana saja menutup galeri. Yang dikecualikan hanya bagian yang
+      // memang bisa ditekan: fotonya sendiri (slideToClickedSlide memilih foto
+      // tetangga), tombol panah, dan titik halaman. Dulu seluruh kotak .korsel
+      // yang dikecualikan, padahal kotak itu flex:1 — ia memenuhi hampir
+      // seluruh tengah layar, jadi ruang kosong di kiri-kanan dan atas-bawah
+      // foto ikut mati dan galeri terasa tidak bisa ditutup sama sekali.
+      //
+      // Foto diuji lewat kotaknya, bukan lewat e.target. Di dalam ruang 3D
+      // coverflow (swiper-3d, preserve-3d) sebagian permukaan slide tidak
+      // terbaca uji-sentuh peramban: e.target di atas foto kerap jatuh ke
+      // .swiper-wrapper, jadi penyaringan dengan closest('.swiper-slide')
+      // akan menutup galeri tepat saat pengguna menekan fotonya.
+      //
+      // Klik sisa dari geseran korsel tidak sampai ke sini: Swiper menahannya
+      // lewat preventClicks/preventClicksPropagation yang menyala bawaan.
+      const diFoto = (x, y) => [...rel.children].some(slide => {
+        const r = slide.getBoundingClientRect();
+        return r.width > 0 && x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+      });
+
       galeri.addEventListener('click', (e) => {
-        if (e.target.closest('.korsel')) return;
+        if (e.target.closest('.korsel__nav, .korsel__titik')) return;
+        if (diFoto(e.clientX, e.clientY)) return;
         tutup();
       });
 
