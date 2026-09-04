@@ -198,5 +198,21 @@
     "galeri": [
       "/assets/unggahan/windah.jpg"
     ]
+  },
+  {
+    "judul": "sewa alat berat",
+    "kategori": "sewa",
+    "sub": "",
+    "desk": "sewa alat berat seperti exsavator, silinder, buldoser, crane",
+    "foto": "/assets/unggahan/WhatsApp Image 2026-09-03 at 09.16.55 (1).jpeg",
+    "kontak": "085292511438",
+    "jam": "24 jam",
+    "lokasi": "setro",
+    "galeri": [
+      "/assets/unggahan/WhatsApp Image 2026-09-03 at 09.16.55 (1).jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-04 at 21.15.55.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-04 at 21.16.54.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-04 at 21.16.32.jpeg"
+    ]
   }
 ]
