@@ -1,0 +1,765 @@
+# =====================================================================
+#  Pengaturan CMS Situs Padukuhan Setro
+#  Berkas ini mengatur formulir yang dilihat pengelola situs di /admin.
+#  Pengelola dusun TIDAK perlu membuka berkas ini.
+# =====================================================================
+
+backend:
+  name: github
+  repo: sebatassstemon/Padukuhan-Setro
+  branch: main
+  # ------------------------------------------------------------------
+  # base_url diisi dengan alamat "Sveltia CMS Authenticator" setelah
+  # Worker-nya dipasang di Cloudflare (lihat PANDUAN_PEMASANGAN.md,
+  # bagian 3). Selama baris di bawah masih diberi tanda pagar, masuk ke
+  # /admin hanya bisa lewat tombol "Sign in with Token".
+  # base_url: https://GANTI-DENGAN-ALAMAT-WORKER.workers.dev
+  # ------------------------------------------------------------------
+
+# Foto yang diunggah pengelola lewat formulir disimpan di sini
+media_folder: assets/unggahan
+public_folder: /assets/unggahan
+
+# Catatan: Sveltia CMS tidak menyediakan pengaturan bahasa tampilan.
+# Bahasa tombol bawaan mengikuti bahasa browser pengelola.
+
+collections:
+  # ===================================================================
+  # 1. TEKS HALAMAN
+  # ===================================================================
+  - name: halaman
+    label: Teks Halaman
+    icon: article
+    files:
+      - name: beranda
+        label: Beranda (bagian paling atas)
+        file: content/beranda.json
+        description: Judul besar, paragraf pembuka, dan lima angka di halaman depan.
+        fields:
+          - { label: Baris kecil di atas judul, name: label, widget: string }
+          - label: Judul besar — bagian putih
+            name: judul
+            widget: string
+            hint: 'Contoh: "Dusun padi di"'
+          - label: Judul besar — bagian berwarna krem
+            name: judulSorot
+            widget: string
+            hint: 'Lanjutan judul yang tampil dengan warna berbeda. Contoh: "gerbang Yogyakarta."'
+          - { label: Paragraf pembuka, name: paragraf, widget: text }
+          - { label: Tulisan pada tombol kiri, name: tombolSatu, widget: string }
+          - { label: Tulisan pada tombol kanan, name: tombolDua, widget: string }
+          - label: Lima angka di bawah foto
+            name: statistik
+            widget: list
+            label_singular: Angka
+            summary: '{{fields.label}} — {{fields.angka}}'
+            min: 1
+            max: 6
+            hint: Sebaiknya tetap lima. Lebih dari lima akan turun ke baris berikutnya.
+            fields:
+              - { label: Keterangan angka, name: label, widget: string }
+              - { label: Angkanya, name: angka, widget: number, value_type: float }
+              - label: Berapa angka di belakang koma
+                name: desimal
+                widget: number
+                value_type: int
+                min: 0
+                max: 3
+                default: 0
+                hint: 'Isi 0 untuk angka bulat (134), 2 untuk angka seperti 3,88.'
+              - label: Beri tanda bintang (*)
+                name: bintang
+                widget: boolean
+                default: false
+                hint: Nyalakan bila angka ini estimasi survei, bukan data resmi.
+          - label: Catatan di bawah deretan angka
+            name: catatan
+            widget: text
+            hint: Tanda bintang di awal kalimat ditambahkan otomatis.
+          - label: Bagian "Profil wilayah"
+            name: profil
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul, name: judul, widget: string }
+              - { label: Paragraf, name: paragraf, widget: text }
+
+      - name: seksi
+        label: Judul Tiga Seksi (Katalog, Program, Kegiatan)
+        file: content/seksi.json
+        description: Judul dan paragraf pembuka untuk seksi E-katalog, Program kerja, dan Kegiatan warga.
+        fields:
+          - label: Seksi E-katalog
+            name: katalog
+            widget: object
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul, name: judul, widget: string }
+              - { label: Paragraf, name: paragraf, widget: text }
+          - label: Seksi Program kerja
+            name: program
+            widget: object
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul, name: judul, widget: string }
+              - { label: Paragraf, name: paragraf, widget: text }
+          - label: Seksi Kegiatan warga
+            name: kegiatan
+            widget: object
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul, name: judul, widget: string }
+              - { label: Paragraf, name: paragraf, widget: text }
+
+      - name: kemitraan
+        label: Peluang Kemitraan (teks)
+        file: content/kemitraan.json
+        description: Judul dan paragraf pembuka seksi kemitraan. Daftar kebutuhannya diatur terpisah.
+        fields:
+          - { label: Baris kecil di atas judul, name: label, widget: string }
+          - { label: Judul, name: judul, widget: string }
+          - { label: Paragraf pembuka, name: paragraf, widget: text }
+          - { label: Tulisan pada tombol, name: tombol, widget: string }
+
+      - name: kontak
+        label: Kontak & Lokasi
+        file: content/kontak.json
+        fields:
+          - { label: Baris kecil di atas judul, name: label, widget: string }
+          - { label: Judul, name: judul, widget: string }
+          - { label: Paragraf pembuka, name: paragraf, widget: text }
+          - { label: Judul kartu alamat, name: alamatJudul, widget: string }
+          - { label: Alamat lengkap, name: alamat, widget: text }
+          - { label: Judul kartu WhatsApp, name: whatsappJudul, widget: string }
+          - label: Nomor WhatsApp
+            name: whatsappNomor
+            widget: string
+            hint: 'Tulis seperti biasa, contoh: 085292511438. Tautan wa.me dibuat otomatis.'
+          - { label: Judul kartu jam berkunjung, name: jamJudul, widget: string }
+          - { label: Catatan jam berkunjung, name: jamCatatan, widget: text }
+
+      - name: footer
+        label: Footer (bagian paling bawah)
+        file: content/footer.json
+        description: Termasuk baris "Disusun oleh KKN ... Angkatan ..." yang wajib diganti tiap pergantian angkatan.
+        fields:
+          - { label: Nama dusun, name: namaDusun, widget: string }
+          - { label: Alamat singkat, name: alamat, widget: text }
+          - { label: Judul kolom sumber data, name: sumberJudul, widget: string }
+          - { label: Keterangan sumber data, name: sumberData, widget: text }
+          - label: Baris "Disusun oleh"
+            name: disusunOleh
+            widget: string
+            hint: Ganti nomor unit, angkatan, dan bulan setiap ada KKN baru.
+
+      - name: menu
+        label: Teks Menu Turun (di bagian atas layar)
+        file: content/menu.json
+        description: >-
+          Hanya tulisannya yang bisa diubah di sini. Tautan tiap baris sudah
+          diatur oleh sistem dan tidak ikut berubah.
+        fields:
+          - label: Menu "Profil"
+            name: profil
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - label: Baris isi menu
+                name: butir
+                widget: list
+                label_singular: Baris
+                summary: '{{fields.nama}} — {{fields.temuan}}'
+                min: 4
+                max: 4
+                hint: Jumlah baris harus tetap empat, karena tiap baris menuju bagian halaman tertentu.
+                fields:
+                  - { label: Nama bagian, name: nama, widget: string }
+                  - { label: Keterangan singkat, name: temuan, widget: string }
+          - label: Menu "Potensi"
+            name: potensi
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - label: Baris isi menu
+                name: butir
+                widget: list
+                label_singular: Baris
+                summary: '{{fields.nama}} — {{fields.temuan}}'
+                min: 3
+                max: 3
+                hint: Jumlah baris harus tetap tiga.
+                fields:
+                  - { label: Nama bagian, name: nama, widget: string }
+                  - { label: Keterangan singkat, name: temuan, widget: string }
+          - label: Menu "E-katalog"
+            name: katalog
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - { label: Keterangan di bawah foto, name: ket, widget: string }
+          - label: Menu "Program kerja"
+            name: program
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - { label: Keterangan di bawah foto, name: ket, widget: string }
+          - label: Menu "Kegiatan warga"
+            name: kegiatan
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - { label: Keterangan di bawah foto, name: ket, widget: string }
+          - label: Menu "Peluang kemitraan"
+            name: kemitraan
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama menu, name: label, widget: string }
+              - { label: Judul di dalam menu, name: judul, widget: string }
+              - { label: Tulisan tautan di bawah, name: semua, widget: string }
+              - { label: Keterangan di bawah foto, name: ket, widget: string }
+
+  # ===================================================================
+  # 2. ENAM KOTAK DATA
+  # ===================================================================
+  - name: kotak
+    label: Enam Kotak Data
+    icon: dashboard
+    files:
+      - name: kotak
+        label: Isi Kotak & Grafik Miniatur
+        file: content/kotak.json
+        description: >-
+          Angka besar, keterangan, dan grafik kecil pada enam kotak di seksi
+          "Potret warga Setro" dan "Potensi Setro".
+        fields:
+          - label: Judul panel "Potret warga Setro"
+            name: panelWarga
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul baris pertama, name: judulBaris1, widget: string }
+              - { label: Judul baris kedua, name: judulBaris2, widget: string }
+              - { label: Paragraf, name: lead, widget: text }
+          - label: Judul panel "Potensi Setro"
+            name: panelPotensi
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Baris kecil di atas judul, name: label, widget: string }
+              - { label: Judul baris pertama, name: judulBaris1, widget: string }
+              - { label: Judul baris kedua, name: judulBaris2, widget: string }
+              - { label: Paragraf, name: lead, widget: text }
+          - label: Judul jembatan menuju E-katalog
+            name: panelJembatan
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Judul baris pertama, name: judulBaris1, widget: string }
+              - { label: Judul baris kedua, name: judulBaris2, widget: string }
+
+          - label: Kotak 1 — Struktur penduduk
+            name: usia
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Satuan (misal: jiwa)', name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - label: Judul grafik miniatur
+                name: motifTajuk
+                widget: string
+                hint: Isi grafiknya sendiri dihitung otomatis dari menu "Struktur Usia".
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+
+          - label: Kotak 2 — Mata pencaharian
+            name: kerja
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Satuan (misal: orang)', name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - label: Isi grafik miniatur
+                name: motifButir
+                widget: list
+                label_singular: Baris
+                summary: '{{fields.nama}} — {{fields.nilai}}'
+                min: 1
+                max: 4
+                hint: Panjang batang dihitung otomatis, baris terbesar selalu penuh.
+                fields:
+                  - { label: Nama, name: nama, widget: string }
+                  - { label: Angka, name: nilai, widget: number, value_type: int, min: 0 }
+                  - { label: Tebalkan baris ini, name: sorot, widget: boolean, default: false }
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+              - { label: 'Kartu sorot — angka', name: sorotAngka, widget: number, value_type: float }
+              - { label: 'Kartu sorot — angka di belakang koma', name: sorotDesimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Kartu sorot — tanda di belakang angka', name: sorotAkhiran, widget: string, required: false }
+              - { label: 'Kartu sorot — judul', name: sorotJudul, widget: string }
+              - { label: 'Kartu sorot — catatan', name: sorotCatatan, widget: string, required: false }
+              - { label: Judul daftar besar di dalam kotak, name: widgetTajuk, widget: string }
+
+          - label: Kotak 3 — Infrastruktur dasar
+            name: infra
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: Satuan, name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - label: Isi grafik miniatur
+                name: motifButir
+                widget: list
+                label_singular: Baris
+                summary: '{{fields.nama}} — {{fields.nilai}}'
+                min: 1
+                max: 4
+                fields:
+                  - { label: Nama, name: nama, widget: string }
+                  - { label: Angka, name: nilai, widget: number, value_type: int, min: 0 }
+                  - { label: Tebalkan baris ini, name: sorot, widget: boolean, default: false }
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+              - { label: Judul daftar besar di dalam kotak, name: widgetTajuk, widget: string }
+
+          - label: Kotak 4 — Potensi pertanian
+            name: tani
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Satuan (misal: hektar)', name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - label: 'Grafik kotak-kotak — jumlah seluruh kotak'
+                name: petakTotal
+                widget: number
+                value_type: int
+                min: 1
+                max: 200
+                hint: 'Contoh: 38 keluarga petani, digambar sebagai 38 kotak kecil.'
+              - label: 'Grafik kotak-kotak — berapa yang diwarnai'
+                name: petakTerisi
+                widget: number
+                value_type: int
+                min: 0
+                max: 200
+              - label: 'Grafik kotak-kotak — kotak keberapa yang disorot'
+                name: petakSorot
+                widget: number
+                value_type: int
+                min: -1
+                max: 200
+                default: -1
+                hint: Isi -1 bila tidak ada yang perlu disorot.
+              - label: 'Grafik kotak-kotak — jumlah kotak per baris'
+                name: petakKolom
+                widget: number
+                value_type: int
+                min: 1
+                max: 60
+              - { label: Keterangan di bawah grafik kotak-kotak, name: petakCatatan, widget: string }
+              - label: Keterangan grafik untuk pembaca layar
+                name: petakAria
+                widget: string
+                hint: Dibacakan aplikasi pembaca layar bagi pengunjung tunanetra.
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+              - { label: Judul daftar besar di dalam kotak, name: widgetTajuk, widget: string }
+
+          - label: Kotak 5 — Peternakan & perikanan
+            name: ternak
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: Satuan, name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - label: Isi grafik miniatur
+                name: motifButir
+                widget: list
+                label_singular: Baris
+                summary: '{{fields.nama}} — {{fields.nilai}}'
+                min: 1
+                max: 4
+                fields:
+                  - { label: Nama, name: nama, widget: string }
+                  - { label: Angka, name: nilai, widget: number, value_type: int, min: 0 }
+                  - { label: Tebalkan baris ini, name: sorot, widget: boolean, default: false }
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+              - { label: 'Kartu sorot — angka', name: sorotAngka, widget: number, value_type: float }
+              - { label: 'Kartu sorot — angka di belakang koma', name: sorotDesimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Kartu sorot — tanda di belakang angka', name: sorotAkhiran, widget: string, required: false }
+              - { label: 'Kartu sorot — judul', name: sorotJudul, widget: string }
+              - { label: 'Kartu sorot — catatan', name: sorotCatatan, widget: string, required: false }
+
+          - label: Kotak 6 — Usaha warga
+            name: umkm
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nama kotak, name: nama, widget: string }
+              - { label: Angka besar, name: angka, widget: number, value_type: float }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0 }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Satuan (misal: unit usaha)', name: satuan, widget: string, required: false }
+              - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
+              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - { label: 'Grafik kotak-kotak — jumlah seluruh kotak', name: petakTotal, widget: number, value_type: int, min: 1, max: 200 }
+              - { label: 'Grafik kotak-kotak — berapa yang diwarnai', name: petakTerisi, widget: number, value_type: int, min: 0, max: 200 }
+              - label: 'Grafik kotak-kotak — kotak keberapa yang disorot'
+                name: petakSorot
+                widget: number
+                value_type: int
+                min: -1
+                max: 200
+                default: -1
+                hint: Hitungan dimulai dari 0. Isi -1 bila tidak ada yang disorot.
+              - { label: 'Grafik kotak-kotak — jumlah kotak per baris', name: petakKolom, widget: number, value_type: int, min: 1, max: 60 }
+              - { label: Keterangan di bawah grafik kotak-kotak, name: petakCatatan, widget: string }
+              - { label: Keterangan grafik untuk pembaca layar, name: petakAria, widget: string }
+              - { label: Paragraf di dalam kotak yang terbuka, name: lead, widget: text }
+              - { label: Judul daftar besar di dalam kotak, name: widgetTajuk, widget: string }
+              - { label: Catatan di bawah daftar besar, name: widgetCatatan, widget: text }
+
+      - name: angka-kotak
+        label: Kartu Angka di dalam Kotak
+        file: content/angka-kotak.json
+        description: >-
+          Kartu-kartu angka yang muncul saat kotak dibuka. Isi "Angkanya" untuk
+          angka biasa, atau isi "Teks khusus" bila nilainya bukan angka murni
+          (misalnya "Rp128 juta").
+        fields:
+          - label: Kotak "Infrastruktur dasar"
+            name: infra
+            widget: list
+            label_singular: Kartu angka
+            summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
+            fields:
+              - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0, required: false }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Teks khusus (kosongkan bila memakai angka)', name: teks, widget: string, required: false }
+              - { label: 'Kata kecil setelah teks khusus (misal: juta)', name: teksKecil, widget: string, required: false }
+              - { label: Keterangan kartu, name: label, widget: string }
+              - { label: Catatan tambahan, name: catatan, widget: string, required: false }
+          - label: Kotak "Potensi pertanian"
+            name: tani
+            widget: list
+            label_singular: Kartu angka
+            summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
+            fields:
+              - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0, required: false }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Teks khusus (kosongkan bila memakai angka)', name: teks, widget: string, required: false }
+              - { label: 'Kata kecil setelah teks khusus (misal: juta)', name: teksKecil, widget: string, required: false }
+              - { label: Keterangan kartu, name: label, widget: string }
+              - { label: Catatan tambahan, name: catatan, widget: string, required: false }
+          - label: Kotak "Peternakan & perikanan"
+            name: ternak
+            widget: list
+            label_singular: Kartu angka
+            summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
+            fields:
+              - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0, required: false }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Teks khusus (kosongkan bila memakai angka)', name: teks, widget: string, required: false }
+              - { label: 'Kata kecil setelah teks khusus (misal: juta)', name: teksKecil, widget: string, required: false }
+              - { label: Keterangan kartu, name: label, widget: string }
+              - { label: Catatan tambahan, name: catatan, widget: string, required: false }
+          - label: Kotak "Usaha warga"
+            name: umkm
+            widget: list
+            label_singular: Kartu angka
+            summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
+            fields:
+              - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
+              - { label: Angka di belakang koma, name: desimal, widget: number, value_type: int, min: 0, max: 3, default: 0, required: false }
+              - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
+              - { label: 'Teks khusus (kosongkan bila memakai angka)', name: teks, widget: string, required: false }
+              - { label: 'Kata kecil setelah teks khusus (misal: juta)', name: teksKecil, widget: string, required: false }
+              - { label: Keterangan kartu, name: label, widget: string }
+              - { label: Catatan tambahan, name: catatan, widget: string, required: false }
+
+  # ===================================================================
+  # 3. DATA ANGKA
+  # ===================================================================
+  - name: data
+    label: Data Angka
+    icon: bar_chart
+    files:
+      - name: wilayah
+        label: Wilayah RT & RW
+        file: content/wilayah.json
+        description: Diagram batang pada seksi "Profil wilayah". Baris "Total" dipakai sebagai pembanding panjang batang, jadi jangan dihapus.
+        fields:
+          - label: Daftar wilayah
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Baris wilayah
+            summary: '{{fields.nama}} — {{fields.kk}} KK, {{fields.jiwa}} jiwa'
+            fields:
+              - { label: 'Nama (contoh: RT 027)', name: nama, widget: string }
+              - { label: Jumlah kepala keluarga, name: kk, widget: number, value_type: int, min: 0 }
+              - { label: Jumlah jiwa, name: jiwa, widget: number, value_type: int, min: 0 }
+              - { label: Jumlah laki-laki, name: laki, widget: number, value_type: int, min: 0 }
+              - { label: Jumlah perempuan, name: perempuan, widget: number, value_type: int, min: 0 }
+              - label: Jenis baris
+                name: tipe
+                widget: select
+                options:
+                  - { label: RW — ditulis tebal, value: rw }
+                  - { label: RT — ditulis menjorok ke dalam, value: rt }
+                  - { label: Total padukuhan — dipakai sebagai pembanding, value: total }
+
+      - name: usia
+        label: Struktur Usia
+        file: content/usia.json
+        description: Dipakai di legenda kotak "Struktur penduduk" sekaligus grafik komposisi umurnya. Lebar tiap warna dihitung otomatis.
+        fields:
+          - label: Kelompok usia
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Kelompok usia
+            summary: '{{fields.nama}} — {{fields.jumlah}} jiwa'
+            min: 1
+            max: 4
+            hint: Maksimal empat kelompok, karena hanya tersedia empat warna.
+            fields:
+              - { label: Nama kelompok, name: nama, widget: string }
+              - { label: Jumlah jiwa, name: jumlah, widget: number, value_type: int, min: 0 }
+              - { label: 'Keterangan (contoh: 18–59 tahun)', name: keterangan, widget: string }
+              - label: Nama pendek untuk grafik miniatur
+                name: ringkas
+                widget: string
+                required: false
+                hint: 'Contoh: "Produktif". Bila kosong, dipakai nama panjangnya.'
+
+      - name: kerja
+        label: Mata Pencaharian
+        file: content/kerja.json
+        fields:
+          - label: Daftar pekerjaan
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Pekerjaan
+            summary: '{{fields.nama}} — {{fields.jumlah}}'
+            fields:
+              - { label: Nama pekerjaan, name: nama, widget: string }
+              - { label: Jumlah orang, name: jumlah, widget: number, value_type: int, min: 0 }
+              - { label: Tebalkan baris ini, name: disorot, widget: boolean, default: false }
+
+      - name: air
+        label: Sumber Air Bersih
+        file: content/air.json
+        fields:
+          - label: Daftar sumber air
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Sumber air
+            summary: '{{fields.nama}} — {{fields.kk}} KK'
+            fields:
+              - { label: Nama sumber air, name: nama, widget: string }
+              - { label: Jumlah kepala keluarga, name: kk, widget: number, value_type: int, min: 0 }
+
+      - name: komoditas
+        label: Komoditas Pertanian
+        file: content/komoditas.json
+        fields:
+          - label: Daftar komoditas
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Komoditas
+            summary: '{{fields.nama}} — {{fields.kk}} KK'
+            fields:
+              - { label: Nama komoditas, name: nama, widget: string }
+              - { label: Jumlah kepala keluarga penanam, name: kk, widget: number, value_type: int, min: 0 }
+              - { label: Tebalkan baris ini, name: disorot, widget: boolean, default: false }
+
+      - name: jenis-usaha
+        label: Jenis Usaha Warga
+        file: content/jenis-usaha.json
+        description: Daftar jenis usaha beserta jumlah unitnya, tampil di kotak "Usaha warga".
+        fields:
+          - label: Daftar jenis usaha
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Jenis usaha
+            summary: '{{fields.nama}} — {{fields.unit}} unit'
+            fields:
+              - { label: Jenis usaha, name: nama, widget: string }
+              - { label: Jumlah unit, name: unit, widget: number, value_type: int, min: 0 }
+              - { label: Tebalkan baris ini, name: disorot, widget: boolean, default: false }
+
+  # ===================================================================
+  # 4. E-KATALOG UMKM
+  # ===================================================================
+  - name: katalog
+    label: E-Katalog UMKM
+    icon: storefront
+    files:
+      - name: katalog
+        label: Kategori Usaha
+        file: content/katalog.json
+        description: >-
+          Kartu-kartu yang berputar di seksi E-katalog. PENTING: jangan menulis
+          nomor telepon asli pelaku usaha sebelum yang bersangkutan menyatakan
+          bersedia secara tertulis (UU 27/2022 tentang Perlindungan Data Pribadi).
+        fields:
+          - label: Daftar kategori
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Kategori usaha
+            summary: '{{fields.judul}} — {{fields.unit}} unit'
+            fields:
+              - { label: Nama kategori, name: judul, widget: string }
+              - label: Anak judul
+                name: sub
+                widget: string
+                required: false
+                hint: 'Ditulis setelah nama, contoh: "— sembako harian".'
+              - { label: Jumlah unit usaha, name: unit, widget: number, value_type: int, min: 0 }
+              - { label: Penjelasan singkat, name: desk, widget: text }
+              - label: Foto
+                name: foto
+                widget: image
+                required: false
+                hint: Foto produk atau tempat usaha. Sebaiknya mendatar (landscape).
+              - label: Nomor kontak
+                name: kontak
+                widget: string
+                required: false
+                hint: >-
+                  Biarkan 0812-XXXX-XXXX selama belum ada persetujuan tertulis
+                  dari pelaku usaha. Situs ini dapat dibaca siapa pun.
+              - { label: Jam buka, name: jam, widget: string, required: false }
+              - { label: Lokasi, name: lokasi, widget: string, required: false }
+
+  # ===================================================================
+  # 5. PROGRAM KERJA
+  # ===================================================================
+  - name: program
+    label: Program Kerja
+    icon: checklist
+    files:
+      - name: program
+        label: Daftar Program
+        file: content/program.json
+        fields:
+          - label: Daftar program
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Program
+            summary: '{{fields.judul}}'
+            fields:
+              - { label: 'Bidang (contoh: Pemberdayaan UMKM)', name: bidang, widget: string }
+              - { label: Judul program, name: judul, widget: string }
+              - { label: Penjelasan program, name: deskripsi, widget: text }
+              - { label: Nama berkas panduan yang dibagikan, name: panduan, widget: string }
+              - label: Judul pendek untuk menu atas
+                name: ringkas
+                widget: string
+                hint: 'Judul panjang tidak muat di menu. Contoh: "Pembukuan UMKM".'
+
+  # ===================================================================
+  # 6. KEGIATAN WARGA
+  # ===================================================================
+  - name: kegiatan
+    label: Kegiatan Warga
+    icon: event
+    files:
+      - name: kegiatan
+        label: Daftar Kegiatan
+        file: content/kegiatan.json
+        description: >-
+          Ditampilkan sebagai cincin foto yang berputar. Delapan kegiatan
+          pertama juga muncul di menu atas.
+        fields:
+          - label: Daftar kegiatan
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Kegiatan
+            summary: '{{fields.judul}}'
+            fields:
+              - { label: Nama kegiatan, name: judul, widget: string }
+              - label: Judul pendek untuk menu atas
+                name: ringkas
+                widget: string
+                required: false
+                hint: Bila kosong, dipakai nama panjangnya.
+
+  # ===================================================================
+  # 7. PELUANG KEMITRAAN
+  # ===================================================================
+  - name: mitra
+    label: Kebutuhan Kemitraan
+    icon: handshake
+    files:
+      - name: mitra
+        label: Daftar Kebutuhan
+        file: content/mitra.json
+        fields:
+          - label: Daftar kebutuhan
+            name: daftar
+            widget: list
+            root: true
+            label_singular: Kebutuhan
+            summary: '{{fields.label}} — {{fields.jumlah}} {{fields.satuan}}'
+            fields:
+              - { label: Kebutuhan yang disampaikan warga, name: label, widget: string }
+              - { label: Berapa banyak yang menyebutkan, name: jumlah, widget: number, value_type: int, min: 0 }
+              - label: Satuan
+                name: satuan
+                widget: select
+                options:
+                  - { label: keluarga, value: keluarga }
+                  - { label: unit usaha, value: unit usaha }
+              - label: Judul pendek untuk menu atas
+                name: ringkas
+                widget: string
+                hint: 'Contoh: "Hama & penyakit".'

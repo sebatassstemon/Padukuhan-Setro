@@ -1,51 +1,72 @@
 [
   {
-    "judul": "Kelontong", "sub": "— sembako harian", "unit": 6,
+    "judul": "Kelontong",
+    "sub": "— sembako harian",
+    "unit": 6,
     "desk": "Kebutuhan pokok warga dilayani dari teras rumah, tersebar hampir di tiap RT.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%201.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "06.00–21.00 WIB, setiap hari",
+    "foto": "/assets/unggahan/produk-contoh-1.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "06.00–21.00 WIB, setiap hari",
     "lokasi": "Tersebar di RT 027 sampai RT 033"
   },
   {
-    "judul": "Olahan pangan", "sub": "— dapur rumahan", "unit": 5,
+    "judul": "Olahan pangan",
+    "sub": "— dapur rumahan",
+    "unit": 5,
     "desk": "Hasil kebun dan sawah diolah jadi makanan dan minuman siap jual.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%202.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "07.00–16.00 WIB, Senin–Sabtu",
+    "foto": "/assets/unggahan/produk-contoh-2.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "07.00–16.00 WIB, Senin–Sabtu",
     "lokasi": "Dapur rumahan, RT 028 dan RT 031"
   },
   {
-    "judul": "Hasil tani", "sub": "— gabah & palawija", "unit": 2,
+    "judul": "Hasil tani",
+    "sub": "— gabah & palawija",
+    "unit": 2,
     "desk": "Penampung gabah, jagung, dan palawija langsung dari petani Setro.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%203.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "06.00–15.00 WIB, menyesuaikan masa panen",
+    "foto": "/assets/unggahan/produk-contoh-3.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "06.00–15.00 WIB, menyesuaikan masa panen",
     "lokasi": "Gudang gabah, RT 027"
   },
   {
-    "judul": "Eceng gondok", "sub": "— anyaman tangan", "unit": 1,
+    "judul": "Eceng gondok",
+    "sub": "— anyaman tangan",
+    "unit": 1,
     "desk": "Kerajinan berbahan eceng gondok, satu-satunya di padukuhan.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%204.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "08.00–16.00 WIB, Senin–Jumat",
+    "foto": "/assets/unggahan/produk-contoh-4.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "08.00–16.00 WIB, Senin–Jumat",
     "lokasi": "Rumah perajin, RT 030"
   },
   {
-    "judul": "Mebel kayu", "sub": "— pesanan warga", "unit": 1,
+    "judul": "Mebel kayu",
+    "sub": "— pesanan warga",
+    "unit": 1,
     "desk": "Perabot kayu dikerjakan per pesanan, dari kusen sampai lemari.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%205.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "08.00–17.00 WIB, Senin–Sabtu",
+    "foto": "/assets/unggahan/produk-contoh-5.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "08.00–17.00 WIB, Senin–Sabtu",
     "lokasi": "Bengkel kayu, RT 029"
   },
   {
-    "judul": "Pemancingan", "sub": "— kolam warga", "unit": 1,
+    "judul": "Pemancingan",
+    "sub": "— kolam warga",
+    "unit": 1,
     "desk": "Kolam pancing milik warga yang dikelola sebagai usaha jasa.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%206.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "06.00–18.00 WIB, setiap hari",
+    "foto": "/assets/unggahan/produk-contoh-6.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "06.00–18.00 WIB, setiap hari",
     "lokasi": "Kolam warga, RT 032"
   },
   {
-    "judul": "Rosok", "sub": "— daur ulang", "unit": 1,
+    "judul": "Rosok",
+    "sub": "— daur ulang",
+    "unit": 1,
     "desk": "Mengumpulkan dan memilah barang bekas warga sebelum disalurkan kembali.",
-    "foto": "foto%20produk%20dummy/produk%20dummy%207.jpg",
-    "kontak": "0812-XXXX-XXXX", "jam": "08.00–17.00 WIB, Senin–Sabtu",
+    "foto": "/assets/unggahan/produk-contoh-7.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "08.00–17.00 WIB, Senin–Sabtu",
     "lokasi": "Halaman pengepul, RT 033"
   }
 ]

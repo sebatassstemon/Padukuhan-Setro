@@ -1,0 +1,158 @@
+# Panduan Pengelola Situs Padukuhan Setro
+
+Panduan ini untuk **pengelola situs padukuhan**. Anda tidak perlu tahu apa pun
+soal pemrograman. Semua isi situs diubah lewat formulir, mirip mengisi Google
+Form.
+
+---
+
+## 1. Masuk ke halaman pengelola
+
+1. Buka browser (Chrome, Edge, atau lainnya).
+2. Ketik alamat situs lalu tambahkan `/admin` di belakangnya, contoh:
+
+   ```
+   padukuhan-setro.vercel.app/admin
+   ```
+
+3. Klik tombol **Sign In with GitHub**.
+4. Masuk dengan akun GitHub Anda, lalu klik tombol izin yang muncul.
+
+Setelah itu Anda melihat daftar menu di sisi kiri.
+
+> Tombol-tombol bawaan CMS berbahasa Inggris. Yang perlu diingat hanya tiga:
+> **Save** = simpan, **Publish** = terbitkan, **Delete** = hapus.
+
+---
+
+## 2. Cara mengubah isi
+
+1. Klik salah satu menu di kiri.
+2. Klik nama berkas yang ingin diubah.
+3. Ubah isi kolom yang ingin diubah.
+4. Klik **Save** di kanan atas.
+5. Klik **Publish**.
+
+Setelah **Publish**, tunggu kira-kira satu menit, lalu buka situsnya dan tekan
+**Ctrl + Shift + R** untuk memuat ulang. Perubahan Anda sudah tampil.
+
+**Kalau belum berubah:** tunggu sebentar lagi lalu muat ulang sekali lagi.
+Situs perlu waktu untuk diterbitkan ulang.
+
+---
+
+## 3. Isi tiap menu
+
+| Menu di kiri | Mengubah bagian mana di situs |
+|---|---|
+| **Teks Halaman → Beranda** | Judul besar, paragraf pembuka, dan lima angka di layar pertama |
+| **Teks Halaman → Judul Tiga Seksi** | Judul & paragraf untuk E-katalog, Program kerja, Kegiatan warga |
+| **Teks Halaman → Peluang Kemitraan** | Judul & paragraf pembuka bagian kemitraan |
+| **Teks Halaman → Kontak & Lokasi** | Alamat, nomor WhatsApp, catatan jam berkunjung |
+| **Teks Halaman → Footer** | Bagian paling bawah, termasuk baris "Disusun oleh KKN ... Angkatan ..." |
+| **Teks Halaman → Teks Menu Turun** | Tulisan di dalam menu yang muncul saat kursor diarahkan ke menu atas |
+| **Enam Kotak Data → Isi Kotak** | Angka besar, keterangan, dan grafik kecil pada enam kotak |
+| **Enam Kotak Data → Kartu Angka** | Kartu-kartu angka yang muncul saat kotak dibuka |
+| **Data Angka → Wilayah RT & RW** | Diagram batang di bagian "Profil wilayah" |
+| **Data Angka → Struktur Usia** | Kelompok umur warga |
+| **Data Angka → Mata Pencaharian** | Daftar pekerjaan warga |
+| **Data Angka → Sumber Air Bersih** | Daftar sumber air |
+| **Data Angka → Komoditas Pertanian** | Daftar tanaman yang ditanam |
+| **Data Angka → Jenis Usaha Warga** | Daftar jenis usaha beserta jumlah unitnya |
+| **E-Katalog UMKM** | Kartu-kartu usaha warga yang berputar |
+| **Program Kerja** | Daftar program KKN beserta penjelasannya |
+| **Kegiatan Warga** | Daftar kegiatan yang berputar sebagai cincin foto |
+| **Kebutuhan Kemitraan** | Daftar kebutuhan warga di bagian kemitraan |
+
+---
+
+## 4. Menambah dan menghapus baris
+
+Pada menu yang isinya berupa daftar (misalnya Kegiatan Warga):
+
+- Klik tombol **+ Add** di bawah daftar untuk menambah satu baris baru.
+- Klik ikon titik tiga di kanan satu baris untuk **menghapus** atau
+  **memindahkannya**.
+- Baris bisa digeser urutannya. Urutan di formulir sama dengan urutan di situs.
+
+Contoh yang paling sering: daftar **Kegiatan Warga** saat ini berisi dua puluh
+judul, sebagian masih contoh. Ganti dengan agenda yang benar-benar berjalan di
+Setro, atau hapus yang tidak dipakai.
+
+---
+
+## 5. Mengganti foto
+
+Pada kolom yang bertuliskan **Foto**:
+
+1. Klik kolomnya.
+2. Klik **Upload** dan pilih foto dari komputer atau HP.
+3. Foto tersimpan otomatis, Anda tidak perlu mengetik alamat berkas.
+
+Sebaiknya foto mendatar (landscape) supaya pas di kartu.
+
+---
+
+## 6. Hal yang HARUS diperhatikan
+
+### Jangan menulis nomor telepon warga tanpa izin
+
+Situs ini bisa dibaca siapa pun di internet. Nomor telepon pelaku usaha di
+E-Katalog sengaja masih ditulis `0812-XXXX-XXXX`.
+
+**Jangan menggantinya dengan nomor asli** sebelum pemilik usaha menyatakan
+bersedia — sebaiknya secara tertulis. Ini kewajiban hukum, bukan sekadar
+kebiasaan (UU 27/2022 tentang Perlindungan Data Pribadi).
+
+Aturan yang sama berlaku untuk nama lengkap, alamat rumah, dan NIK warga.
+
+### Angka harus diisi angka
+
+Kolom yang mengharapkan angka hanya boleh diisi angka, tanpa titik pemisah
+ribuan dan tanpa satuan. Tulis `14791`, bukan `14.791` atau `14791 kg`.
+Satuannya sudah ada di kolomnya sendiri.
+
+### Baris "Total Padukuhan Setro" jangan dihapus
+
+Pada **Data Angka → Wilayah RT & RW**, baris bertanda **Total padukuhan**
+dipakai sebagai pembanding panjang batang diagram. Kalau dihapus, diagramnya
+tidak tampil.
+
+### Kelompok usia maksimal empat
+
+Pada **Data Angka → Struktur Usia**, hanya tersedia empat warna. Lebih dari
+empat kelompok tidak akan terlihat benar.
+
+### Kalau ragu, jangan disimpan
+
+Klik ikon panah kembali di kiri atas tanpa menekan **Save**. Tidak ada yang
+berubah.
+
+---
+
+## 7. Kalau ada yang salah
+
+Semua perubahan tersimpan riwayatnya, jadi tidak ada yang benar-benar hilang.
+
+- **Salah ketik dan sudah terbit:** buka lagi menunya, perbaiki, **Save**, lalu
+  **Publish**. Cara ini cukup untuk hampir semua kasus.
+- **Situs jadi aneh setelah diubah:** kemungkinan besar ada kolom angka yang
+  terisi huruf, atau ada kolom wajib yang dikosongkan. Buka kembali menu yang
+  terakhir Anda ubah dan periksa isinya.
+- **Tidak bisa masuk ke /admin:** pastikan Anda memakai akun GitHub yang sudah
+  diundang ke repo. Hubungi tim KKN yang memasang sistem ini.
+
+---
+
+## 8. Yang tidak diatur dari sini
+
+Beberapa hal memang tidak bisa diubah lewat formulir, karena bagian dari
+rancangan situs, bukan isi:
+
+- Warna, jenis huruf, dan tata letak
+- Gerakan/animasi saat halaman digulir
+- Video latar di layar pertama
+- Peta lokasi
+- Ikon-ikon pada daftar program kerja
+
+Untuk mengubah hal-hal itu, dibutuhkan bantuan orang yang mengerti kode.
