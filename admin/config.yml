@@ -8,13 +8,7 @@ backend:
   name: github
   repo: sebatassstemon/Padukuhan-Setro
   branch: main
-  # ------------------------------------------------------------------
-  # base_url diisi dengan alamat "Sveltia CMS Authenticator" setelah
-  # Worker-nya dipasang di Cloudflare (lihat PANDUAN_PEMASANGAN.md,
-  # bagian 3). Selama baris di bawah masih diberi tanda pagar, masuk ke
-  # /admin hanya bisa lewat tombol "Sign in with Token".
-  # base_url: https://GANTI-DENGAN-ALAMAT-WORKER.workers.dev
-  # ------------------------------------------------------------------
+  base_url: https://sveltia-cms-auth.westprogg220.workers.dev
 
 # Foto yang diunggah pengelola lewat formulir disimpan di sini
 media_folder: assets/unggahan
