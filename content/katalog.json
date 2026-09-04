@@ -1,16 +1,5 @@
 [
   {
-    "judul": "Kelontong 1",
-    "kategori": "Kelontong",
-    "sub": "— sembako harian",
-    "desk": "Melayani kebutuhan pokok warga langsung dari teras rumah.",
-    "foto": "/assets/unggahan/produk-contoh-1.jpg",
-    "kontak": "0812-XXXX-XXXX",
-    "jam": "06.00–21.00 WIB, setiap hari",
-    "lokasi": "Teras rumah, RT 027–033",
-    "galeri": []
-  },
-  {
     "judul": "Kelontong 2",
     "kategori": "Kelontong",
     "sub": "— sembako harian",
@@ -185,19 +174,6 @@
     "jam": "08.00–17.00 WIB, Senin–Sabtu",
     "lokasi": "Halaman pengepul, RT 033",
     "galeri": []
-  },
-  {
-    "judul": "TES",
-    "kategori": "TES",
-    "sub": "TES",
-    "desk": "TES",
-    "foto": "/assets/unggahan/windah.jpg",
-    "kontak": "TES",
-    "jam": "TES",
-    "lokasi": "TES",
-    "galeri": [
-      "/assets/unggahan/windah.jpg"
-    ]
   },
   {
     "judul": "sewa alat berat",
