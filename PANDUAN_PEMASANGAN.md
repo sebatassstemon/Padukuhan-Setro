@@ -24,35 +24,25 @@ Isi situs tersimpan di berkas `content/*.json`. `index.html` membacanya lewat
 
 ---
 
-## 1. Mengirim repo ke GitHub
+## 1. Repo GitHub — SUDAH SELESAI
 
-Repo lokal sudah dibuat dan seluruh berkas sudah di-commit. Remote sudah
-diarahkan ke `https://github.com/sebatassstemon/Padukuhan-Setro.git`.
+Repo sudah dibuat, seluruh berkas sudah di-commit, dan sudah dikirim ke
+<https://github.com/sebatassstemon/Padukuhan-Setro> pada branch `main`.
 
-Yang tersisa hanyalah mengirimnya (push). Paling mudah lewat VS Code:
+Sudah diperiksa: **tidak ada berkas Excel/CSV di dalam repo maupun di
+riwayatnya.** `DATA_FINAL_WEBSITE_PADUKUHAN_SETRO.xlsx` berisi NIK, nomor HP,
+dan omzet per keluarga, dan sudah dikecualikan lewat `.gitignore`. Jangan
+sekali-kali memaksa memasukkannya (`git add -f`) — menghapusnya di commit
+berikutnya tidak cukup, riwayatnya harus dibersihkan.
 
-1. Buka folder proyek ini di VS Code.
-2. Klik ikon **Source Control** di bilah kiri (ikon percabangan).
-3. Klik **Publish Branch** / **Sync Changes**.
-4. VS Code akan meminta login GitHub — pilih **Allow**, lalu masuk dengan akun
-   pemilik repo.
-
-Atau lewat terminal, bila GitHub CLI sudah terpasang:
+Untuk mengirim perubahan berikutnya dari komputer ini:
 
 ```bash
-gh auth login          # sekali saja
-git push -u origin main
+git push
 ```
 
-**Cara memastikan berhasil:** buka
-<https://github.com/sebatassstemon/Padukuhan-Setro> — harus terlihat folder
-`content/`, `admin/`, `assets/`, dan berkas `index.html`.
-
-**Wajib dicek:** pastikan **`DATA_FINAL_WEBSITE_PADUKUHAN_SETRO.xlsx` TIDAK ada
-di GitHub.** Berkas itu berisi NIK, nomor HP, dan omzet per keluarga. Sudah
-dikecualikan lewat `.gitignore`, tetapi tetap periksa dengan mata sendiri.
-Kalau sampai terlanjur terkirim, menghapusnya dari commit berikutnya tidak
-cukup — riwayatnya harus dibersihkan.
+Atau lewat VS Code: ikon **Source Control** di bilah kiri, lalu
+**Sync Changes**. Komputer ini sudah terautentikasi sebagai pemilik repo.
 
 ---
 
