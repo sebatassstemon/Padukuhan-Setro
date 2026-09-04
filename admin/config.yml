@@ -80,25 +80,25 @@ collections:
               - { label: Paragraf, name: paragraf, widget: text }
 
       - name: seksi
-        label: Judul Tiga Seksi (Katalog, Program, Kegiatan)
+        label: Judul Pembuka Bagian (Katalog, Program, Kegiatan)
         file: content/seksi.json
-        description: Judul dan paragraf pembuka untuk seksi E-katalog, Program kerja, dan Kegiatan warga.
+        description: Judul dan paragraf pembuka untuk bagian E-katalog, Program kerja, dan Kegiatan warga.
         fields:
-          - label: Seksi E-katalog
+          - label: Bagian E-katalog
             name: katalog
             widget: object
             fields:
               - { label: Baris kecil di atas judul, name: label, widget: string }
               - { label: Judul, name: judul, widget: string }
               - { label: Paragraf, name: paragraf, widget: text }
-          - label: Seksi Program kerja
+          - label: Bagian Program kerja
             name: program
             widget: object
             fields:
               - { label: Baris kecil di atas judul, name: label, widget: string }
               - { label: Judul, name: judul, widget: string }
               - { label: Paragraf, name: paragraf, widget: text }
-          - label: Seksi Kegiatan warga
+          - label: Bagian Kegiatan warga
             name: kegiatan
             widget: object
             fields:
@@ -109,7 +109,7 @@ collections:
       - name: kemitraan
         label: Peluang Kemitraan (teks)
         file: content/kemitraan.json
-        description: Judul dan paragraf pembuka seksi kemitraan. Daftar kebutuhannya diatur terpisah.
+        description: Judul dan paragraf pembuka bagian kemitraan. Daftar kebutuhannya diatur terpisah.
         fields:
           - { label: Baris kecil di atas judul, name: label, widget: string }
           - { label: Judul, name: judul, widget: string }
@@ -148,7 +148,7 @@ collections:
             hint: Ganti nomor unit, angkatan, dan bulan setiap ada KKN baru.
 
       - name: menu
-        label: Teks Menu Turun (di bagian atas layar)
+        label: Menu Navigasi Atas (untuk pindah antar bagian)
         file: content/menu.json
         description: >-
           Hanya tulisannya yang bisa diubah di sini. Tautan tiap baris sudah
@@ -237,10 +237,10 @@ collections:
     icon: dashboard
     files:
       - name: kotak
-        label: Isi Kotak & Grafik Miniatur
+        label: Isi Kotak & Grafik Kecil
         file: content/kotak.json
         description: >-
-          Angka besar, keterangan, dan grafik kecil pada enam kotak di seksi
+          Angka besar, keterangan, dan grafik kecil pada enam kotak di bagian
           "Potret warga Setro" dan "Potensi Setro".
         fields:
           - label: Judul panel "Potret warga Setro"
@@ -280,7 +280,7 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: 'Satuan (misal: jiwa)', name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - label: Judul grafik miniatur
+              - label: Judul grafik kecil
                 name: motifTajuk
                 widget: string
                 hint: Isi grafiknya sendiri dihitung otomatis dari menu "Struktur Usia".
@@ -297,8 +297,8 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: 'Satuan (misal: orang)', name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
-              - label: Isi grafik miniatur
+              - { label: Judul grafik kecil, name: motifTajuk, widget: string }
+              - label: Isi grafik kecil
                 name: motifButir
                 widget: list
                 label_singular: Baris
@@ -329,8 +329,8 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: Satuan, name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
-              - label: Isi grafik miniatur
+              - { label: Judul grafik kecil, name: motifTajuk, widget: string }
+              - label: Isi grafik kecil
                 name: motifButir
                 widget: list
                 label_singular: Baris
@@ -355,7 +355,7 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: 'Satuan (misal: hektar)', name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - { label: Judul grafik kecil, name: motifTajuk, widget: string }
               - label: 'Grafik kotak-kotak — jumlah seluruh kotak'
                 name: petakTotal
                 widget: number
@@ -402,8 +402,8 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: Satuan, name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
-              - label: Isi grafik miniatur
+              - { label: Judul grafik kecil, name: motifTajuk, widget: string }
+              - label: Isi grafik kecil
                 name: motifButir
                 widget: list
                 label_singular: Baris
@@ -432,7 +432,7 @@ collections:
               - { label: 'Tanda di belakang angka (misal %)', name: akhiran, widget: string, required: false }
               - { label: 'Satuan (misal: unit usaha)', name: satuan, widget: string, required: false }
               - { label: Keterangan satu baris di bawah angka, name: keterangan, widget: string }
-              - { label: Judul grafik miniatur, name: motifTajuk, widget: string }
+              - { label: Judul grafik kecil, name: motifTajuk, widget: string }
               - { label: 'Grafik kotak-kotak — jumlah seluruh kotak', name: petakTotal, widget: number, value_type: int, min: 1, max: 200 }
               - { label: 'Grafik kotak-kotak — berapa yang diwarnai', name: petakTerisi, widget: number, value_type: int, min: 0, max: 200 }
               - label: 'Grafik kotak-kotak — kotak keberapa yang disorot'
@@ -451,17 +451,17 @@ collections:
               - { label: Catatan di bawah daftar besar, name: widgetCatatan, widget: text }
 
       - name: angka-kotak
-        label: Kartu Angka di dalam Kotak
+        label: Rincian Angka Saat Kotak Dibuka
         file: content/angka-kotak.json
         description: >-
-          Kartu-kartu angka yang muncul saat kotak dibuka. Isi "Angkanya" untuk
+          Angka-angka rinci yang muncul saat pengunjung membuka kotak. Isi "Angkanya" untuk
           angka biasa, atau isi "Teks khusus" bila nilainya bukan angka murni
           (misalnya "Rp128 juta").
         fields:
           - label: Kotak "Infrastruktur dasar"
             name: infra
             widget: list
-            label_singular: Kartu angka
+            label_singular: Angka
             summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
             fields:
               - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
@@ -474,7 +474,7 @@ collections:
           - label: Kotak "Potensi pertanian"
             name: tani
             widget: list
-            label_singular: Kartu angka
+            label_singular: Angka
             summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
             fields:
               - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
@@ -487,7 +487,7 @@ collections:
           - label: Kotak "Peternakan & perikanan"
             name: ternak
             widget: list
-            label_singular: Kartu angka
+            label_singular: Angka
             summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
             fields:
               - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
@@ -500,7 +500,7 @@ collections:
           - label: Kotak "Usaha warga"
             name: umkm
             widget: list
-            label_singular: Kartu angka
+            label_singular: Angka
             summary: '{{fields.label}} — {{fields.angka}}{{fields.teks}}'
             fields:
               - { label: Angkanya, name: angka, widget: number, value_type: float, required: false }
@@ -521,7 +521,7 @@ collections:
       - name: wilayah
         label: Wilayah RT & RW
         file: content/wilayah.json
-        description: Diagram batang pada seksi "Profil wilayah". Baris "Total" dipakai sebagai pembanding panjang batang, jadi jangan dihapus.
+        description: Diagram batang pada bagian "Profil wilayah". Baris "Total" dipakai sebagai pembanding panjang batang, jadi jangan dihapus.
         fields:
           - label: Daftar wilayah
             name: daftar
@@ -561,7 +561,7 @@ collections:
               - { label: Nama kelompok, name: nama, widget: string }
               - { label: Jumlah jiwa, name: jumlah, widget: number, value_type: int, min: 0 }
               - { label: 'Keterangan (contoh: 18–59 tahun)', name: keterangan, widget: string }
-              - label: Nama pendek untuk grafik miniatur
+              - label: Nama pendek untuk grafik kecil
                 name: ringkas
                 widget: string
                 required: false
@@ -638,7 +638,7 @@ collections:
         label: Daftar Usaha Warga
         file: content/katalog.json
         description: >-
-          Kartu-kartu yang berputar di seksi E-katalog. Satu kartu untuk satu
+          Kartu-kartu yang berputar di bagian E-katalog. Satu kartu untuk satu
           usaha, bukan sekelompok usaha. PENTING: jangan menulis
           nomor telepon asli pelaku usaha sebelum yang bersangkutan menyatakan
           bersedia secara tertulis (UU 27/2022 tentang Perlindungan Data Pribadi).

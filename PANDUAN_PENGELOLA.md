@@ -46,13 +46,13 @@ Situs perlu waktu untuk diterbitkan ulang.
 | Menu di kiri | Mengubah bagian mana di situs |
 |---|---|
 | **Teks Halaman → Beranda** | Judul besar, paragraf pembuka, dan lima angka di layar pertama |
-| **Teks Halaman → Judul Tiga Seksi** | Judul & paragraf untuk E-katalog, Program kerja, Kegiatan warga |
+| **Teks Halaman → Judul Pembuka Bagian** | Judul & paragraf untuk E-katalog, Program kerja, Kegiatan warga |
 | **Teks Halaman → Peluang Kemitraan** | Judul & paragraf pembuka bagian kemitraan |
 | **Teks Halaman → Kontak & Lokasi** | Alamat, nomor WhatsApp, catatan jam berkunjung |
 | **Teks Halaman → Footer** | Bagian paling bawah, termasuk baris "Disusun oleh KKN ... Angkatan ..." |
-| **Teks Halaman → Teks Menu Turun** | Tulisan di dalam menu yang muncul saat kursor diarahkan ke menu atas |
-| **Enam Kotak Data → Isi Kotak** | Angka besar, keterangan, dan grafik kecil pada enam kotak |
-| **Enam Kotak Data → Kartu Angka** | Kartu-kartu angka yang muncul saat kotak dibuka |
+| **Teks Halaman → Menu Navigasi Atas** | Tulisan di dalam menu yang muncul saat kursor diarahkan ke menu atas |
+| **Enam Kotak Data → Isi Kotak & Grafik Kecil** | Angka besar, keterangan, dan grafik kecil pada enam kotak |
+| **Enam Kotak Data → Rincian Angka** | Angka-angka rinci yang muncul saat pengunjung membuka kotak |
 | **Data Angka → Wilayah RT & RW** | Diagram batang di bagian "Profil wilayah" |
 | **Data Angka → Struktur Usia** | Kelompok umur warga |
 | **Data Angka → Mata Pencaharian** | Daftar pekerjaan warga |
