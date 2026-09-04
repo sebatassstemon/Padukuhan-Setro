@@ -702,7 +702,22 @@ collections:
               - { label: 'Bidang (contoh: Pemberdayaan UMKM)', name: bidang, widget: string }
               - { label: Judul program, name: judul, widget: string }
               - { label: Penjelasan program, name: deskripsi, widget: text }
-              - { label: Nama berkas panduan yang dibagikan, name: panduan, widget: string }
+              - label: Nama berkas panduan yang dibagikan
+                name: panduan
+                widget: string
+                hint: >-
+                  Tulisan yang tampil di tombol unduh, misalnya "Template Buku
+                  Kas Sederhana UMKM". Ini hanya namanya; berkasnya diunggah di
+                  kolom berikutnya.
+              - label: Berkas panduan (PDF)
+                name: berkas
+                widget: file
+                required: false
+                hint: >-
+                  Unggah berkas PDF yang boleh diunduh pengunjung. Selama masih
+                  kosong, tombol unduh di situs tetap terkunci dan bertuliskan
+                  "Berkas dibagikan setelah program selesai dilaksanakan".
+                  Begitu berkas diunggah, tombolnya hidup dengan sendirinya.
               - label: Judul pendek untuk menu atas
                 name: ringkas
                 widget: string

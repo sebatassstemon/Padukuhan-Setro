@@ -2240,6 +2240,56 @@
       line-height: 1.35;
     }
 
+    /* berkas sudah diunggah pengelola: tombol hidup */
+    a.pk__unduh {
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .25s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    a.pk__unduh b {
+      color: var(--tinta);
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, var(--daun) 45%, transparent);
+      text-underline-offset: .22em;
+    }
+
+    a.pk__unduh svg {
+      stroke: var(--daun);
+      transition: transform .25s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    a.pk__unduh:hover svg,
+    a.pk__unduh:focus-visible svg {
+      transform: translateY(2px);
+    }
+
+    a.pk__unduh:hover b {
+      text-decoration-color: var(--daun);
+    }
+
+    a.pk__unduh:focus-visible {
+      outline: 2px solid var(--daun);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    a.pk__unduh:active {
+      opacity: .68;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      a.pk__unduh,
+      a.pk__unduh svg {
+        transition: none;
+      }
+
+      a.pk__unduh:hover svg,
+      a.pk__unduh:focus-visible svg {
+        transform: none;
+      }
+    }
+
     /* ---------- layar sempit: kartu dikecilkan agar tetangga tetap muat ---------- */
     @media (max-width:1023px) {
       .pk__menu::before,
@@ -5210,6 +5260,7 @@
     // Selama masih kosong, dipakai foto contoh seperti sebelumnya.
     let FOTO_PROGRAM = [];
     let FOTO_KEGIATAN = [];
+    let BERKAS_PROGRAM = [];
 
     /* ============ KONTEN DARI CMS ============ */
     /* Seluruh nilai di atas adalah CADANGAN BAWAAN. Bila berkas content/*.json
@@ -5258,6 +5309,7 @@
       PROGRAM = dt.map(x => [x.bidang, x.judul, x.deskripsi, x.panduan]);
       RINGKAS_PROGRAM = dt.map(x => x.ringkas || x.judul);
       FOTO_PROGRAM = dt.map(x => Array.isArray(x.foto) ? x.foto : []);
+      BERKAS_PROGRAM = dt.map(x => typeof x.berkas === 'string' ? x.berkas.trim() : '');
     }
     if (dt = daftar(KONTEN.kegiatan)) {
       KEGIATAN = dt.map(x => x.judul);
@@ -5954,13 +6006,19 @@
       <span class="chip chip-est self-start !text-[.72rem]">${bidang}</span>
       <h3 class="pk__judul">${judul}</h3>
       <p class="pk__desk">${desk}</p>
-      <button type="button" class="pk__unduh" disabled
+      ${BERKAS_PROGRAM[i] ? `<a class="pk__unduh" href="${BERKAS_PROGRAM[i]}" download
+        aria-label="Unduh berkas: ${unduh}">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        <b>${unduh}</b>
+      </a>` : `<button type="button" class="pk__unduh" disabled
         title="Berkas dibagikan setelah program selesai dilaksanakan">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B9B0A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
         <b>${unduh}</b>
-      </button>
+      </button>`}
     </div>
   </article>`).join('');
 

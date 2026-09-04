@@ -60,7 +60,7 @@ Situs perlu waktu untuk diterbitkan ulang.
 | **Data Angka → Komoditas Pertanian** | Daftar tanaman yang ditanam |
 | **Data Angka → Jenis Usaha Warga** | Daftar jenis usaha beserta jumlah unitnya |
 | **E-Katalog UMKM** | Kartu-kartu usaha warga yang berputar, beserta foto etalasenya |
-| **Program Kerja** | Daftar program KKN, penjelasan, dan foto dokumentasinya |
+| **Program Kerja** | Daftar program KKN, penjelasan, foto dokumentasi, dan berkas PDF yang boleh diunduh |
 | **Kegiatan Warga** | Daftar kegiatan yang berputar sebagai cincin foto, beserta foto dokumentasinya |
 | **Kebutuhan Kemitraan** | Daftar kebutuhan warga di bagian kemitraan |
 
@@ -123,7 +123,35 @@ Di **E-Katalog UMKM** ada dua kolom foto yang berbeda:
 
 ---
 
-## 6. Hal yang HARUS diperhatikan
+## 6. Berkas PDF yang boleh diunduh pengunjung
+
+Setiap program kerja punya tombol unduh di bagian bawah kartunya. Sekarang
+tombol itu masih **terkunci** dan bertuliskan "Berkas dibagikan setelah program
+selesai dilaksanakan" — karena memang belum ada berkas yang diunggah.
+
+Untuk menghidupkannya:
+
+1. Buka **Program Kerja**, klik programnya.
+2. Kolom **Nama berkas panduan yang dibagikan** = tulisan yang tampil di
+   tombol, misalnya "Template Buku Kas Sederhana UMKM". Ini hanya namanya.
+3. Kolom **Berkas panduan (PDF)** = berkasnya sendiri. Klik, lalu **Upload**
+   dan pilih berkas PDF dari komputer.
+4. **Save**, lalu **Publish**.
+
+Begitu berkasnya terunggah, tombol di situs **hidup dengan sendirinya**:
+tulisannya berubah warna, ikonnya jadi hijau, dan pengunjung bisa mengklik
+untuk mengunduh. Anda tidak perlu mengubah apa pun selain mengunggah berkasnya.
+
+Program yang belum diunggahi berkas tetap terkunci seperti semula, jadi boleh
+diisi satu per satu.
+
+> **Sebelum mengunggah, buka dulu PDF-nya dan periksa isinya.** Berkas ini bisa
+> diunduh siapa saja di internet. Jangan mengunggah berkas yang memuat nama
+> lengkap, alamat, NIK, nomor HP, atau data keuangan warga.
+
+---
+
+## 7. Hal yang HARUS diperhatikan
 
 ### Jangan menulis nomor telepon warga tanpa izin
 
@@ -160,7 +188,7 @@ berubah.
 
 ---
 
-## 7. Kalau ada yang salah
+## 8. Kalau ada yang salah
 
 Semua perubahan tersimpan riwayatnya, jadi tidak ada yang benar-benar hilang.
 
@@ -174,7 +202,7 @@ Semua perubahan tersimpan riwayatnya, jadi tidak ada yang benar-benar hilang.
 
 ---
 
-## 8. Yang tidak diatur dari sini
+## 9. Yang tidak diatur dari sini
 
 Beberapa hal memang tidak bisa diubah lewat formulir, karena bagian dari
 rancangan situs, bukan isi:
