@@ -716,6 +716,12 @@
         height: 34rem;
         padding: 1.1rem;
         margin-top: 2rem;
+        /* Kartu diputar rotateX di dalam perspective 400px, jadi proyeksi 3D-nya
+           tampil ~10% lebih lebar daripada kotak tata letaknya. Tanpa batas ini
+           bingkai tabletnya terpotong tepi layar di 768-1100px: di 900px sisi
+           kiri-kanannya hilang 47px. Batas 84% menyisakan ruang untuk pemuaian
+           itu; di >=1105px suku 58rem yang menang, jadi layar lebar tidak berubah. */
+        max-width: min(58rem, 84%);
       }
 
       .tablet__layar {
@@ -6731,27 +6737,38 @@
       if (!wadah || !kartu || !header || kurangGerak || typeof gsap === 'undefined') return;
 
       gsap.registerPlugin(ScrollTrigger);
-      const mobile = window.matchMedia('(max-width: 767px)').matches;
-      const skalaAwal = mobile ? .7 : 1.05;
-      const skalaAkhir = mobile ? .9 : 1;
+
+      // Skala kartu berbeda antara ponsel dan layar lebar, dan nilainya WAJIB
+      // dibaca ulang tiap kali lebar layar melewati 768px. Dulu breakpoint-nya
+      // dibaca sekali saat muat lalu dibekukan: begitu ponsel diputar dari
+      // lanskap ke potret, kartu tetap memakai skala 1.05 milik layar lebar
+      // sehingga menjulur ~60px keluar layar di kiri dan kanan. gsap.matchMedia
+      // membongkar-pasang animasinya sendiri di tiap pergantian breakpoint.
+      const mm = gsap.matchMedia();
 
       // catatan: tiap ScrollTrigger butuh objek/timeline sendiri — berbagi satu objek
       // literal antar tween membuat ScrollTrigger kedua gagal terpasang dengan benar.
+      const pasang = (skalaAwal, skalaAkhir) => () => {
+        // kartu: rotateX & scale rampung di 40% pertama jangkauan scroll (setara
+        // scrollYProgress [0, .4, 1] -> [42, 0, 0] di Framer Motion), lalu terkunci
+        // datar untuk 60% sisanya.
+        gsap.timeline({
+          scrollTrigger: { trigger: wadah, start: 'top bottom', end: 'bottom top', scrub: 0 }
+        })
+          .fromTo(kartu, { rotateX: 20, scale: skalaAwal },
+            { rotateX: 0, scale: skalaAkhir, ease: 'none', duration: .5 })
+          .to(kartu, { duration: .3 }); // tahan datar di sisa scroll
 
-      // kartu: rotateX & scale rampung di 40% pertama jangkauan scroll (setara
-      // scrollYProgress [0, .4, 1] -> [42, 0, 0] di Framer Motion), lalu terkunci
-      // datar untuk 60% sisanya.
-      gsap.timeline({
-        scrollTrigger: { trigger: wadah, start: 'top bottom', end: 'bottom top', scrub: 0 }
-      })
-        .fromTo(kartu, { rotateX: 20, scale: skalaAwal },
-          { rotateX: 0, scale: skalaAkhir, ease: 'none', duration: .5 })
-        .to(kartu, { duration: .3 }); // tahan datar di sisa scroll
+        gsap.fromTo(header, { y: 0 }, {
+          y: -56, ease: 'none',
+          scrollTrigger: { trigger: wadah, start: 'top bottom', end: 'bottom top', scrub: 0 }
+        });
 
-      gsap.fromTo(header, { y: 0 }, {
-        y: -56, ease: 'none',
-        scrollTrigger: { trigger: wadah, start: 'top bottom', end: 'bottom top', scrub: 0 }
-      });
+        return () => gsap.set([kartu, header], { clearProps: 'transform' });
+      };
+
+      mm.add('(max-width: 767.98px)', pasang(.7, .9));
+      mm.add('(min-width: 768px)', pasang(1.05, 1));
 
       ScrollTrigger.refresh();
     }
