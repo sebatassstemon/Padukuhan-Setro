@@ -70,5 +70,16 @@
     "berkas": "/assets/unggahan/paspor-belajar-bahasa-inggris.pdf",
     "ringkas": "Data pribadi & scam",
     "foto": []
+  },
+  {
+    "bidang": "TES",
+    "judul": "TES",
+    "deskripsi": "TES",
+    "panduan": "TES",
+    "berkas": "/assets/unggahan/windah.jpg",
+    "ringkas": "TES",
+    "foto": [
+      "/assets/unggahan/windah.jpg"
+    ]
   }
 ]
