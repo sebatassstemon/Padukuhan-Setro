@@ -1,0 +1,156 @@
+{
+  "panelWarga": {
+    "label": "Potret warga Setro",
+    "judulBaris1": "Tenaganya cukup,",
+    "judulBaris2": "sarananya sudah ada.",
+    "lead": "Siapa yang tinggal di Setro, dari mana mereka hidup, dan sarana apa yang sudah berdiri. Buka tiap kotak untuk membaca datanya."
+  },
+  "panelPotensi": {
+    "label": "Potensi Setro",
+    "judulBaris1": "Sawah, kandang,",
+    "judulBaris2": "dan tangan warganya.",
+    "lead": "Tiga sumber penghasilan yang saling menyambung: hasil sawah, isi kandang, dan olahan tangan warga. Buka tiap kotak untuk membaca datanya."
+  },
+  "panelJembatan": {
+    "judulBaris1": "Kini giliran",
+    "judulBaris2": "karya warganya."
+  },
+  "usia": {
+    "nama": "Struktur penduduk",
+    "angka": 81,
+    "desimal": 0,
+    "akhiran": "",
+    "satuan": "jiwa",
+    "keterangan": "berusia produktif, dari 164 jiwa yang terdata survei",
+    "motifTajuk": "Komposisi umur",
+    "lead": "Dari 164 jiwa yang tercakup survei, 81 orang berada pada rentang usia 18 sampai 59 tahun. Inilah tenaga kerja yang dimiliki Setro hari ini."
+  },
+  "kerja": {
+    "nama": "Mata pencaharian",
+    "angka": 36,
+    "desimal": 0,
+    "akhiran": "",
+    "satuan": "orang",
+    "keterangan": "petani & buruh tani, dari 94 warga yang bekerja",
+    "motifTajuk": "Pekerjaan terbanyak",
+    "lead": "Dari 94 warga yang bekerja, 36 di antaranya petani atau buruh tani. Sisanya tersebar di perdagangan, jasa, dan pekerjaan formal.",
+    "sorotAngka": 38.3,
+    "sorotDesimal": 1,
+    "sorotAkhiran": "%",
+    "sorotJudul": "Petani & buruh tani",
+    "sorotCatatan": "dari seluruh penduduk yang bekerja",
+    "widgetTajuk": "Sebaran pekerjaan warga",
+    "motifButir": [
+      {
+        "nama": "Petani & buruh tani",
+        "nilai": 36,
+        "sorot": true
+      },
+      {
+        "nama": "Wiraswasta",
+        "nilai": 18,
+        "sorot": false
+      },
+      {
+        "nama": "Buruh harian lepas",
+        "nilai": 12,
+        "sorot": false
+      }
+    ]
+  },
+  "infra": {
+    "nama": "Infrastruktur dasar",
+    "angka": 98.4,
+    "desimal": 1,
+    "akhiran": "%",
+    "satuan": "",
+    "keterangan": "rumah tangga sudah punya jamban sendiri",
+    "motifTajuk": "Air bersih",
+    "lead": "Hampir seluruh rumah tangga memiliki jamban sendiri, dan sembilan dari sepuluh rumah sudah terhubung internet. Setro siap menerima layanan dan informasi digital.",
+    "widgetTajuk": "Sumber air bersih",
+    "motifButir": [
+      {
+        "nama": "Sumur gali",
+        "nilai": 39,
+        "sorot": false
+      },
+      {
+        "nama": "Sumur bor",
+        "nilai": 18,
+        "sorot": false
+      },
+      {
+        "nama": "PAMSIMAS",
+        "nilai": 9,
+        "sorot": false
+      }
+    ]
+  },
+  "tani": {
+    "nama": "Potensi pertanian",
+    "angka": 3.88,
+    "desimal": 2,
+    "akhiran": "",
+    "satuan": "hektar",
+    "keterangan": "sawah yang digarap 38 keluarga petani",
+    "motifTajuk": "Keluarga petani",
+    "petakTotal": 38,
+    "petakTerisi": 33,
+    "petakSorot": -1,
+    "petakKolom": 19,
+    "petakCatatan": "33 dari 38 keluarga menanam padi",
+    "petakAria": "33 dari 38 keluarga petani menanam padi",
+    "lead": "Tiga puluh delapan keluarga menggarap lahan seluas 3,88 hektar. Padi ditanam 33 keluarga, disusul jagung, palawija, dan hortikultura dalam skala kecil.",
+    "widgetTajuk": "Komoditas yang ditanam"
+  },
+  "ternak": {
+    "nama": "Peternakan & perikanan",
+    "angka": 84,
+    "desimal": 0,
+    "akhiran": "%",
+    "satuan": "",
+    "keterangan": "peternak sudah membuat pupuk organik sendiri",
+    "motifTajuk": "Populasi ternak & ikan",
+    "lead": "Dua puluh satu dari dua puluh lima peternak sudah mengolah kotoran ternak menjadi pupuk organik. Siklus antara kandang dan sawah sudah berjalan sendiri.",
+    "sorotAngka": 84,
+    "sorotDesimal": 0,
+    "sorotAkhiran": "%",
+    "sorotJudul": "Peternak membuat pupuk organik mandiri",
+    "sorotCatatan": "",
+    "motifButir": [
+      {
+        "nama": "Ikan lele",
+        "nilai": 800,
+        "sorot": false
+      },
+      {
+        "nama": "Unggas",
+        "nilai": 251,
+        "sorot": false
+      },
+      {
+        "nama": "Kambing & domba",
+        "nilai": 60,
+        "sorot": false
+      }
+    ]
+  },
+  "umkm": {
+    "nama": "Usaha warga",
+    "angka": 17,
+    "desimal": 0,
+    "akhiran": "",
+    "satuan": "unit usaha",
+    "keterangan": "menyerap 29 tenaga kerja dari dalam dusun",
+    "motifTajuk": "Unit usaha terdata",
+    "petakTotal": 17,
+    "petakTerisi": 17,
+    "petakSorot": 16,
+    "petakKolom": 17,
+    "petakCatatan": "Satu di antaranya perajin eceng gondok",
+    "petakAria": "Tujuh belas unit usaha, satu di antaranya perajin anyaman eceng gondok",
+    "lead": "Dari warung kelontong sampai anyaman eceng gondok. Sebagian besar melayani pasar dusun, dan tiga di antaranya sudah menerima pesanan lewat media sosial.",
+    "widgetTajuk": "Jenis usaha",
+    "widgetCatatan": "Anyaman eceng gondok adalah kerajinan khas Setro — satu-satunya kategori usaha yang tidak dimiliki dusun tetangga."
+  }
+}

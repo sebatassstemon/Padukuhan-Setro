@@ -1,0 +1,77 @@
+[
+  {
+    "nama": "Pelajar / mahasiswa",
+    "jumlah": 40,
+    "disorot": false
+  },
+  {
+    "nama": "Petani & buruh tani",
+    "jumlah": 36,
+    "disorot": true
+  },
+  {
+    "nama": "Ibu rumah tangga",
+    "jumlah": 22,
+    "disorot": false
+  },
+  {
+    "nama": "Wiraswasta / pedagang",
+    "jumlah": 18,
+    "disorot": false
+  },
+  {
+    "nama": "Buruh harian lepas",
+    "jumlah": 12,
+    "disorot": false
+  },
+  {
+    "nama": "Karyawan swasta",
+    "jumlah": 9,
+    "disorot": false
+  },
+  {
+    "nama": "Belum / tidak bekerja",
+    "jumlah": 8,
+    "disorot": false
+  },
+  {
+    "nama": "PNS / ASN",
+    "jumlah": 4,
+    "disorot": false
+  },
+  {
+    "nama": "Tenaga pendidik",
+    "jumlah": 4,
+    "disorot": false
+  },
+  {
+    "nama": "Jasa & keterampilan",
+    "jumlah": 4,
+    "disorot": false
+  },
+  {
+    "nama": "Buruh bangunan",
+    "jumlah": 2,
+    "disorot": false
+  },
+  {
+    "nama": "Buruh pabrik",
+    "jumlah": 2,
+    "disorot": false
+  },
+  {
+    "nama": "Tenaga kesehatan",
+    "jumlah": 1,
+    "disorot": false
+  },
+  {
+    "nama": "TNI / Polisi",
+    "jumlah": 1,
+    "disorot": false
+  },
+  {
+    "nama": "Pensiunan",
+    "jumlah": 1,
+    "disorot": false
+  }
+]

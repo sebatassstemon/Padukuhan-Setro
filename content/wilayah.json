@@ -1,0 +1,12 @@
+[
+  { "nama": "RW 009", "kk": 79, "jiwa": 204, "laki": 91, "perempuan": 113, "tipe": "rw" },
+  { "nama": "RT 027", "kk": 27, "jiwa": 74, "laki": 34, "perempuan": 40, "tipe": "rt" },
+  { "nama": "RT 028", "kk": 20, "jiwa": 50, "laki": 22, "perempuan": 28, "tipe": "rt" },
+  { "nama": "RT 029", "kk": 16, "jiwa": 37, "laki": 18, "perempuan": 19, "tipe": "rt" },
+  { "nama": "RT 030", "kk": 16, "jiwa": 43, "laki": 17, "perempuan": 26, "tipe": "rt" },
+  { "nama": "RW 010", "kk": 55, "jiwa": 136, "laki": 64, "perempuan": 72, "tipe": "rw" },
+  { "nama": "RT 031", "kk": 24, "jiwa": 61, "laki": 30, "perempuan": 31, "tipe": "rt" },
+  { "nama": "RT 032", "kk": 20, "jiwa": 48, "laki": 21, "perempuan": 27, "tipe": "rt" },
+  { "nama": "RT 033", "kk": 11, "jiwa": 27, "laki": 13, "perempuan": 14, "tipe": "rt" },
+  { "nama": "Total Padukuhan Setro", "kk": 134, "jiwa": 340, "laki": 155, "perempuan": 185, "tipe": "total" }
+]

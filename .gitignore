@@ -1,0 +1,27 @@
+# ============================================================
+#  JANGAN PERNAH di-commit: data mentah warga (NIK, nomor HP,
+#  omzet per keluarga). Repo ini publik.
+# ============================================================
+*.xlsx
+*.xls
+*.csv
+DATA_FINAL_WEBSITE_PADUKUHAN_SETRO.xlsx
+
+# hasil kerja sementara, bukan bagian situs
+temporary screenshots/
+*.log
+
+# berkas sistem
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# kalau suatu saat dipakai
+node_modules/
+.vercel/
+.env
+.env.*
+
+# salinan kerja lokal
+*.bak
+_lama.html

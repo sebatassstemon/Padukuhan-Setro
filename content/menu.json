@@ -1,0 +1,68 @@
+{
+  "profil": {
+    "label": "Profil",
+    "judul": "Wilayah, warga, dan sarananya",
+    "semua": "Lihat profil wilayah",
+    "butir": [
+      {
+        "nama": "Profil wilayah",
+        "temuan": "Dua RW, tujuh RT"
+      },
+      {
+        "nama": "Struktur penduduk",
+        "temuan": "Separuh warga berusia produktif"
+      },
+      {
+        "nama": "Mata pencaharian",
+        "temuan": "Bertani masih jadi tumpuan"
+      },
+      {
+        "nama": "Infrastruktur dasar",
+        "temuan": "Sanitasi tuntas, jaringan siap"
+      }
+    ]
+  },
+  "potensi": {
+    "label": "Potensi",
+    "judul": "Yang bisa digarap dari Setro",
+    "semua": "Telusuri potensi",
+    "butir": [
+      {
+        "nama": "Potensi pertanian",
+        "temuan": "Padi sebagai tulang punggung"
+      },
+      {
+        "nama": "Peternakan & perikanan",
+        "temuan": "Kandang yang menyuburkan sawah"
+      },
+      {
+        "nama": "Usaha warga",
+        "temuan": "Tujuh belas usaha, dua puluh sembilan pekerja"
+      }
+    ]
+  },
+  "katalog": {
+    "label": "E-katalog",
+    "judul": "Tujuh kategori usaha warga",
+    "semua": "Buka e-katalog",
+    "ket": "Cuplikan · foto contoh"
+  },
+  "program": {
+    "label": "Program kerja",
+    "judul": "Delapan program KKN Unit 220",
+    "semua": "Lihat semua program",
+    "ket": "Cuplikan · foto contoh"
+  },
+  "kegiatan": {
+    "label": "Kegiatan warga",
+    "judul": "Dua puluh agenda warga",
+    "semua": "Lihat semua kegiatan",
+    "ket": "Dokumentasi · foto contoh"
+  },
+  "kemitraan": {
+    "label": "Peluang kemitraan",
+    "judul": "Enam bidang yang dibuka",
+    "semua": "Ajukan kerja sama",
+    "ket": "Lahan & usaha Setro"
+  }
+}

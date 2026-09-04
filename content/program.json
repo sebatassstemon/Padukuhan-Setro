@@ -1,0 +1,58 @@
+[
+  {
+    "bidang": "Pemberdayaan UMKM",
+    "judul": "Pelatihan Pencatatan Keuangan Sederhana bagi Pelaku UMKM",
+    "deskripsi": "Pendampingan pelaku UMKM Padukuhan Setro dalam mencatat pemasukan dan pengeluaran usaha secara sederhana, menghitung hasil usaha, serta membiasakan pencatatan rutin agar perkembangan usaha dapat dipantau.",
+    "panduan": "Template Buku Kas Sederhana UMKM",
+    "ringkas": "Pembukuan UMKM"
+  },
+  {
+    "bidang": "Pemberdayaan Masyarakat",
+    "judul": "Majalah Profil Digital Padukuhan Setro",
+    "deskripsi": "Penyusunan majalah digital yang menghimpun identitas wilayah, monografi, potensi pertanian, peternakan, UMKM, fasilitas umum, serta dokumentasi kegiatan masyarakat dalam satu media yang mudah dibagikan.",
+    "panduan": "Majalah Profil Digital (PDF)",
+    "ringkas": "Majalah profil dusun"
+  },
+  {
+    "bidang": "Pendidikan Bahasa Asing",
+    "judul": "Edukasi Bahasa Inggris Dasar dan Pengenalan Budaya",
+    "deskripsi": "Kelas bahasa Inggris dasar untuk anak-anak Padukuhan Setro dengan metode belajar sambil bermain, disertai pengenalan budaya Indonesia dan mancanegara untuk menumbuhkan wawasan global sejak dini.",
+    "panduan": "Modul Bahasa Inggris & Poster Kosakata",
+    "ringkas": "Bahasa Inggris anak"
+  },
+  {
+    "bidang": "Hukum",
+    "judul": "Akselerasi Kesiapan Warga dalam PTSL Susulan",
+    "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara mandiri, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
+    "panduan": "Panduan Pendaftaran & Konversi Tanah",
+    "ringkas": "Kesiapan PTSL"
+  },
+  {
+    "bidang": "Manajemen Keuangan",
+    "judul": "Pelatihan Pengelolaan Keuangan Pribadi dan Keluarga",
+    "deskripsi": "Pelatihan pencatatan pemasukan dan pengeluaran, pengelompokan kebutuhan dan keinginan, serta penyusunan anggaran sederhana bagi pemuda-pemudi dan warga Padukuhan Setro.",
+    "panduan": "Template Anggaran Keuangan Keluarga",
+    "ringkas": "Keuangan keluarga"
+  },
+  {
+    "bidang": "Lingkungan Hidup",
+    "judul": "Edukasi Limbah Rumah Tangga & Komposter Galon Air Lindi",
+    "deskripsi": "Edukasi pemilahan sampah rumah tangga dan dampak pembakaran sampah, disertai praktik langsung merakit komposter dari galon bekas beserta cara memanen air lindinya.",
+    "panduan": "Panduan Pembuatan Komposter Galon",
+    "ringkas": "Komposter galon"
+  },
+  {
+    "bidang": "Kesehatan Masyarakat & Gizi",
+    "judul": "Skrining Asam Urat dan Pendampingan Diet Mandiri",
+    "deskripsi": "Pemeriksaan kadar asam urat gratis bagi warga usia 30 tahun ke atas, dilanjutkan pendampingan pola makan mandiri menggunakan matriks makanan tinggi purin bagi warga yang teridentifikasi berisiko.",
+    "panduan": "Matriks Makanan Tinggi Purin",
+    "ringkas": "Skrining asam urat"
+  },
+  {
+    "bidang": "Hukum & Kemasyarakatan",
+    "judul": "Sosialisasi Perlindungan Data Pribadi & Mitigasi Scamming",
+    "deskripsi": "Sosialisasi interaktif bagi siswa sekolah dasar dan karang taruna mengenai perlindungan data pribadi, pengenalan modus penipuan daring, serta dasar hukum UU Perlindungan Data Pribadi.",
+    "panduan": "Poster Anti-Scam & Materi UU PDP",
+    "ringkas": "Data pribadi & scam"
+  }
+]

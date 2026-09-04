@@ -1,0 +1,17 @@
+{
+  "katalog": {
+    "label": "E-katalog",
+    "judul": "Katalog produk warga",
+    "paragraf": "Ruang ini disiapkan untuk menampilkan produk UMKM Setro. Setiap kartu akan diisi setelah pelaku usaha menyatakan bersedia ditampilkan dan foto produknya lengkap."
+  },
+  "program": {
+    "label": "Program kerja",
+    "judul": "Delapan program, satu tujuan",
+    "paragraf": "Program KKN Universitas Islam Indonesia Unit 220 di Padukuhan Setro. Panduan tiap program disiapkan agar warga dapat melanjutkannya secara mandiri setelah masa KKN berakhir."
+  },
+  "kegiatan": {
+    "label": "Kegiatan warga",
+    "judul": "Yang sedang berjalan di Setro",
+    "paragraf": "Dokumentasi kegiatan warga. Foto dan judul diperbarui berkala oleh pengelola dusun."
+  }
+}

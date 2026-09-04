@@ -1,0 +1,46 @@
+{
+  "label": "Kapanewon Temon · Kulon Progo · DIY",
+  "judul": "Dusun padi di",
+  "judulSorot": "gerbang Yogyakarta.",
+  "paragraf": "Tiga ratus empat puluh jiwa menggarap sawah, memelihara ternak, dan menjalankan belasan usaha rumahan. Halaman ini memetakan apa yang Setro punya — dan apa yang bisa dikerjakan bersama.",
+  "tombolSatu": "Lihat potensi Setro",
+  "tombolDua": "Peluang kemitraan",
+  "statistik": [
+    {
+      "label": "Kepala keluarga",
+      "angka": 134,
+      "desimal": 0,
+      "bintang": false
+    },
+    {
+      "label": "Jumlah jiwa",
+      "angka": 340,
+      "desimal": 0,
+      "bintang": false
+    },
+    {
+      "label": "Keluarga petani",
+      "angka": 38,
+      "desimal": 0,
+      "bintang": true
+    },
+    {
+      "label": "Usaha warga",
+      "angka": 17,
+      "desimal": 0,
+      "bintang": true
+    },
+    {
+      "label": "Hektar sawah",
+      "angka": 3.88,
+      "desimal": 2,
+      "bintang": true
+    }
+  ],
+  "catatan": "Estimasi hasil survei mandiri KKN. Angka tanpa tanda bersumber dari data resmi Kalurahan Kulur.",
+  "profil": {
+    "label": "Profil wilayah",
+    "judul": "Dua RW, tujuh RT",
+    "paragraf": "Setro terbagi atas dua rukun warga dan tujuh rukun tetangga. Seluruh angka pada diagram ini bersumber dari Data Wilayah Administratif Kalurahan Kulur."
+  }
+}

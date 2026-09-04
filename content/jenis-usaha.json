@@ -1,0 +1,9 @@
+[
+  { "nama": "Warung kelontong & sembako", "unit": 6, "disorot": false },
+  { "nama": "Olahan makanan & minuman", "unit": 5, "disorot": false },
+  { "nama": "Perdagangan hasil tani", "unit": 2, "disorot": false },
+  { "nama": "Kerajinan anyaman eceng gondok", "unit": 1, "disorot": true },
+  { "nama": "Mebel & furnitur", "unit": 1, "disorot": false },
+  { "nama": "Jasa pemancingan", "unit": 1, "disorot": false },
+  { "nama": "Pengepul barang rongsokan", "unit": 1, "disorot": false }
+]

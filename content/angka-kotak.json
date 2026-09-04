@@ -1,0 +1,106 @@
+{
+  "infra": [
+    {
+      "angka": 98.4,
+      "desimal": 1,
+      "akhiran": "%",
+      "label": "Jamban sehat mandiri",
+      "catatan": "Rumah tangga dengan sanitasi milik sendiri."
+    },
+    {
+      "angka": 88.7,
+      "desimal": 1,
+      "akhiran": "%",
+      "label": "Terkoneksi internet",
+      "catatan": "Dari rumah tangga yang menjawab konektivitas."
+    },
+    {
+      "angka": 1.85,
+      "desimal": 2,
+      "akhiran": "",
+      "label": "Telepon pintar per KK",
+      "catatan": "Rata-rata kepemilikan perangkat tiap keluarga."
+    }
+  ],
+  "tani": [
+    {
+      "angka": 38,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Keluarga petani",
+      "catatan": ""
+    },
+    {
+      "angka": 3.88,
+      "desimal": 2,
+      "akhiran": "",
+      "label": "Hektar sawah",
+      "catatan": ""
+    },
+    {
+      "angka": 14791,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Kg panen per musim",
+      "catatan": ""
+    },
+    {
+      "teks": "Rp128",
+      "teksKecil": "juta",
+      "label": "Estimasi omzet tani/tahun",
+      "catatan": ""
+    }
+  ],
+  "ternak": [
+    {
+      "angka": 251,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Unggas",
+      "catatan": "ayam dan itik peliharaan warga"
+    },
+    {
+      "angka": 800,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Ikan lele",
+      "catatan": "budidaya kolam pekarangan"
+    },
+    {
+      "angka": 60,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Kambing & domba",
+      "catatan": "tersebar di kandang pekarangan"
+    },
+    {
+      "angka": 27,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Keluarga peternak",
+      "catatan": "memelihara ternak atau ikan"
+    }
+  ],
+  "umkm": [
+    {
+      "angka": 17,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Unit usaha",
+      "catatan": ""
+    },
+    {
+      "angka": 29,
+      "desimal": 0,
+      "akhiran": "",
+      "label": "Tenaga kerja terserap",
+      "catatan": ""
+    },
+    {
+      "teks": "Rp50,6",
+      "teksKecil": "juta",
+      "label": "Estimasi omzet per bulan",
+      "catatan": ""
+    }
+  ]
+}

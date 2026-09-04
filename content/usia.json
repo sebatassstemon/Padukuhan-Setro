@@ -1,0 +1,26 @@
+[
+  {
+    "nama": "Usia produktif",
+    "jumlah": 81,
+    "keterangan": "18–59 tahun",
+    "ringkas": "Produktif"
+  },
+  {
+    "nama": "Lansia",
+    "jumlah": 45,
+    "keterangan": "60 tahun ke atas",
+    "ringkas": "Lansia"
+  },
+  {
+    "nama": "Usia sekolah",
+    "jumlah": 34,
+    "keterangan": "5–17 tahun",
+    "ringkas": "Sekolah"
+  },
+  {
+    "nama": "Balita",
+    "jumlah": 4,
+    "keterangan": "di bawah 5 tahun",
+    "ringkas": "Balita"
+  }
+]

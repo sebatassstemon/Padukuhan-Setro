@@ -1,0 +1,8 @@
+[
+  { "label": "Pengendalian hama & penyakit tanaman", "jumlah": 31, "satuan": "keluarga", "ringkas": "Hama & penyakit" },
+  { "label": "Akses pupuk yang terjangkau", "jumlah": 9, "satuan": "keluarga", "ringkas": "Akses pupuk" },
+  { "label": "Perbaikan irigasi / saluran air", "jumlah": 5, "satuan": "keluarga", "ringkas": "Irigasi & saluran" },
+  { "label": "Perluasan pemasaran produk UMKM", "jumlah": 7, "satuan": "unit usaha", "ringkas": "Pemasaran UMKM" },
+  { "label": "Ketersediaan bahan baku UMKM", "jumlah": 6, "satuan": "unit usaha", "ringkas": "Bahan baku UMKM" },
+  { "label": "Modal usaha & peralatan produksi", "jumlah": 5, "satuan": "unit usaha", "ringkas": "Modal & peralatan" }
+]

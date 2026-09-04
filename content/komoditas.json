@@ -1,0 +1,9 @@
+[
+  { "nama": "Padi", "kk": 33, "disorot": true },
+  { "nama": "Jagung", "kk": 4, "disorot": false },
+  { "nama": "Kedelai / palawija", "kk": 4, "disorot": false },
+  { "nama": "Cabai / sayuran", "kk": 3, "disorot": false },
+  { "nama": "Kelapa", "kk": 1, "disorot": false },
+  { "nama": "Pisang", "kk": 1, "disorot": false },
+  { "nama": "Buah-buahan", "kk": 1, "disorot": false }
+]
