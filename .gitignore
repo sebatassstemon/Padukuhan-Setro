@@ -25,3 +25,7 @@ node_modules/
 # salinan kerja lokal
 *.bak
 _lama.html
+
+# berkas sumber di akar folder kerja; salinan yang dipakai situs
+# ada di assets/unggahan/ dengan nama yang layak dibaca pengunjung
+/PunyaJanz.pdf
