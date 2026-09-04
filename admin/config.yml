@@ -635,27 +635,39 @@ collections:
     icon: storefront
     files:
       - name: katalog
-        label: Kategori Usaha
+        label: Daftar Usaha Warga
         file: content/katalog.json
         description: >-
-          Kartu-kartu yang berputar di seksi E-katalog. PENTING: jangan menulis
+          Kartu-kartu yang berputar di seksi E-katalog. Satu kartu untuk satu
+          usaha, bukan sekelompok usaha. PENTING: jangan menulis
           nomor telepon asli pelaku usaha sebelum yang bersangkutan menyatakan
           bersedia secara tertulis (UU 27/2022 tentang Perlindungan Data Pribadi).
         fields:
-          - label: Daftar kategori
+          - label: Daftar usaha
             name: daftar
             widget: list
             root: true
-            label_singular: Kategori usaha
-            summary: '{{fields.judul}} — {{fields.unit}} unit'
+            label_singular: Usaha
+            summary: '{{fields.judul}} — {{fields.kategori}}'
             fields:
-              - { label: Nama kategori, name: judul, widget: string }
+              - label: Nama usaha
+                name: judul
+                widget: string
+                hint: >-
+                  Nama tokonya, bukan nama kategori. Selama nama asli belum
+                  terkumpul, dipakai pola "Kelontong 1", "Kelontong 2", dan
+                  seterusnya.
+              - label: Kategori
+                name: kategori
+                widget: string
+                hint: >-
+                  Jenis usahanya, misalnya "Kelontong" atau "Olahan pangan".
+                  Tampil sebagai label kecil di atas nama saat kartu dibuka.
               - label: Anak judul
                 name: sub
                 widget: string
                 required: false
                 hint: 'Ditulis setelah nama, contoh: "— sembako harian".'
-              - { label: Jumlah unit usaha, name: unit, widget: number, value_type: int, min: 0 }
               - { label: Penjelasan singkat, name: desk, widget: text }
               - label: Foto
                 name: foto
@@ -679,7 +691,7 @@ collections:
                 collapsed: true
                 field: { label: Foto, name: foto, widget: image }
                 hint: >-
-                  Tumpukan foto yang tampil saat pengunjung membuka kartu kategori ini. Berbeda dari kolom "Foto" di atas, yang hanya dipakai untuk muka kartunya. Selama masih kosong, dipakai foto contoh.
+                  Tumpukan foto yang tampil saat pengunjung membuka kartu usaha ini. Berbeda dari kolom "Foto" di atas, yang hanya dipakai untuk muka kartunya. Selama masih kosong, dipakai foto contoh.
 
   # ===================================================================
   # 5. PROGRAM KERJA

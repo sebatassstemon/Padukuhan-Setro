@@ -96,7 +96,7 @@ Struktur section di halaman (urutan dari atas): Nav → Hero → Profil Wilayah 
 | Sumber air | `AIR` | array-of-array | `[nama sumber, jumlah KK]` |
 | Komoditas tani | `KOMODITAS` | array-of-array | `[nama komoditas, jumlah KK]` |
 | Jenis usaha (potensi) | `UMKM` | array-of-array | `[jenis usaha, jumlah unit]` |
-| **E-Katalog UMKM** | `KATALOG` | array-of-object | `judul, sub, unit, desk, foto, kontak, jam, lokasi` |
+| **E-Katalog UMKM** | `KATALOG` | array-of-object | `judul, kategori, sub, desk, foto, kontak, jam, lokasi` |
 | Program Kerja | `PROGRAM` | array-of-array | `[bidang, judul, deskripsi, nama berkas panduan]` |
 | **Kegiatan Warga** | `KEGIATAN` | array-of-string | judul kegiatan (masih 14 dari 20 dummy — biarkan, admin yang nanti isi/hapus lewat CMS, JANGAN dihapus di tahap ini) |
 | Kemitraan | `MITRA` | array-of-array | `[label kebutuhan, jumlah, satuan]` |

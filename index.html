@@ -4615,17 +4615,17 @@
       </div>
 
       <div id="katalog-panggung" class="cf mt-2 reveal" role="region" aria-roledescription="carousel"
-        aria-label="Kategori usaha warga Setro">
+        aria-label="Usaha warga Setro">
         <div class="cf__isi">
           <div class="cf__dek" data-cf-dek aria-live="polite"></div>
 
-          <button type="button" class="cf__nav cf__nav--kiri" data-cf-mundur aria-label="Kategori sebelumnya">
+          <button type="button" class="cf__nav cf__nav--kiri" data-cf-mundur aria-label="Usaha sebelumnya">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <button type="button" class="cf__nav cf__nav--kanan" data-cf-maju aria-label="Kategori berikutnya">
+          <button type="button" class="cf__nav cf__nav--kanan" data-cf-maju aria-label="Usaha berikutnya">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M9 5l7 7-7 7" />
@@ -5167,56 +5167,128 @@
 
 
     // katalog: panggung coverflow 3D
-    // Tujuh kategori usaha dari survei (total 17 unit). Foto masih memakai
-    // berkas contoh; kontak, jam, dan lokasi ditulis sebagai slot sampai
-    // pelaku usaha menyatakan bersedia ditampilkan (UU 27/2022 tentang PDP).
+    // Tujuh belas unit usaha dari survei, satu kartu untuk satu usaha.
+    // Nama masih memakai pola "kategori + nomor" sampai nama toko
+    // terkumpul dari observasi. Foto memakai berkas contoh; kontak, jam,
+    // dan lokasi ditulis sebagai slot sampai pelaku usaha menyatakan
+    // bersedia ditampilkan (UU 27/2022 tentang PDP).
     let KATALOG = [
       {
-        judul: 'Kelontong', sub: '&mdash; sembako harian', unit: 6,
-        desk: 'Kebutuhan pokok warga dilayani dari teras rumah, tersebar hampir di tiap RT.',
+        judul: 'Kelontong 1', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
         foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
-        lokasi: 'Tersebar di RT 027 sampai RT 033'
+        lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
-        judul: 'Olahan pangan', sub: '&mdash; dapur rumahan', unit: 5,
-        desk: 'Hasil kebun dan sawah diolah jadi makanan dan minuman siap jual.',
+        judul: 'Kelontong 2', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
+        lokasi: 'Teras rumah, RT 027&ndash;033'
+      },
+      {
+        judul: 'Kelontong 3', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
+        lokasi: 'Teras rumah, RT 027&ndash;033'
+      },
+      {
+        judul: 'Kelontong 4', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%204.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
+        lokasi: 'Teras rumah, RT 027&ndash;033'
+      },
+      {
+        judul: 'Kelontong 5', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%205.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
+        lokasi: 'Teras rumah, RT 027&ndash;033'
+      },
+      {
+        judul: 'Kelontong 6', kategori: 'Kelontong', sub: '&mdash; sembako harian',
+        desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%206.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
+        lokasi: 'Teras rumah, RT 027&ndash;033'
+      },
+      {
+        judul: 'Olahan pangan 1', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
+        desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%207.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
+        lokasi: 'Dapur rumahan, RT 028 atau RT 031'
+      },
+      {
+        judul: 'Olahan pangan 2', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
+        desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
+        lokasi: 'Dapur rumahan, RT 028 atau RT 031'
+      },
+      {
+        judul: 'Olahan pangan 3', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
+        desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
         foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
-        lokasi: 'Dapur rumahan, RT 028 dan RT 031'
+        lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
-        judul: 'Hasil tani', sub: '&mdash; gabah &amp; palawija', unit: 2,
-        desk: 'Penampung gabah, jagung, dan palawija langsung dari petani Setro.',
+        judul: 'Olahan pangan 4', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
+        desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
         foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
+        lokasi: 'Dapur rumahan, RT 028 atau RT 031'
+      },
+      {
+        judul: 'Olahan pangan 5', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
+        desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%204.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
+        lokasi: 'Dapur rumahan, RT 028 atau RT 031'
+      },
+      {
+        judul: 'Hasil tani 1', kategori: 'Hasil tani', sub: '&mdash; gabah &amp; palawija',
+        desk: 'Menampung gabah, jagung, dan palawija langsung dari petani Setro.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%205.jpg',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;15.00 WIB, menyesuaikan masa panen',
         lokasi: 'Gudang gabah, RT 027'
       },
       {
-        judul: 'Eceng gondok', sub: '&mdash; anyaman tangan', unit: 1,
+        judul: 'Hasil tani 2', kategori: 'Hasil tani', sub: '&mdash; gabah &amp; palawija',
+        desk: 'Menampung gabah, jagung, dan palawija langsung dari petani Setro.',
+        foto: 'foto%20produk%20dummy/produk%20dummy%206.jpg',
+        kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;15.00 WIB, menyesuaikan masa panen',
+        lokasi: 'Gudang gabah, RT 027'
+      },
+      {
+        judul: 'Eceng gondok', kategori: 'Eceng gondok', sub: '&mdash; anyaman tangan',
         desk: 'Kerajinan berbahan eceng gondok, satu-satunya di padukuhan.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%204.jpg',
+        foto: 'foto%20produk%20dummy/produk%20dummy%207.jpg',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;16.00 WIB, Senin&ndash;Jumat',
         lokasi: 'Rumah perajin, RT 030'
       },
       {
-        judul: 'Mebel kayu', sub: '&mdash; pesanan warga', unit: 1,
+        judul: 'Mebel kayu', kategori: 'Mebel kayu', sub: '&mdash; pesanan warga',
         desk: 'Perabot kayu dikerjakan per pesanan, dari kusen sampai lemari.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%205.jpg',
+        foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;17.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Bengkel kayu, RT 029'
       },
       {
-        judul: 'Pemancingan', sub: '&mdash; kolam warga', unit: 1,
+        judul: 'Pemancingan', kategori: 'Pemancingan', sub: '&mdash; kolam warga',
         desk: 'Kolam pancing milik warga yang dikelola sebagai usaha jasa.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%206.jpg',
+        foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;18.00 WIB, setiap hari',
         lokasi: 'Kolam warga, RT 032'
       },
       {
-        judul: 'Rosok', sub: '&mdash; daur ulang', unit: 1,
+        judul: 'Rosok', kategori: 'Rosok', sub: '&mdash; daur ulang',
         desk: 'Mengumpulkan dan memilah barang bekas warga sebelum disalurkan kembali.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%207.jpg',
+        foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;17.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Halaman pengepul, RT 033'
       }
@@ -5316,7 +5388,7 @@
     if (dt = daftar(KONTEN.komoditas)) KOMODITAS = dt.map(x => [x.nama, x.kk, !!x.disorot]);
     if (dt = daftar(KONTEN['jenis-usaha'])) UMKM = dt.map(x => [x.nama, x.unit, !!x.disorot]);
     if (dt = daftar(KONTEN.katalog)) KATALOG = dt.map(x => ({
-      judul: x.judul, sub: x.sub, unit: x.unit, desk: x.desk,
+      judul: x.judul, kategori: x.kategori, sub: x.sub, desk: x.desk,
       foto: x.foto, kontak: x.kontak, jam: x.jam, lokasi: x.lokasi,
       galeri: Array.isArray(x.galeri) ? x.galeri : []
     }));
@@ -5873,7 +5945,7 @@
     });
 
     /* ============ E-KATALOG: LAYAR PRODUK ============ */
-    // foto etalase tiap kategori; selama pengelola belum mengunggah, dipakai
+    // foto etalase tiap usaha; selama pengelola belum mengunggah, dipakai
     // tujuh foto contoh yang sama, digeser urutannya
     const FOTO_KATALOG = KATALOG.map((d, i) =>
       adaFoto(d.galeri) ? d.galeri : contohDigeser(i));
@@ -5934,7 +6006,7 @@
         const d = KATALOG[i];
         if (!d) return;
         pemicu = dari || null;
-        isi.lencana.textContent = `${d.unit} unit usaha terdata`;
+        isi.lencana.textContent = d.kategori || '';
         isi.judul.innerHTML = d.judul;
         isi.sub.innerHTML = d.sub || '';
         isi.desk.innerHTML = d.desk;
@@ -6956,11 +7028,11 @@
         },
         katalog: {
           label: 'E-katalog',
-          judul: 'Tujuh kategori usaha warga',
+          judul: 'Tujuh belas usaha warga',
           semua: 'Buka e-katalog', href: '#katalog',
           ket: 'Cuplikan &middot; foto contoh',
           foto: FOTO_CONTOH,
-          butir: KATALOG.map((d, i) => ({ nama: d.judul, i }))
+          butir: KATALOG.slice(0, 8).map((d, i) => ({ nama: d.judul, i }))
         },
         program: {
           label: 'Program kerja',
