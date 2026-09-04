@@ -87,36 +87,56 @@ Butuh akun Cloudflare (gratis).
 
 1. Buka <https://github.com/sveltia/sveltia-cms-auth>.
 2. Klik tombol **Deploy to Cloudflare Workers** di halaman itu.
-3. Ikuti prosesnya sampai selesai (masuk / daftar Cloudflare bila diminta).
-4. Catat alamat Worker yang muncul di dashboard Cloudflare, bentuknya:
-   `https://sveltia-cms-auth.NAMA-ANDA.workers.dev`
+3. Izinkan GitHub mengakses Cloudflare, lalu ikuti proses deploy sampai selesai.
+4. Browser akan kembali ke GitHub. Buka <https://dash.cloudflare.com> untuk melihat Worker yang baru dibuat.
+5. Di dashboard Cloudflare, klik menu **Workers & Pages** di kiri.
+6. Catat nama Worker terbaru (biasanya `sveltia-cms-auth`), lalu klik nama itu.
+7. Di halaman detail Worker, lihat **Deployments** atau URL yang ditampilkan, bentuknya:
+   ```
+   https://sveltia-cms-auth.NAMA-ANDA.workers.dev
+   ```
+   Ganti `NAMA-ANDA` dengan nama subdomain Anda di Cloudflare. Catat alamat lengkapnya.
 
 ### 3b. Daftarkan OAuth App di GitHub
 
 1. Buka <https://github.com/settings/developers> → **OAuth Apps** →
    **New OAuth App**.
-2. Isi:
-   - **Application name:** `Pengelola Situs Padukuhan Setro`
-   - **Homepage URL:** alamat situs Vercel Anda
-   - **Authorization callback URL:** alamat Worker + `/callback`, misalnya
-     `https://sveltia-cms-auth.nama-anda.workers.dev/callback`
+2. Isi form dengan:
+   - **Application name:** bebas, misalnya `Pengelola Situs Padukuhan Setro`
+   - **Homepage URL:** bebas, misalnya `https://github.com/sveltia/sveltia-cms-auth`
+   - **Authorization callback URL:** **HARUS PERSIS** alamat Worker + `/callback`,
+     misalnya `https://sveltia-cms-auth.westprogg220.workers.dev/callback`
+     
+     ⚠️ Yang dua kolom pertama bisa berisi apa saja, tapi **callback URL harus sesuai
+     dengan Worker Anda yang sebenarnya**.
+
 3. Klik **Register application**.
-4. Catat **Client ID**, lalu klik **Generate a new client secret** dan catat
-   **Client Secret**. Secret hanya ditampilkan sekali.
+4. Catat **Client ID** (64 karakter heksadesimal).
+5. Klik **Generate a new client secret** dan catat **Client Secret** itu.
+   Secret hanya ditampilkan sekali — jangan lupa catat.
 
 ### 3c. Isi pengaturan Worker
 
-Di dashboard Cloudflare, buka Worker tadi → **Settings** → **Variables**, lalu
-tambahkan tiga variabel:
+Di dashboard Cloudflare, buka Worker `sveltia-cms-auth` → **Settings** →
+**Variables**, lalu tambahkan variabel lingkungan berikut:
+
+**Wajib diisi:**
 
 | Nama | Isi |
 |---|---|
 | `GITHUB_CLIENT_ID` | Client ID dari langkah 3b |
-| `GITHUB_CLIENT_SECRET` | Client Secret dari langkah 3b — tekan tombol **Encrypt** |
-| `ALLOWED_DOMAINS` | nama host situs Anda, misal `padukuhan-setro.vercel.app` |
+| `GITHUB_CLIENT_SECRET` | Client Secret dari langkah 3b — klik **Encrypt** |
 
-`ALLOWED_DOMAINS` mencegah orang lain memakai Worker Anda untuk situs mereka.
-Jangan dikosongkan. Simpan dan deploy ulang Worker-nya.
+**Opsional tapi sangat disarankan:**
+
+| Nama | Isi |
+|---|---|
+| `ALLOWED_DOMAINS` | Nama host situs Anda, misal `padukuhan-setro.vercel.app` |
+
+`ALLOWED_DOMAINS` mencegah orang lain memakai Worker Anda (anti-abuse).
+Meskipun opsional, sebaiknya diisi.
+
+Setelah selesai, klik **Deploy** atau **Save and Deploy**.
 
 ### 3d. Sambungkan ke CMS
 
