@@ -677,6 +677,15 @@ collections:
                   dari pelaku usaha. Situs ini dapat dibaca siapa pun.
               - { label: Jam buka, name: jam, widget: string, required: false }
               - { label: Lokasi, name: lokasi, widget: string, required: false }
+              - label: Foto etalase produk
+                name: galeri
+                widget: list
+                required: false
+                label_singular: Foto
+                collapsed: true
+                field: { label: Foto, name: foto, widget: image }
+                hint: >-
+                  Tumpukan foto yang tampil saat pengunjung membuka kartu kategori ini. Berbeda dari kolom "Foto" di atas, yang hanya dipakai untuk muka kartunya. Selama masih kosong, dipakai foto contoh.
 
   # ===================================================================
   # 5. PROGRAM KERJA
@@ -704,6 +713,15 @@ collections:
                 name: ringkas
                 widget: string
                 hint: 'Judul panjang tidak muat di menu. Contoh: "Pembukuan UMKM".'
+              - label: Foto dokumentasi program
+                name: foto
+                widget: list
+                required: false
+                label_singular: Foto
+                collapsed: true
+                field: { label: Foto, name: foto, widget: image }
+                hint: >-
+                  Foto yang tampil saat pengunjung menekan "Buka Galeri" pada program ini. Foto pertama juga dipakai sebagai gambar kartunya. Selama masih kosong, situs memakai foto contoh dan memberi tanda "Foto contoh"; tanda itu hilang sendiri begitu ada foto asli.
 
   # ===================================================================
   # 6. KEGIATAN WARGA
@@ -732,6 +750,15 @@ collections:
                 widget: string
                 required: false
                 hint: Bila kosong, dipakai nama panjangnya.
+              - label: Foto dokumentasi kegiatan
+                name: foto
+                widget: list
+                required: false
+                label_singular: Foto
+                collapsed: true
+                field: { label: Foto, name: foto, widget: image }
+                hint: >-
+                  Foto yang tampil saat pengunjung menekan "Buka Galeri" pada kegiatan ini. Foto pertama juga dipakai sebagai gambar keping di cincin berputar. Selama masih kosong, situs memakai foto contoh dan memberi tanda "Foto contoh".
 
   # ===================================================================
   # 7. PELUANG KEMITRAAN

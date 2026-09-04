@@ -5206,6 +5206,11 @@
     // teks menu turun; strukturnya (tautan & kotak yang dibuka) tetap dari kode
     let TEKS_MENU = null;
 
+    // foto dokumentasi per program dan per kegiatan, diisi dari content/*.json.
+    // Selama masih kosong, dipakai foto contoh seperti sebelumnya.
+    let FOTO_PROGRAM = [];
+    let FOTO_KEGIATAN = [];
+
     /* ============ KONTEN DARI CMS ============ */
     /* Seluruh nilai di atas adalah CADANGAN BAWAAN. Bila berkas content/*.json
        terbaca, isinya menimpa nilai di atas; bila tidak (berkas belum ada,
@@ -5246,15 +5251,18 @@
     if (dt = daftar(KONTEN['jenis-usaha'])) UMKM = dt.map(x => [x.nama, x.unit, !!x.disorot]);
     if (dt = daftar(KONTEN.katalog)) KATALOG = dt.map(x => ({
       judul: x.judul, sub: x.sub, unit: x.unit, desk: x.desk,
-      foto: x.foto, kontak: x.kontak, jam: x.jam, lokasi: x.lokasi
+      foto: x.foto, kontak: x.kontak, jam: x.jam, lokasi: x.lokasi,
+      galeri: Array.isArray(x.galeri) ? x.galeri : []
     }));
     if (dt = daftar(KONTEN.program)) {
       PROGRAM = dt.map(x => [x.bidang, x.judul, x.deskripsi, x.panduan]);
       RINGKAS_PROGRAM = dt.map(x => x.ringkas || x.judul);
+      FOTO_PROGRAM = dt.map(x => Array.isArray(x.foto) ? x.foto : []);
     }
     if (dt = daftar(KONTEN.kegiatan)) {
       KEGIATAN = dt.map(x => x.judul);
       RINGKAS_KEGIATAN = dt.map(x => x.ringkas || x.judul).slice(0, 8);
+      FOTO_KEGIATAN = dt.map(x => Array.isArray(x.foto) ? x.foto : []);
     }
     if (dt = daftar(KONTEN.mitra)) {
       MITRA = dt.map(x => [x.label, x.jumlah, x.satuan]);
@@ -5651,13 +5659,20 @@
     siapkanKatalog();
 
     /* ============ GALERI DOKUMENTASI: KARTU MENGIPAS ============ */
-    // Foto contoh; ganti tiap larik dengan dokumentasi asli tiap program.
+    // Foto contoh dipakai selama pengelola belum mengunggah dokumentasi asli
+    // lewat /admin. Begitu foto asli terisi, penanda "Foto contoh" pada kartu,
+    // cincin, dan galeri ikut hilang dengan sendirinya.
     const FOTO_CONTOH = [1, 2, 3, 4, 5, 6, 7]
       .map(n => `foto%20produk%20dummy/produk%20dummy%20${n}.jpg`);
+    const adaFoto = (d) => Array.isArray(d) && d.length > 0;
+    const contohDigeser = (i) =>
+      FOTO_CONTOH.map((_, j) => FOTO_CONTOH[(j + i) % FOTO_CONTOH.length]);
     const DOKUMENTASI = PROGRAM.map((_, i) =>
-      FOTO_CONTOH.map((_, j) => FOTO_CONTOH[(j + i) % FOTO_CONTOH.length]));
+      adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i] : contohDigeser(i));
+    const CONTOH_PROGRAM = PROGRAM.map((_, i) => !adaFoto(FOTO_PROGRAM[i]));
     const DOKUMENTASI_KEGIATAN = KEGIATAN.map((_, i) =>
-      FOTO_CONTOH.map((_, j) => FOTO_CONTOH[(j + i) % FOTO_CONTOH.length]));
+      adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i] : contohDigeser(i));
+    const CONTOH_KEGIATAN = KEGIATAN.map((_, i) => !adaFoto(FOTO_KEGIATAN[i]));
 
     /* ============ GALERI FOTO: KORSEL COVERFLOW ============ */
     // Satu korsel melayani dua galeri — dokumentasi program kerja dan kegiatan
@@ -5727,12 +5742,16 @@
 
       function buka(i, dari) {
         if (typeof Swiper === 'undefined') return;
-        const { daftar, nama } = isiKepala(i);
+        const { daftar, nama, contoh } = isiKepala(i);
         pemicu = dari || null;
+
+        // catatan "foto contoh" hanya relevan selama dokumentasi asli belum ada
+        const catatan = galeri.querySelector('.galeri__catatan');
+        if (catatan) catatan.hidden = !contoh;
 
         rel.innerHTML = daftar.map((foto, j) => `
   <div class="swiper-slide">
-    <img src="${foto}" alt="Foto contoh ${j + 1} dari ${daftar.length} untuk ${nama}">
+    <img src="${foto}" alt="${contoh ? 'Foto contoh' : 'Dokumentasi'} ${j + 1} dari ${daftar.length} untuk ${nama}">
   </div>`).join('');
 
         galeri.hidden = false;
@@ -5777,19 +5796,21 @@
       const [bidang, judul] = PROGRAM[i];
       document.querySelector('[data-galeri-bidang]').innerHTML = bidang;
       document.querySelector('[data-galeri-judul]').innerHTML = judul;
-      return { daftar: DOKUMENTASI[i], nama: judul.replace(/&amp;/g, '&') };
+      return { daftar: DOKUMENTASI[i], nama: judul.replace(/&amp;/g, '&'), contoh: CONTOH_PROGRAM[i] };
     });
 
     const GALERI_KEGIATAN = siapkanKorsel('galeri-kegiatan', (i) => {
       const nama = KEGIATAN[i];
       document.querySelector('[data-kegiatan-judul]').textContent = nama;
-      return { daftar: DOKUMENTASI_KEGIATAN[i], nama };
+      return { daftar: DOKUMENTASI_KEGIATAN[i], nama, contoh: CONTOH_KEGIATAN[i] };
     });
 
     /* ============ E-KATALOG: LAYAR PRODUK ============ */
-    // tiap kategori memakai tujuh foto contoh yang sama, digeser urutannya
-    const FOTO_KATALOG = KATALOG.map((_, i) =>
-      FOTO_CONTOH.map((_, j) => FOTO_CONTOH[(j + i) % FOTO_CONTOH.length]));
+    // foto etalase tiap kategori; selama pengelola belum mengunggah, dipakai
+    // tujuh foto contoh yang sama, digeser urutannya
+    const FOTO_KATALOG = KATALOG.map((d, i) =>
+      adaFoto(d.galeri) ? d.galeri : contohDigeser(i));
+    const CONTOH_KATALOG = KATALOG.map(d => !adaFoto(d.galeri));
 
     function siapkanProduk() {
       const galeri = document.getElementById('galeri-produk');
@@ -5807,11 +5828,11 @@
 
       // etalase produk memakai tumpukan kartu yang sama dengan galeri kegiatan
       // warga: foto polos yang mengendap satu di bawah yang lain saat digulir
-      function bangunEtalase(daftar, judul) {
+      function bangunEtalase(daftar, judul, contoh) {
         jalur.innerHTML = daftar.map((foto, j) => `
   <div class="tumpuk__lekat">
     <figure class="tumpuk__kartu" style="--turun:${200 + j * 15}px">
-      <img class="tumpuk__foto" src="${foto}" alt="Foto contoh produk ${j + 1} dari ${daftar.length}: ${judul}">
+      <img class="tumpuk__foto" src="${foto}" alt="${contoh ? 'Foto contoh produk' : 'Foto produk'} ${j + 1} dari ${daftar.length}: ${judul}">
     </figure>
   </div>`).join('');
         kartuEtalase = [...jalur.querySelectorAll('.tumpuk__kartu')];
@@ -5854,7 +5875,7 @@
         isi.jam.innerHTML = d.jam;
         isi.lokasi.innerHTML = d.lokasi;
 
-        bangunEtalase(FOTO_KATALOG[i], d.judul);
+        bangunEtalase(FOTO_KATALOG[i], d.judul, CONTOH_KATALOG[i]);
         galeri.hidden = false;
         galeri.dataset.gulir = 'false';
         document.body.style.overflow = 'hidden';
@@ -5924,7 +5945,7 @@
     <button type="button" class="pk__foto" data-galeri-buka="${i}"
       aria-label="Buka galeri dokumentasi: ${judul}">
       <img class="pk__gambar" src="${DOKUMENTASI[i][0]}" alt="">
-      <span class="chip chip-soon !text-[.7rem]">Foto contoh</span>
+      ${CONTOH_PROGRAM[i] ? '<span class="chip chip-soon !text-[.7rem]">Foto contoh</span>' : ''}
       <span class="pk__petunjuk"><em>Buka Galeri
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5l7 7-7 7m7-7H3"/></svg>
       </em></span>
@@ -6204,14 +6225,14 @@
   <li class="cincin__kartu" style="--sudut:${(i * sudutItem).toFixed(2)}deg">
     <button type="button" class="cincin__pemicu" data-kegiatan="${i}"
       aria-label="Buka galeri dokumentasi: ${nama}">
-      <img class="cincin__foto" src="${FOTO_CONTOH[i % FOTO_CONTOH.length]}" alt="">
+      <img class="cincin__foto" src="${DOKUMENTASI_KEGIATAN[i][0]}" alt="">
       <span class="cincin__tirai"></span>
       <span class="cincin__petunjuk"><em>Buka Galeri
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5l7 7-7 7m7-7H3"/></svg>
       </em></span>
       <span class="cincin__isi">
         <span class="cincin__judul">${nama}</span>
-        <span class="cincin__tanda">Foto contoh</span>
+        ${CONTOH_KEGIATAN[i] ? '<span class="cincin__tanda">Foto contoh</span>' : ''}
       </span>
     </button>
   </li>`).join('');
@@ -6828,7 +6849,7 @@
 
       const FOTO_MITRA = [
         'assets/hero-sawah.jpg',
-        'dummy%20gambar%20sawah%20sunset.jpg',
+        'assets/hero-setro-poster.jpg',
         ...FOTO_CONTOH.slice(0, 4)
       ];
 

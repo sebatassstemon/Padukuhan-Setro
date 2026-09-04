@@ -7,7 +7,8 @@
     "foto": "/assets/unggahan/produk-contoh-1.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "06.00–21.00 WIB, setiap hari",
-    "lokasi": "Tersebar di RT 027 sampai RT 033"
+    "lokasi": "Tersebar di RT 027 sampai RT 033",
+    "galeri": []
   },
   {
     "judul": "Olahan pangan",
@@ -17,7 +18,8 @@
     "foto": "/assets/unggahan/produk-contoh-2.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "07.00–16.00 WIB, Senin–Sabtu",
-    "lokasi": "Dapur rumahan, RT 028 dan RT 031"
+    "lokasi": "Dapur rumahan, RT 028 dan RT 031",
+    "galeri": []
   },
   {
     "judul": "Hasil tani",
@@ -27,7 +29,8 @@
     "foto": "/assets/unggahan/produk-contoh-3.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "06.00–15.00 WIB, menyesuaikan masa panen",
-    "lokasi": "Gudang gabah, RT 027"
+    "lokasi": "Gudang gabah, RT 027",
+    "galeri": []
   },
   {
     "judul": "Eceng gondok",
@@ -37,7 +40,8 @@
     "foto": "/assets/unggahan/produk-contoh-4.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "08.00–16.00 WIB, Senin–Jumat",
-    "lokasi": "Rumah perajin, RT 030"
+    "lokasi": "Rumah perajin, RT 030",
+    "galeri": []
   },
   {
     "judul": "Mebel kayu",
@@ -47,7 +51,8 @@
     "foto": "/assets/unggahan/produk-contoh-5.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "08.00–17.00 WIB, Senin–Sabtu",
-    "lokasi": "Bengkel kayu, RT 029"
+    "lokasi": "Bengkel kayu, RT 029",
+    "galeri": []
   },
   {
     "judul": "Pemancingan",
@@ -57,7 +62,8 @@
     "foto": "/assets/unggahan/produk-contoh-6.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "06.00–18.00 WIB, setiap hari",
-    "lokasi": "Kolam warga, RT 032"
+    "lokasi": "Kolam warga, RT 032",
+    "galeri": []
   },
   {
     "judul": "Rosok",
@@ -67,6 +73,7 @@
     "foto": "/assets/unggahan/produk-contoh-7.jpg",
     "kontak": "0812-XXXX-XXXX",
     "jam": "08.00–17.00 WIB, Senin–Sabtu",
-    "lokasi": "Halaman pengepul, RT 033"
+    "lokasi": "Halaman pengepul, RT 033",
+    "galeri": []
   }
 ]

@@ -1,22 +1,102 @@
 [
-  { "judul": "Kerja Bakti Bersih Lingkungan", "ringkas": "Kerja bakti lingkungan" },
-  { "judul": "Posyandu Balita dan Lansia", "ringkas": "Posyandu balita & lansia" },
-  { "judul": "Pengajian Rutin Ibu-Ibu", "ringkas": "Pengajian rutin ibu-ibu" },
-  { "judul": "Panen Raya Padi", "ringkas": "Panen raya padi" },
-  { "judul": "Pelatihan UMKM bersama KKN UII", "ringkas": "Pelatihan UMKM" },
-  { "judul": "Rapat Koordinasi Warga", "ringkas": "Rapat koordinasi warga" },
-  { "judul": "Ronda Malam Bergilir", "ringkas": "Ronda malam bergilir" },
-  { "judul": "Pertemuan Rutin PKK Dusun", "ringkas": "Pertemuan PKK dusun" },
-  { "judul": "Latihan Karang Taruna", "ringkas": "Latihan karang taruna" },
-  { "judul": "Perawatan Saluran Irigasi", "ringkas": "Perawatan irigasi" },
-  { "judul": "Penyuluhan Pertanian Padi", "ringkas": "Penyuluhan pertanian" },
-  { "judul": "Senam Sehat Lansia", "ringkas": "Senam sehat lansia" },
-  { "judul": "Kerja Bakti Perbaikan Jalan Dusun", "ringkas": "Perbaikan jalan dusun" },
-  { "judul": "Pengelolaan PAMSIMAS Dusun", "ringkas": "Pengelolaan PAMSIMAS" },
-  { "judul": "Anyaman Eceng Gondok Bersama", "ringkas": "Anyaman eceng gondok" },
-  { "judul": "Peringatan Hari Kemerdekaan", "ringkas": "Hari kemerdekaan" },
-  { "judul": "Bersih Makam Menjelang Ruwahan", "ringkas": "Bersih makam" },
-  { "judul": "Pembagian Pakan Ternak Bersama", "ringkas": "Pakan ternak bersama" },
-  { "judul": "Tadarus dan Buka Bersama", "ringkas": "Tadarus & buka bersama" },
-  { "judul": "Musyawarah Rencana Pembangunan Dusun", "ringkas": "Musyawarah pembangunan" }
+  {
+    "judul": "Kerja Bakti Bersih Lingkungan",
+    "ringkas": "Kerja bakti lingkungan",
+    "foto": []
+  },
+  {
+    "judul": "Posyandu Balita dan Lansia",
+    "ringkas": "Posyandu balita & lansia",
+    "foto": []
+  },
+  {
+    "judul": "Pengajian Rutin Ibu-Ibu",
+    "ringkas": "Pengajian rutin ibu-ibu",
+    "foto": []
+  },
+  {
+    "judul": "Panen Raya Padi",
+    "ringkas": "Panen raya padi",
+    "foto": []
+  },
+  {
+    "judul": "Pelatihan UMKM bersama KKN UII",
+    "ringkas": "Pelatihan UMKM",
+    "foto": []
+  },
+  {
+    "judul": "Rapat Koordinasi Warga",
+    "ringkas": "Rapat koordinasi warga",
+    "foto": []
+  },
+  {
+    "judul": "Ronda Malam Bergilir",
+    "ringkas": "Ronda malam bergilir",
+    "foto": []
+  },
+  {
+    "judul": "Pertemuan Rutin PKK Dusun",
+    "ringkas": "Pertemuan PKK dusun",
+    "foto": []
+  },
+  {
+    "judul": "Latihan Karang Taruna",
+    "ringkas": "Latihan karang taruna",
+    "foto": []
+  },
+  {
+    "judul": "Perawatan Saluran Irigasi",
+    "ringkas": "Perawatan irigasi",
+    "foto": []
+  },
+  {
+    "judul": "Penyuluhan Pertanian Padi",
+    "ringkas": "Penyuluhan pertanian",
+    "foto": []
+  },
+  {
+    "judul": "Senam Sehat Lansia",
+    "ringkas": "Senam sehat lansia",
+    "foto": []
+  },
+  {
+    "judul": "Kerja Bakti Perbaikan Jalan Dusun",
+    "ringkas": "Perbaikan jalan dusun",
+    "foto": []
+  },
+  {
+    "judul": "Pengelolaan PAMSIMAS Dusun",
+    "ringkas": "Pengelolaan PAMSIMAS",
+    "foto": []
+  },
+  {
+    "judul": "Anyaman Eceng Gondok Bersama",
+    "ringkas": "Anyaman eceng gondok",
+    "foto": []
+  },
+  {
+    "judul": "Peringatan Hari Kemerdekaan",
+    "ringkas": "Hari kemerdekaan",
+    "foto": []
+  },
+  {
+    "judul": "Bersih Makam Menjelang Ruwahan",
+    "ringkas": "Bersih makam",
+    "foto": []
+  },
+  {
+    "judul": "Pembagian Pakan Ternak Bersama",
+    "ringkas": "Pakan ternak bersama",
+    "foto": []
+  },
+  {
+    "judul": "Tadarus dan Buka Bersama",
+    "ringkas": "Tadarus & buka bersama",
+    "foto": []
+  },
+  {
+    "judul": "Musyawarah Rencana Pembangunan Dusun",
+    "ringkas": "Musyawarah pembangunan",
+    "foto": []
+  }
 ]

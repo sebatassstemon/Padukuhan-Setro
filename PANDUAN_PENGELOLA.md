@@ -59,9 +59,9 @@ Situs perlu waktu untuk diterbitkan ulang.
 | **Data Angka → Sumber Air Bersih** | Daftar sumber air |
 | **Data Angka → Komoditas Pertanian** | Daftar tanaman yang ditanam |
 | **Data Angka → Jenis Usaha Warga** | Daftar jenis usaha beserta jumlah unitnya |
-| **E-Katalog UMKM** | Kartu-kartu usaha warga yang berputar |
-| **Program Kerja** | Daftar program KKN beserta penjelasannya |
-| **Kegiatan Warga** | Daftar kegiatan yang berputar sebagai cincin foto |
+| **E-Katalog UMKM** | Kartu-kartu usaha warga yang berputar, beserta foto etalasenya |
+| **Program Kerja** | Daftar program KKN, penjelasan, dan foto dokumentasinya |
+| **Kegiatan Warga** | Daftar kegiatan yang berputar sebagai cincin foto, beserta foto dokumentasinya |
 | **Kebutuhan Kemitraan** | Daftar kebutuhan warga di bagian kemitraan |
 
 ---
@@ -90,6 +90,36 @@ Pada kolom yang bertuliskan **Foto**:
 3. Foto tersimpan otomatis, Anda tidak perlu mengetik alamat berkas.
 
 Sebaiknya foto mendatar (landscape) supaya pas di kartu.
+
+### Foto dokumentasi program & kegiatan
+
+Saat ini seluruh foto di situs masih **foto contoh**, dan situs jujur
+mengatakannya — ada tulisan kecil "Foto contoh" di kartu program, di keping
+kegiatan, dan di dalam galeri.
+
+Untuk memasang foto asli:
+
+1. Buka **Program Kerja** (atau **Kegiatan Warga**).
+2. Klik program/kegiatan yang ingin diisi.
+3. Cari kolom **Foto dokumentasi**, klik **+ Add**, lalu unggah fotonya.
+   Boleh berapa pun jumlahnya.
+4. **Save**, lalu **Publish**.
+
+Yang terjadi setelah itu:
+
+- Foto **pertama** dipakai sebagai gambar kartu program / keping cincin
+  kegiatan.
+- Seluruh foto tampil saat pengunjung menekan **"Buka Galeri"**.
+- Tulisan **"Foto contoh" hilang dengan sendirinya** untuk program/kegiatan
+  itu. Anda tidak perlu menghapusnya secara manual.
+
+Program dan kegiatan lain yang belum diisi tetap memakai foto contoh dan tetap
+bertanda "Foto contoh". Jadi Anda boleh mengisinya sedikit demi sedikit.
+
+Di **E-Katalog UMKM** ada dua kolom foto yang berbeda:
+
+- **Foto** — satu gambar untuk muka kartunya.
+- **Foto etalase produk** — tumpukan foto yang tampil saat kartu dibuka.
 
 ---
 
