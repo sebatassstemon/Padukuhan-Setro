@@ -749,42 +749,24 @@
       text-align: center;
     }
 
-    /* Panel penutup ke E-katalog memakai takaran yang sama dengan dua panel
-       judul di atasnya -- judul di tengah panel, beralas 1,5rem -- supaya
-       jarak dari dasar judul ke kepala E-katalog dihitung dengan rumus yang
-       sama seperti jarak judul Potret Warga dan Potensi Setro ke deret
-       kotaknya, dan ikut melar-menyusut mengikuti tinggi layar.
-       Dua penyesuaian yang membuat rumus itu jatuh sama persis:
-       1. Panel ini cuma membawa judul; label kecil dan paragraf pengantar
-          yang ada di dua panel atasnya tidak ikut. Tingginya dipotong setinggi
-          keduanya (di layar sempit paragraf itu makan lebih banyak baris, jadi
-          potongannya ditambah), supaya sisa ruang di bawah judul sama besar.
-       2. Seluruh jarak itu sudah disediakan panel ini, jadi ganjalan atas
-          E-katalog dinolkan -- kalau tidak, 7rem-nya menumpuk di atasnya. */
+    /* Panel penutup ke E-katalog tidak membawa deret kotak, jadi ia dibuat
+       lebih pendek dan tanpa alas: judulnya berdiri tepat di atas kepala
+       E-katalog dan keduanya terbaca sebagai satu bagian. */
     .panggung--tutup {
-      min-height: calc(80vh - 8rem);
-      min-height: calc(80svh - 8rem);
+      min-height: 58vh;
+      min-height: 58svh;
+      padding-bottom: 0;
+      /* judul ditutupkan ke dasar panel, dan ruang ekor huruf baris kedua
+         dikembalikan lewat margin negatif. Dasar teks jadi benar-benar garis
+         batas ke E-katalog, jadi 7rem milik seksi itu adalah seluruh jarak
+         yang terlihat -- sama seperti Program, Kegiatan, dan Kontak.
+         Akibatnya 'overflow: hidden' milik .panggung memenggal drop-shadow
+         baris kedua tepat di garis dasar teks -- itu yang terbaca sebagai
+         garis lurus. Pemotongan tegaknya dilepas di @supports bawah; ekor
+         bayangannya habis dalam ~60px di ganjalan atas E-katalog. */
+      justify-content: flex-end;
     }
 
-    @media (max-width:700px) {
-      .panggung--tutup {
-        min-height: calc(80vh - 10.5rem);
-        min-height: calc(80svh - 10.5rem);
-      }
-    }
-
-    #katalog {
-      padding-top: 0;
-    }
-
-    /* Ruang ekor huruf baris kedua dikembalikan lewat margin negatif -- sama
-       seperti yang dilakukan .sinema__judul:not(:last-child) di panel lain --
-       supaya yang dihitung sebagai dasar judul adalah dasar teksnya, bukan
-       dasar teks ditambah setinggi satu huruf.
-       Akibatnya 'overflow: hidden' milik .panggung memenggal drop-shadow baris
-       kedua tepat di garis dasar teks, dan itu terbaca sebagai garis lurus.
-       Pemotongan tegaknya dilepas di sini; ekor bayangannya habis dalam ~60px
-       di ruang kosong menuju E-katalog. */
     @supports (overflow: clip) {
       .panggung--tutup {
         overflow-x: clip;
@@ -3558,19 +3540,17 @@
       }
     }
 
-    /* Tanpa sorot tak ada yang memunculkan selubung, jadi di layar sentuh
-       ajakannya menetap sebagai pil hijau di bawah judul yang tetap terbaca.
-       Kelas .peta--sentuh, bukan @media (hover:none): patokannya alat tunjuk
-       yang benar-benar dipakai pengunjung. Laptop layar sentuh dan beberapa
-       browser salah melaporkan dirinya "tanpa sorot", dan di situ pil ini
-       terlanjur tampil padahal petanya masih bisa disorot mouse. */
-    .peta--sentuh .peta__ajak {
-      top: calc(50% + 3rem);
-      opacity: 1;
-      transform: translate(-50%, 0);
-      background: var(--sawah);
-      color: #fff;
-      box-shadow: 0 2px 6px rgba(30, 68, 35, .18), 0 14px 26px -12px rgba(30, 68, 35, .55);
+    /* tanpa sorot tak ada yang memunculkan selubung, jadi di layar sentuh
+       ajakannya menetap sebagai pil hijau di bawah judul yang tetap terbaca */
+    @media (hover: none) {
+      .peta__ajak {
+        top: calc(50% + 3rem);
+        opacity: 1;
+        transform: translate(-50%, 0);
+        background: var(--sawah);
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(30, 68, 35, .18), 0 14px 26px -12px rgba(30, 68, 35, .55);
+      }
     }
 
     .peta.terbuka .peta__ajak {
@@ -7328,12 +7308,7 @@
       const bingkaiPenuh = panggung.querySelector('iframe');
       // isi panel disembunyikan dari urutan Tab selama panel tertutup
       const isiPanel = [bingkaiPenuh, panggung.querySelector('.peta__tautan')];
-      // 'hover'/'pointer' hanya melaporkan alat tunjuk UTAMA, dan laptop layar
-      // sentuh kerap mengaku tanpa sorot -- di situ pil "Buka Peta Setro"
-      // terlanjur tampil sebelum kartunya disorot. Tebakan awal dibuat dari
-      // 'any-*': selama masih ada satu alat tunjuk halus yang bisa menyorot,
-      // kartu ini mulai dalam mode sorot.
-      const halus = window.matchMedia('(any-hover: hover) and (any-pointer: fine)');
+      const halus = window.matchMedia('(hover: hover) and (pointer: fine)');
 
       let terbuka = false;
 
@@ -7402,41 +7377,14 @@
         setTimeout(() => { if (!peta.contains(document.activeElement)) tutup(); }, 0);
       });
 
-      let modeSentuh = !halus.matches;
-      let sentuhTerakhir = 0;
-
       function terapkanMode() {
-        peta.classList.toggle('peta--sentuh', modeSentuh);
-        peta.setAttribute('aria-label', modeSentuh
-          ? 'Buka peta Padukuhan Setro. Ketuk untuk membuka peta besar yang bisa digeser.'
-          : 'Buka peta Padukuhan Setro. Peta besar yang bisa digeser terbuka di tengah layar.');
+        peta.classList.toggle('peta--sentuh', !halus.matches);
+        peta.setAttribute('aria-label', halus.matches
+          ? 'Buka peta Padukuhan Setro. Peta besar yang bisa digeser terbuka di tengah layar.'
+          : 'Buka peta Padukuhan Setro. Ketuk untuk membuka peta besar yang bisa digeser.');
+        tutup();
       }
-
-      function pakaiMode(sentuh) {
-        if (sentuh === modeSentuh) return;
-        modeSentuh = sentuh;
-        terapkanMode();
-      }
-
-      // Kata putusnya ada di alat tunjuk yang betul-betul dipakai: sekali jari
-      // atau pena menyentuh layar kartu masuk mode sentuh, sekali mouse
-      // bergerak ia kembali ke mode sorot. Peristiwa mouse tiruan yang
-      // menyusul sesudah sentuhan diabaikan sebentar supaya tidak membalik
-      // modenya sendiri.
-      addEventListener('pointerdown', (e) => {
-        if (e.pointerType === 'touch' || e.pointerType === 'pen') {
-          sentuhTerakhir = e.timeStamp;
-          pakaiMode(true);
-        }
-      }, { capture: true, passive: true });
-
-      const dariMouse = (e) => {
-        if (e.pointerType === 'mouse' && e.timeStamp - sentuhTerakhir > 700) pakaiMode(false);
-      };
-      addEventListener('pointerover', dariMouse, { capture: true, passive: true });
-      addEventListener('pointermove', dariMouse, { capture: true, passive: true });
-
-      halus.addEventListener('change', () => { modeSentuh = !halus.matches; terapkanMode(); tutup(); });
+      halus.addEventListener('change', terapkanMode);
       terapkanMode();
       tombolTutup.addEventListener('click', tutup);
     })();
