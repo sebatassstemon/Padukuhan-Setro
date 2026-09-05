@@ -765,6 +765,9 @@
          garis lurus. Pemotongan tegaknya dilepas di @supports bawah; ekor
          bayangannya habis dalam ~60px di ganjalan atas E-katalog. */
       justify-content: flex-end;
+      /* kepala E-katalog dinaikkan sedikit ke arah judul jembatan ini, tanpa
+         mengutak-atik irama py-20/lg:py-28 milik seksi itu sendiri */
+      margin-bottom: -1rem;
     }
 
     @supports (overflow: clip) {
@@ -840,6 +843,10 @@
       max-width: var(--shell, 1200px);
       margin-inline: auto;
       padding: 0 1.5rem 6rem;
+      /* deretnya dinaikkan sedikit ke arah judul panelnya. Jarak itu sendiri
+         separuh sisa ruang .panggung, jadi ia ikut tinggi layar; margin negatif
+         ini memangkasnya rata di semua ukuran tanpa menggeser judulnya. */
+      margin-top: -1.5rem;
     }
 
     /* baris kedua judul memakai padding-bottom 1em supaya ekor huruf tidak
