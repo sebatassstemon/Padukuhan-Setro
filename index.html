@@ -735,55 +735,38 @@
       position: relative;
     }
 
-    /* ---------- panel judul: satu layar penuh, judul duduk di dasar ---------- */
+    /* ---------- panel judul: satu layar penuh, judul duduk di tengah ---------- */
     .panggung {
       position: relative;
-      /* Jarak dari dasar judul ke isi di bawahnya dipakukan lewat alas panel,
-         bukan diambil dari sisa ruang. Sebelumnya judul dipusatkan tegak, jadi
-         jaraknya = separuh sisa ruang -- dan itu ikut tinggi BLOK JUDUL, yang
-         melompat satu baris penuh (~29px) di lebar yang berbeda-beda untuk
-         tiap panel. Akibatnya ketiga panel tidak pernah berjarak sama.
-         Dipakukan begini, ketiganya persis sama di setiap ukuran layar.
-         Rumusnya sengaja meniru perilaku lama panel Potret Warga (40svh
-         dikurangi tetapan) supaya jaraknya tetap bernapas mengikuti tinggi
-         layar, hanya kini seragam dan ditambah sedikit. */
-      --jarak-judul: max(5rem, calc(40vh - 160px));
-      --jarak-judul: max(5rem, calc(40svh - 160px));
       min-height: 80vh;
       min-height: 80svh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       overflow: hidden;
-      padding: 5rem 1.5rem var(--jarak-judul);
+      padding: 5rem 1.5rem 1.5rem;
       text-align: center;
     }
 
-    /* Panel penutup memakai resep yang sama dengan dua panel di atasnya, jadi
-       jaraknya ke E-katalog terhitung dengan rumus yang sama. Karena seluruh
-       jarak itu disediakan panel ini, ganjalan atas E-katalog dinolkan --
-       kalau tidak, 7rem-nya menumpuk di atasnya. */
+    /* Panel penutup ke E-katalog tidak membawa deret kotak, jadi ia dibuat
+       lebih pendek dan tanpa alas: judulnya berdiri tepat di atas kepala
+       E-katalog dan keduanya terbaca sebagai satu bagian. */
     .panggung--tutup {
-      /* Dua panel di atas berakhir dengan paragraf pengantar yang tintanya
-         berhenti di dalam kotaknya. Panel ini berakhir dengan baris judul
-         bergradien, yang memakai 'padding-bottom:1em' (demi jangkauan gradien
-         dan ekor huruf) lalu dibatalkan 'margin-bottom:-1em' -- jadi tintanya
-         menggantung di bawah kotaknya. Terukur gantungan itu cuma 4-6px di
-         seluruh rentang ukuran huruf, jadi alasnya cukup ditambah 5px supaya
-         jarak yang TERLIHAT sama dengan dua panel lain (meleset <=1,2px). */
-      padding-bottom: calc(var(--jarak-judul) + 5px);
+      min-height: 58vh;
+      min-height: 58svh;
+      padding-bottom: 0;
+      /* judul ditutupkan ke dasar panel, dan ruang ekor huruf baris kedua
+         dikembalikan lewat margin negatif. Dasar teks jadi benar-benar garis
+         batas ke E-katalog, jadi 7rem milik seksi itu adalah seluruh jarak
+         yang terlihat -- sama seperti Program, Kegiatan, dan Kontak.
+         Akibatnya 'overflow: hidden' milik .panggung memenggal drop-shadow
+         baris kedua tepat di garis dasar teks -- itu yang terbaca sebagai
+         garis lurus. Pemotongan tegaknya dilepas di @supports bawah; ekor
+         bayangannya habis dalam ~60px di ganjalan atas E-katalog. */
+      justify-content: flex-end;
     }
 
-    #katalog {
-      padding-top: 0;
-    }
-
-    /* jaring pengaman lama: sewaktu judul ini masih menempel di dasar panel,
-       'overflow: hidden' memenggal drop-shadow-nya jadi garis lurus. Sekarang
-       ada ratusan piksel alas di bawahnya sehingga tak ada lagi yang terpenggal,
-       tapi pelepasan ini dibiarkan supaya bayangannya tetap aman kalau jaraknya
-       suatu saat dirapatkan lagi. */
     @supports (overflow: clip) {
       .panggung--tutup {
         overflow-x: clip;
