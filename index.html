@@ -3711,8 +3711,14 @@
     .tm {
       position: absolute;
       top: calc(100% + 15px);
+      /* Panel selebar deret tab: tepi kiri lurus dengan tab pertama, tepi kanan
+         lurus dengan tombol ajakan. Lebar mati 720px + right:0 dulu membuat
+         panel berhenti 100px sebelum tab Profil begitu layar lewat ~1100px,
+         jadi tab paling kiri berada di luar panel dan nub tak sampai ke sana.
+         Di bawah itu deret tab lebih sempit dari 720px, maka panel dibiarkan
+         melebar ke kiri supaya isinya tidak terjepit -- tanpa lompatan lebar. */
+      left: min(0px, 100% - 720px);
       right: 0;
-      width: 720px;
       padding: 1.15rem;
       border-radius: 20px;
       background: var(--paper);
