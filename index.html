@@ -755,15 +755,16 @@
     .panggung--tutup {
       min-height: 58vh;
       min-height: 58svh;
-      padding-bottom: 0;
-      /* judul ditutupkan ke dasar panel, dan ruang ekor huruf baris kedua
-         dikembalikan lewat margin negatif. Dasar teks jadi benar-benar garis
-         batas ke E-katalog, jadi 7rem milik seksi itu adalah seluruh jarak
-         yang terlihat -- sama seperti Program, Kegiatan, dan Kontak.
+      /* Judul ditutupkan ke dasar panel, dan ruang ekor huruf baris kedua
+         dikembalikan lewat margin negatif, jadi dasar teks benar-benar jadi
+         garis batas ke E-katalog. Alas 2,5rem mengangkat judulnya sedikit dari
+         garis itu -- 7rem milik E-katalog jadi tidak lagi seluruh jarak yang
+         terlihat, tapi napas antara keduanya kini cukup.
          Akibatnya 'overflow: hidden' milik .panggung memenggal drop-shadow
          baris kedua tepat di garis dasar teks -- itu yang terbaca sebagai
          garis lurus. Pemotongan tegaknya dilepas di @supports bawah; ekor
-         bayangannya habis dalam ~60px di ganjalan atas E-katalog. */
+         bayangannya habis dalam ~60px di alas ini. */
+      padding-bottom: 2.5rem;
       justify-content: flex-end;
     }
 
