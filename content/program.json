@@ -4,7 +4,13 @@
     "judul": "Pelatihan Pencatatan Keuangan Sederhana bagi Pelaku UMKM",
     "deskripsi": "Pendampingan pelaku UMKM Padukuhan Setro dalam mencatat pemasukan dan pengeluaran usaha secara sederhana, menghitung hasil usaha, serta membiasakan pencatatan rutin agar perkembangan usaha dapat dipantau.",
     "panduan": "Buku Panduan Pencatatan Keuangan UMKM",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Buku panduan pencatatan keuangan UMKM",
+        "berkas": "/assets/unggahan/panduan-pencatatan-keuangan-umkm.pdf",
+        "rincian": "4 halaman · 198 KB"
+      }
+    ],
     "ringkas": "Pembukuan UMKM",
     "foto": [
       "/assets/unggahan/dok-pembukuan-umkm-01.jpg",
@@ -12,20 +18,20 @@
       "/assets/unggahan/dok-pembukuan-umkm-03.jpg",
       "/assets/unggahan/dok-pembukuan-umkm-04.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/panduan-pencatatan-keuangan-umkm.pdf",
-        "nama": "Buku panduan pencatatan keuangan UMKM",
-        "rincian": "4 halaman · 198 KB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Pemberdayaan Masyarakat",
     "judul": "Majalah Profil Digital Padukuhan Setro",
     "deskripsi": "Penyusunan majalah digital yang menghimpun identitas wilayah, monografi, potensi pertanian, peternakan, UMKM, fasilitas umum, serta dokumentasi kegiatan masyarakat dalam satu media yang mudah dibagikan.",
     "panduan": "Buku Data Profil dan Potensi Padukuhan Setro",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Buku data profil dan potensi Padukuhan Setro",
+        "berkas": "/assets/unggahan/buku-data-profil-potensi-setro.pdf",
+        "rincian": "15 halaman · 1,1 MB"
+      }
+    ],
     "ringkas": "Majalah profil dusun",
     "foto": [
       "/assets/unggahan/dok-majalah-profil-01.jpg",
@@ -36,20 +42,20 @@
       "/assets/unggahan/dok-majalah-profil-06.jpg",
       "/assets/unggahan/dok-majalah-profil-07.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/buku-data-profil-potensi-setro.pdf",
-        "nama": "Buku data profil dan potensi Padukuhan Setro",
-        "rincian": "15 halaman · 1,1 MB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Pendidikan Bahasa Asing",
     "judul": "Edukasi Bahasa Inggris Dasar dan Pengenalan Budaya",
     "deskripsi": "Kelas bahasa Inggris dasar untuk anak-anak Padukuhan Setro dengan metode belajar sambil bermain, disertai pengenalan budaya Indonesia dan mancanegara untuk menumbuhkan wawasan global sejak dini.",
     "panduan": "Modul Bahasa Inggris Dasar",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Modul bahasa Inggris dasar, 10 unit setara A1–A2",
+        "berkas": "/assets/unggahan/modul-bahasa-inggris-dasar.pdf",
+        "rincian": "59 halaman · 1,5 MB"
+      }
+    ],
     "ringkas": "Bahasa Inggris anak",
     "foto": [
       "/assets/unggahan/dok-bahasa-inggris-01.jpg",
@@ -60,30 +66,37 @@
       "/assets/unggahan/dok-bahasa-inggris-06.jpg",
       "/assets/unggahan/dok-bahasa-inggris-07.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/modul-bahasa-inggris-dasar.pdf",
-        "nama": "Modul bahasa Inggris dasar, 10 unit setara A1–A2",
-        "rincian": "59 halaman · 1,5 MB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Hukum",
     "judul": "Akselerasi Kesiapan Warga dalam PTSL Susulan",
     "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara mandiri, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
     "panduan": "Panduan Pendaftaran & Konversi Tanah",
-    "berkas": "",
+    "lampiran": [],
     "ringkas": "Kesiapan PTSL",
-    "foto": [],
-    "lampiran": []
+    "foto": [
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (2).jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (1).jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 14.41.13.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 14.35.29.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (1).jpeg"
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Manajemen Keuangan",
     "judul": "Pelatihan Pengelolaan Keuangan Pribadi dan Keluarga",
     "deskripsi": "Pelatihan pencatatan pemasukan dan pengeluaran, pengelompokan kebutuhan dan keinginan, serta penyusunan anggaran sederhana bagi pemuda-pemudi dan warga Padukuhan Setro.",
     "panduan": "Lembar Pengelolaan Keuangan Pribadi",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Lembar pengelolaan keuangan pribadi",
+        "berkas": "/assets/unggahan/template-keuangan-pribadi.pdf",
+        "rincian": "3 halaman · 86 KB"
+      }
+    ],
     "ringkas": "Keuangan keluarga",
     "foto": [
       "/assets/unggahan/dok-keuangan-keluarga-01.jpg",
@@ -92,20 +105,25 @@
       "/assets/unggahan/dok-keuangan-keluarga-04.jpg",
       "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (1).jpeg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/template-keuangan-pribadi.pdf",
-        "nama": "Lembar pengelolaan keuangan pribadi",
-        "rincian": "3 halaman · 86 KB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Lingkungan Hidup",
     "judul": "Edukasi Limbah Rumah Tangga & Komposter Galon Air Lindi",
     "deskripsi": "Sampah dapur di Padukuhan Setro masih dibakar karena belum ada layanan pengangkutan. Bersama ibu-ibu PKK, mahasiswa KKN merakit komposter dari galon bekas yang menghasilkan kompos padat sekaligus pupuk cair.",
     "panduan": "Panduan Komposter Galon Air Lindi",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Poster panduan membuat komposter galon",
+        "berkas": "/assets/unggahan/poster-panduan-komposter-galon.pdf",
+        "rincian": "A3 siap cetak · 103 KB"
+      },
+      {
+        "nama": "Resep praktis kelola sampah rumah tangga",
+        "berkas": "/assets/unggahan/resep-praktis-kelola-sampah.pdf",
+        "rincian": "21 halaman · 4,1 MB"
+      }
+    ],
     "ringkas": "Komposter galon",
     "foto": [
       "/assets/unggahan/dok-komposter-galon-01.jpg",
@@ -130,25 +148,25 @@
       "/assets/unggahan/dok-komposter-galon-20.jpg",
       "/assets/unggahan/dok-komposter-galon-21.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/poster-panduan-komposter-galon.pdf",
-        "nama": "Poster panduan membuat komposter galon",
-        "rincian": "A3 siap cetak · 103 KB"
-      },
-      {
-        "berkas": "/assets/unggahan/resep-praktis-kelola-sampah.pdf",
-        "nama": "Resep praktis kelola sampah rumah tangga",
-        "rincian": "21 halaman · 4,1 MB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Kesehatan Masyarakat & Gizi",
     "judul": "Skrining Asam Urat dan Pendampingan Diet Mandiri",
     "deskripsi": "Pemeriksaan kadar asam urat gratis bagi warga usia 30 tahun ke atas, dilanjutkan pendampingan pola makan mandiri menggunakan matriks makanan tinggi purin bagi warga yang teridentifikasi berisiko.",
     "panduan": "Materi Asam Urat & Makanan Tinggi Purin",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Artikel makanan tinggi purin dan cara menghindarinya",
+        "berkas": "/assets/unggahan/artikel-makanan-tinggi-purin.pdf",
+        "rincian": "2 halaman · 46 KB"
+      },
+      {
+        "nama": "Poster B.E.B.A.S dari nyeri sendi",
+        "berkas": "/assets/unggahan/poster-bebas-asam-urat.jpg",
+        "rincian": "siap cetak · 237 KB"
+      }
+    ],
     "ringkas": "Skrining asam urat",
     "foto": [
       "/assets/unggahan/dok-asam-urat-01.jpg",
@@ -163,25 +181,20 @@
       "/assets/unggahan/dok-asam-urat-10.jpg",
       "/assets/unggahan/dok-asam-urat-11.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/artikel-makanan-tinggi-purin.pdf",
-        "nama": "Artikel makanan tinggi purin dan cara menghindarinya",
-        "rincian": "2 halaman · 46 KB"
-      },
-      {
-        "berkas": "/assets/unggahan/poster-bebas-asam-urat.jpg",
-        "nama": "Poster B.E.B.A.S dari nyeri sendi",
-        "rincian": "siap cetak · 237 KB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Hukum & Kemasyarakatan",
     "judul": "Sosialisasi Perlindungan Data Pribadi & Mitigasi Scamming",
     "deskripsi": "Lewat permainan kartu dan simulasi chat dari akun yang mengaku admin game, siswa kelas 4–6 mengenali tanda penipuan daring: permintaan kata sandi, kode OTP, tautan mencurigakan, dan ajakan menyimpan rahasia dari orang tua.",
     "panduan": "Materi Misi Anti-Scam",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Misi anti-scam: mengenali modus penipuan daring",
+        "berkas": "/assets/unggahan/misi-anti-scam.pdf",
+        "rincian": "12 halaman · 2,0 MB"
+      }
+    ],
     "ringkas": "Data pribadi & scam",
     "foto": [
       "/assets/unggahan/dok-data-pribadi-01.jpg",
@@ -200,20 +213,20 @@
       "/assets/unggahan/dok-data-pribadi-14.jpg",
       "/assets/unggahan/dok-data-pribadi-15.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/misi-anti-scam.pdf",
-        "nama": "Misi anti-scam: mengenali modus penipuan daring",
-        "rincian": "12 halaman · 2,0 MB"
-      }
-    ]
+    "berkas": ""
   },
   {
     "bidang": "Perlindungan Anak",
     "judul": "Sosialisasi Perlindungan Diri bagi Siswa Kelas 1–3",
     "deskripsi": "Siswa kelas 1–3 mengenali batas tubuh pribadinya lewat permainan Lampu Sentuhan, membedakan rahasia baik dari rahasia buruk, lalu memperagakan tiga langkah: TIDAK, PERGI, CERITA.",
     "panduan": "Panduan Tubuhku Milikku",
-    "berkas": "",
+    "lampiran": [
+      {
+        "nama": "Panduan tubuhku milikku untuk siswa kelas 1–3",
+        "berkas": "/assets/unggahan/panduan-tubuhku-milikku.pdf",
+        "rincian": "15 halaman · 2,5 MB"
+      }
+    ],
     "ringkas": "Tubuhku milikku",
     "foto": [
       "/assets/unggahan/dok-tubuhku-milikku-01.jpg",
@@ -236,12 +249,6 @@
       "/assets/unggahan/dok-tubuhku-milikku-18.jpg",
       "/assets/unggahan/dok-tubuhku-milikku-19.jpg"
     ],
-    "lampiran": [
-      {
-        "berkas": "/assets/unggahan/panduan-tubuhku-milikku.pdf",
-        "nama": "Panduan tubuhku milikku untuk siswa kelas 1–3",
-        "rincian": "15 halaman · 2,5 MB"
-      }
-    ]
+    "berkas": ""
   }
 ]
