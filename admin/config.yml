@@ -714,22 +714,52 @@ collections:
               - { label: 'Bidang (contoh: Pemberdayaan UMKM)', name: bidang, widget: string }
               - { label: Judul program, name: judul, widget: string }
               - { label: Penjelasan program, name: deskripsi, widget: text }
-              - label: Nama berkas panduan yang dibagikan
+              - label: Nama kumpulan panduan
                 name: panduan
                 widget: string
                 hint: >-
-                  Tulisan yang tampil di tombol unduh, misalnya "Template Buku
-                  Kas Sederhana UMKM". Ini hanya namanya; berkasnya diunggah di
-                  kolom berikutnya.
-              - label: Berkas panduan (PDF)
-                name: berkas
-                widget: file
+                  Janji berkas yang sedang disiapkan, misalnya "Panduan
+                  Pendaftaran & Konversi Tanah". Tulisan ini hanya tampil selama
+                  daftar berkas di bawah masih kosong, pada tombol yang terkunci.
+                  Begitu ada berkas, tombolnya memakai nama berkas itu (kalau
+                  cuma satu) atau jumlahnya (kalau lebih dari satu).
+              - label: Berkas panduan yang dibagikan
+                name: lampiran
+                widget: list
                 required: false
+                label_singular: Berkas
+                collapsed: true
+                summary: '{{fields.nama}}'
                 hint: >-
-                  Unggah berkas PDF yang boleh diunduh pengunjung. Selama masih
-                  kosong, tombol unduh di situs tetap terkunci dan bertuliskan
-                  "Berkas dibagikan setelah program selesai dilaksanakan".
-                  Begitu berkas diunggah, tombolnya hidup dengan sendirinya.
+                  Satu program boleh membagikan beberapa berkas sekaligus. Satu
+                  berkas: tombol di kartu program langsung mengunduh. Dua berkas
+                  atau lebih: tombolnya membuka panel berisi daftar berkas, dan
+                  pengunjung memilih sendiri mana yang diunduh. Selama daftar ini
+                  kosong, tombol unduh tetap terkunci dan bertuliskan "Berkas
+                  dibagikan setelah program selesai dilaksanakan".
+                fields:
+                  - label: Nama berkas
+                    name: nama
+                    widget: string
+                    hint: >-
+                      Tulisan yang dibaca pengunjung, misalnya "Poster panduan
+                      membuat komposter galon".
+                  - label: Berkasnya
+                    name: berkas
+                    widget: file
+                    hint: >-
+                      PDF atau gambar. Siapa pun yang membuka situs boleh
+                      mengunduhnya, jadi jangan diisi berkas berisi data pribadi
+                      warga.
+                  - label: Keterangan singkat
+                    name: rincian
+                    widget: string
+                    required: false
+                    hint: >-
+                      Jumlah halaman dan ukuran berkas, misalnya "21 halaman ·
+                      4,1 MB", supaya warga tahu seberat apa unduhannya. Jenis
+                      berkas (PDF, JPG) ditambahkan situs sendiri, tidak perlu
+                      ditulis di sini. Boleh dikosongkan.
               - label: Judul pendek untuk menu atas
                 name: ringkas
                 widget: string

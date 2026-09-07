@@ -2289,9 +2289,45 @@
       opacity: .68;
     }
 
+    /* Tombol pembuka daftar berkas. Wujudnya sama dengan tautan unduh -- warga
+       tetap mengenalinya sebagai jalan menuju berkas -- tapi panahnya tidak
+       ikut turun saat disorot, karena menekannya belum mengunduh apa pun. */
+    .pk__unduh--banyak {
+      cursor: pointer;
+      transition: opacity .25s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .pk__unduh--banyak svg {
+      stroke: var(--daun);
+    }
+
+    .pk__unduh--banyak b {
+      color: var(--tinta);
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, var(--daun) 45%, transparent);
+      text-underline-offset: .22em;
+    }
+
+    .pk__unduh--banyak:hover b {
+      text-decoration-color: var(--daun);
+    }
+
+    .pk__unduh--banyak:focus-visible {
+      outline: 2px solid var(--daun);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .pk__unduh--banyak:active {
+      opacity: .68;
+    }
+
+
     @media (prefers-reduced-motion: reduce) {
+
       a.pk__unduh,
-      a.pk__unduh svg {
+      a.pk__unduh svg,
+      .pk__unduh--banyak {
         transition: none;
       }
 
@@ -2638,6 +2674,233 @@
 
     .galeri__tutup:active {
       transform: scale(.94);
+    }
+
+    /* ================= PANEL BERKAS PANDUAN ================= */
+    /* Dipakai hanya oleh program yang membagikan lebih dari satu berkas.
+       Latarnya memakai kaca hijau yang sama seperti galeri foto supaya kedua
+       lapisan di atas halaman terasa satu keluarga. */
+    .lembar {
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 4vw, 2rem);
+      opacity: 0;
+      transition: opacity .3s var(--ease);
+    }
+
+    .lembar[data-buka="true"] {
+      opacity: 1;
+    }
+
+    .lembar__latar {
+      position: absolute;
+      inset: 0;
+      background: rgba(21, 48, 25, .93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 0;
+      padding: 0;
+      cursor: default;
+    }
+
+    .lembar__kotak {
+      position: relative;
+      z-index: 1;
+      width: min(520px, 100%);
+      max-height: min(82vh, 620px);
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: 1px solid var(--garis);
+      border-radius: 22px;
+      box-shadow: 0 30px 64px rgba(21, 48, 25, .3);
+      overflow: hidden;
+      transform: translateY(16px) scale(.985);
+      transition: transform .45s cubic-bezier(.28, 1.12, .42, 1);
+    }
+
+    .lembar[data-buka="true"] .lembar__kotak {
+      transform: none;
+    }
+
+    .lembar__kepala {
+      position: relative;
+      flex: 0 0 auto;
+      padding: 1.6rem 1.6rem 1.35rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--garis);
+    }
+
+    @media (min-width:640px) {
+      .lembar__kepala {
+        padding: 1.8rem 1.9rem 1.5rem;
+      }
+    }
+
+    .lembar__judul {
+      font-weight: 600;
+      font-size: 1.06rem;
+      line-height: 1.34;
+      letter-spacing: -.012em;
+      margin-top: .75rem;
+      padding-right: 2.6rem;
+    }
+
+    .lembar__catatan {
+      font-weight: 300;
+      font-size: .82rem;
+      line-height: 1.6;
+      color: var(--hangat);
+      margin-top: .4rem;
+    }
+
+    .lembar__tutup {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.1rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--garis);
+      background: var(--paper);
+      color: var(--hangat);
+      cursor: pointer;
+      transition: background-color .25s var(--ease), color .25s var(--ease),
+        border-color .25s var(--ease), transform .25s var(--ease);
+    }
+
+    .lembar__tutup:hover {
+      background: var(--sawah);
+      border-color: var(--sawah);
+      color: var(--paper);
+    }
+
+    .lembar__tutup:focus-visible {
+      outline: 2px solid var(--sawah);
+      outline-offset: 3px;
+    }
+
+    .lembar__tutup:active {
+      transform: scale(.93);
+    }
+
+    .lembar__daftar {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    /* satu baris = satu berkas; seluruh baris jadi sasaran unduh supaya mudah
+       ditekan di layar sentuh dan tidak ada tombol bersarang di dalam tautan */
+    .lembar__baris {
+      display: flex;
+      align-items: flex-start;
+      gap: .95rem;
+      padding: 1.05rem 1.6rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--garis);
+      transition: background-color .2s var(--ease);
+    }
+
+    @media (min-width:640px) {
+      .lembar__baris {
+        padding: 1.15rem 1.9rem;
+      }
+    }
+
+    .lembar__baris:last-child {
+      border-bottom: 0;
+    }
+
+    .lembar__baris:hover {
+      background: var(--bone);
+    }
+
+    .lembar__baris:focus-visible {
+      outline: 2px solid var(--daun);
+      outline-offset: -3px;
+      background: var(--bone);
+    }
+
+    .lembar__baris:active {
+      background: var(--cream);
+    }
+
+    .lembar__rupa {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: var(--cream);
+      border: 1px solid var(--garis);
+      color: var(--sawah);
+      margin-top: .1rem;
+    }
+
+    .lembar__teks {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lembar__nama {
+      display: block;
+      font-weight: 500;
+      font-size: .9rem;
+      line-height: 1.45;
+      color: var(--tinta);
+    }
+
+    .lembar__rincian {
+      display: block;
+      font-weight: 300;
+      font-size: .78rem;
+      line-height: 1.5;
+      color: var(--hangat);
+      margin-top: .2rem;
+    }
+
+    .lembar__panah {
+      flex: 0 0 auto;
+      color: var(--daun);
+      margin-top: .55rem;
+      transition: transform .25s var(--ease);
+    }
+
+    .lembar__baris:hover .lembar__panah,
+    .lembar__baris:focus-visible .lembar__panah {
+      transform: translateY(2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .lembar,
+      .lembar__kotak,
+      .lembar__baris,
+      .lembar__panah,
+      .lembar__tutup {
+        transition: none;
+      }
+
+      .lembar__kotak {
+        transform: none;
+      }
+
+      .lembar__baris:hover .lembar__panah,
+      .lembar__baris:focus-visible .lembar__panah,
+      .lembar__tutup:active {
+        transform: none;
+      }
     }
 
     /* ================= KEGIATAN WARGA: CINCIN FOTO 3D ================= */
@@ -5034,6 +5297,28 @@
     </div>
   </div>
 
+  <!-- ================= BERKAS PANDUAN PROGRAM ================= -->
+  <div id="berkas" class="lembar" role="dialog" aria-modal="true" aria-labelledby="berkas-judul" hidden>
+    <button type="button" class="lembar__latar" data-berkas-tutup tabindex="-1" aria-hidden="true"></button>
+
+    <div class="lembar__kotak">
+      <div class="lembar__kepala">
+        <span class="chip chip-est !text-[.72rem]" data-berkas-bidang></span>
+        <h2 class="lembar__judul" id="berkas-judul" data-berkas-judul></h2>
+        <p class="lembar__catatan">Pilih berkas yang ingin diunduh.</p>
+
+        <button type="button" class="lembar__tutup" data-berkas-tutup aria-label="Tutup daftar berkas">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="lembar__daftar" data-berkas-daftar data-lenis-prevent></div>
+    </div>
+  </div>
+
   <!-- ================= E-KATALOG: LAYAR PRODUK ================= -->
   <div id="galeri-produk" class="galeri" role="dialog" aria-modal="true" aria-labelledby="produk-judul" hidden>
     <button type="button" class="galeri__latar" data-produk-tutup tabindex="-1" aria-hidden="true"></button>
@@ -5389,7 +5674,9 @@
     // Selama masih kosong, dipakai foto contoh seperti sebelumnya.
     let FOTO_PROGRAM = [];
     let FOTO_KEGIATAN = [];
-    let BERKAS_PROGRAM = [];
+    // satu program bisa membagikan lebih dari satu berkas panduan; tiap butir
+    // berbentuk {nama, berkas, rincian}
+    let LAMPIRAN_PROGRAM = [];
 
     /* ============ KONTEN DARI CMS ============ */
     /* Seluruh nilai di atas adalah CADANGAN BAWAAN. Bila berkas content/*.json
@@ -5438,7 +5725,21 @@
       PROGRAM = dt.map(x => [x.bidang, x.judul, x.deskripsi, x.panduan]);
       RINGKAS_PROGRAM = dt.map(x => x.ringkas || x.judul);
       FOTO_PROGRAM = dt.map(x => Array.isArray(x.foto) ? x.foto : []);
-      BERKAS_PROGRAM = dt.map(x => typeof x.berkas === 'string' ? x.berkas.trim() : '');
+      // bentuk lama (satu kolom 'berkas' berisi satu jalan berkas) masih dibaca,
+      // supaya isi CMS yang belum dipindah ke daftar lampiran tidak hilang
+      LAMPIRAN_PROGRAM = dt.map(x => {
+        const daftar = Array.isArray(x.lampiran) ? x.lampiran : [];
+        const bersih = daftar
+          .map(l => ({
+            nama: (l && typeof l.nama === 'string' ? l.nama : '').trim(),
+            berkas: (l && typeof l.berkas === 'string' ? l.berkas : '').trim(),
+            rincian: (l && typeof l.rincian === 'string' ? l.rincian : '').trim()
+          }))
+          .filter(l => l.berkas);
+        if (bersih.length) return bersih;
+        const tunggal = typeof x.berkas === 'string' ? x.berkas.trim() : '';
+        return tunggal ? [{ nama: x.panduan || '', berkas: tunggal, rincian: '' }] : [];
+      });
     }
     if (dt = daftar(KONTEN.kegiatan)) {
       KEGIATAN = dt.map(x => x.judul);
@@ -6046,6 +6347,96 @@
       return { daftar: DOKUMENTASI_KEGIATAN[i], nama, contoh: CONTOH_KEGIATAN[i] };
     });
 
+    /* ============ PANEL BERKAS PANDUAN ============ */
+    // Hanya dipakai program yang membagikan lebih dari satu berkas. Program
+    // dengan satu berkas tetap mengunduh langsung dari kartunya, tanpa panel.
+    function siapkanBerkas() {
+      const lembar = document.getElementById('berkas');
+      if (!lembar) return null;
+      const daftar = lembar.querySelector('[data-berkas-daftar]');
+      const hematGerak = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let pemicu = null, sedangTutup = false;
+
+      // dokumen dan gambar dibedakan supaya warga tahu mana yang berupa poster
+      const RUPA_PDF = 'M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7zM14 2v5h5M9 13h6M9 17h4';
+      const RUPA_GAMBAR = 'M3 5.5A1.5 1.5 0 0 1 4.5 4h15A1.5 1.5 0 0 1 21 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5zM3 16l5-4 4 3 3-2 6 5M9 9.5a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0';
+      const GAMBAR = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'avif'];
+
+      function jenis(jalan) {
+        const ext = (jalan.split('?')[0].split('.').pop() || '').toLowerCase();
+        if (ext === 'pdf') return { label: 'PDF', rupa: RUPA_PDF };
+        if (GAMBAR.includes(ext)) return { label: ext === 'jpeg' ? 'JPG' : ext.toUpperCase(), rupa: RUPA_GAMBAR };
+        return { label: ext ? ext.toUpperCase() : 'Berkas', rupa: RUPA_PDF };
+      }
+
+      function buka(i, dari) {
+        const berkas = LAMPIRAN_PROGRAM[i] || [];
+        if (!berkas.length) return;
+        const [bidang, judul] = PROGRAM[i];
+        pemicu = dari || null;
+
+        lembar.querySelector('[data-berkas-bidang]').textContent = bidang;
+        lembar.querySelector('[data-berkas-judul]').textContent = judul;
+
+        daftar.innerHTML = berkas.map(b => {
+          const j = jenis(b.berkas);
+          const nama = aman(b.nama || b.berkas.split('/').pop());
+          const rincian = [j.label, b.rincian].filter(Boolean).map(aman).join(' · ');
+          return `
+  <a class="lembar__baris" href="${aman(b.berkas)}" download>
+    <span class="lembar__rupa" aria-hidden="true">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${j.rupa}"/></svg>
+    </span>
+    <span class="lembar__teks">
+      <span class="lembar__nama">${nama}</span>
+      <span class="lembar__rincian">${rincian}</span>
+    </span>
+    <svg class="lembar__panah" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg>
+  </a>`;
+        }).join('');
+
+        lembar.hidden = false;
+        daftar.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        if (window.__lenis) window.__lenis.stop();
+        requestAnimationFrame(() => { lembar.dataset.buka = 'true'; });
+        lembar.querySelector('.lembar__tutup').focus();
+      }
+
+      function tutup() {
+        if (lembar.hidden || sedangTutup) return;
+        sedangTutup = true;
+        lembar.dataset.buka = 'false';
+        document.body.style.overflow = '';
+        if (window.__lenis) window.__lenis.start();
+        setTimeout(() => {
+          lembar.hidden = true;
+          daftar.innerHTML = '';
+          sedangTutup = false;
+        }, hematGerak ? 0 : 300);
+        if (pemicu) pemicu.focus();
+      }
+
+      lembar.querySelectorAll('[data-berkas-tutup]').forEach(t => t.addEventListener('click', tutup));
+
+      window.addEventListener('keydown', (e) => {
+        if (lembar.hidden) return;
+        if (e.key === 'Escape') { e.preventDefault(); tutup(); return; }
+        if (e.key !== 'Tab') return;
+        // kurung fokus di dalam panel: tautan unduh ikut dihitung, bukan tombol saja
+        const bisa = [...lembar.querySelectorAll('a[href], button:not([tabindex="-1"])')];
+        if (!bisa.length) return;
+        const awal = bisa[0], akhir = bisa[bisa.length - 1];
+        if (e.shiftKey && document.activeElement === awal) { e.preventDefault(); akhir.focus(); }
+        else if (!e.shiftKey && document.activeElement === akhir) { e.preventDefault(); awal.focus(); }
+      });
+
+      return { buka };
+    }
+    const BERKAS_PANEL = siapkanBerkas();
+
     /* ============ E-KATALOG: LAYAR PRODUK ============ */
     // foto etalase tiap usaha; selama pengelola belum mengunggah, dipakai
     // tujuh foto contoh yang sama, digeser urutannya
@@ -6158,7 +6549,8 @@
       'M20 12V8H6a2 2 0 0 1 0-4h12v4M4 6v12a2 2 0 0 0 2 2h14v-4M18 12a2 2 0 0 0 0 4h4v-4z',
       'M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10zM2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12',
       'M20.4 4.6a5.4 5.4 0 0 0-7.6 0l-.8.8-.8-.8a5.4 5.4 0 1 0-7.6 7.6l.8.8L12 21l7.6-8 .8-.8a5.4 5.4 0 0 0 0-7.6M3 12h4l1.5-3 3 6 1.5-3h4',
-      'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4'
+      'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4',
+      'M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.3l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15'
     ];
 
     function siapkanProgram() {
@@ -6180,6 +6572,45 @@
     </button>
   </div>`).join('');
 
+      // Baris paling bawah kartu punya tiga wujud, menurut jumlah berkas yang
+      // sudah dibagikan pengelola:
+      //   0 berkas -- tombol mati, keterangannya menyusul setelah program jalan
+      //   1 berkas -- tautan unduh langsung, bertuliskan nama berkasnya
+      //   >1       -- tombol pembuka panel, bertuliskan jumlah berkasnya. Nama
+      //               panduannya tidak diulang di sini: judul program sudah
+      //               tercetak persis di atas baris ini, dan terulang lagi di
+      //               kepala panel.
+      // Tinggi kartu dikunci dan deskripsinya sudah dipotong enam baris, jadi
+      // daftar berkas tidak bisa memuai di dalam kartu; ia dibuka di panel.
+      const PANAH_UNDUH = 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3';
+      const TUMPUK_BERKAS = 'M16 3H9a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6zM16 3v3h3M4 7v12a2 2 0 0 0 2 2h9';
+      const ikonUnduh = (jalan, warna) =>
+        `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="${warna}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${jalan}"/></svg>`;
+
+      function barisUnduh(i, unduh) {
+        const berkas = LAMPIRAN_PROGRAM[i] || [];
+        if (!berkas.length) {
+          return `<button type="button" class="pk__unduh" disabled
+        title="Berkas dibagikan setelah program selesai dilaksanakan">
+        ${ikonUnduh(PANAH_UNDUH, '#B9B0A0')}
+        <b>${unduh}</b>
+      </button>`;
+        }
+        if (berkas.length === 1) {
+          const nama = berkas[0].nama || unduh;
+          return `<a class="pk__unduh" href="${berkas[0].berkas}" download
+        aria-label="Unduh berkas: ${nama}">
+        ${ikonUnduh(PANAH_UNDUH, 'currentColor')}
+        <b>${nama}</b>
+      </a>`;
+        }
+        return `<button type="button" class="pk__unduh pk__unduh--banyak" data-berkas-buka="${i}"
+        aria-label="Lihat ${berkas.length} berkas panduan untuk program ini">
+        ${ikonUnduh(TUMPUK_BERKAS, 'currentColor')}
+        <b>${berkas.length} berkas panduan</b>
+      </button>`;
+      }
+
       dek.innerHTML = PROGRAM.map(([bidang, judul, desk, unduh], i) => `
   <article class="pk__kartu" data-i="${i}" aria-roledescription="slide"
     aria-label="Program ${i + 1} dari ${total}: ${judul}">
@@ -6195,19 +6626,7 @@
       <span class="chip chip-est self-start !text-[.72rem]">${bidang}</span>
       <h3 class="pk__judul">${judul}</h3>
       <p class="pk__desk">${desk}</p>
-      ${BERKAS_PROGRAM[i] ? `<a class="pk__unduh" href="${BERKAS_PROGRAM[i]}" download
-        aria-label="Unduh berkas: ${unduh}">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-        </svg>
-        <b>${unduh}</b>
-      </a>` : `<button type="button" class="pk__unduh" disabled
-        title="Berkas dibagikan setelah program selesai dilaksanakan">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B9B0A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-        </svg>
-        <b>${unduh}</b>
-      </button>`}
+      ${barisUnduh(i, unduh)}
     </div>
   </article>`).join('');
 
@@ -6267,9 +6686,10 @@
           else if (geser === 1) pos = 'kanan';
           k.dataset.posisi = pos;
           k.setAttribute('aria-hidden', pos === 'pusat' ? 'false' : 'true');
-          // tombol di kartu samping tidak boleh menangkap fokus keyboard:
-          // kartunya sendiri sudah jadi sasaran klik untuk pindah
-          k.querySelectorAll('button').forEach(t => { t.tabIndex = pos === 'pusat' ? 0 : -1; });
+          // tombol dan tautan di kartu samping tidak boleh menangkap fokus
+          // keyboard: kartunya sendiri sudah jadi sasaran klik untuk pindah,
+          // dan kartu itu ber-aria-hidden sehingga isinya tak boleh terfokus
+          k.querySelectorAll('button, a').forEach(t => { t.tabIndex = pos === 'pusat' ? 0 : -1; });
         });
 
         hitung.textContent = `${nomor(aktif + 1)} / ${nomor(total)}`;
@@ -6293,6 +6713,10 @@
 
       dek.querySelectorAll('[data-galeri-buka]').forEach(t => t.addEventListener('click', () => {
         if (GALERI) GALERI.buka(+t.dataset.galeriBuka, t);
+      }));
+
+      dek.querySelectorAll('[data-berkas-buka]').forEach(t => t.addEventListener('click', () => {
+        if (BERKAS_PANEL) BERKAS_PANEL.buka(+t.dataset.berkasBuka, t);
       }));
 
       // Klik kartu di belakang untuk pindah ke sana. Ditangkap di fase capture
@@ -7048,6 +7472,16 @@
     });
 
     /* ---------- menu turun bergeser + cuplikan foto berputar ---------- */
+    // Cincin foto pada menu "Program kerja" memakai satu foto sampul tiap
+    // program. Selama pengelola belum mengunggah dokumentasi apa pun, cincin
+    // jatuh kembali ke foto contoh -- sama seperti kartu dan galerinya.
+    const FOTO_MENU_PROGRAM = (() => {
+      const sampul = PROGRAM
+        .map((_, i) => adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i][0] : null)
+        .filter(Boolean);
+      return sampul.length ? sampul : FOTO_CONTOH;
+    })();
+
     /* Tab berbagi satu panel: yang berpindah hanya isinya, selalu masuk dari
        kanan ke kiri ke mana pun kursor bergerak. Tiap tautan langsung memilih
        kartu yang sesuai di bagian tujuan, jadi menu ini memotong jalan, bukan
@@ -7105,10 +7539,11 @@
         },
         program: {
           label: 'Program kerja',
-          judul: 'Delapan program KKN Unit 220',
+          judul: 'Sembilan program KKN Unit 220',
           semua: 'Lihat semua program', href: '#program',
-          ket: 'Cuplikan &middot; foto contoh',
-          foto: FOTO_CONTOH,
+          ket: FOTO_MENU_PROGRAM === FOTO_CONTOH
+            ? 'Cuplikan &middot; foto contoh' : 'Dokumentasi &middot; program kerja',
+          foto: FOTO_MENU_PROGRAM,
           butir: RINGKAS_PROGRAM.map((nama, i) => ({ nama, i }))
         },
         kegiatan: {

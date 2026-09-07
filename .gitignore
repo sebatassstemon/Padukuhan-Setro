@@ -29,3 +29,8 @@ _lama.html
 # berkas sumber di akar folder kerja; salinan yang dipakai situs
 # ada di assets/unggahan/ dengan nama yang layak dibaca pengunjung
 /PunyaJanz.pdf
+
+# materi mentah dari tiap anggota unit: PDF asli sebelum dikompres dan foto
+# HEIC yang tidak bisa ditampilkan peramban. 235 MB, tidak perlu ikut ke repo --
+# salinan siap pakainya sudah ada di assets/unggahan/
+/Materi Program Kerja/
