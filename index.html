@@ -4962,8 +4962,9 @@
           <p class="petak t-label reveal" data-isi="seksi.katalog.label">E-katalog</p>
           <h2 class="t-sec mt-5 reveal" data-isi="seksi.katalog.judul">Katalog produk warga</h2>
           <p class="t-body mt-5 reveal" data-isi="seksi.katalog.paragraf">
-            Ruang ini disiapkan untuk menampilkan produk UMKM Setro. Setiap kartu akan diisi
-            setelah pelaku usaha menyatakan bersedia ditampilkan dan foto produknya lengkap.
+            Tujuh usaha warga Setro, dari keripik pisang sampai bengkel kayu. Buka satu kartu
+            untuk melihat etalase fotonya. Nomor kontak menyusul setelah pelaku usaha
+            menyatakan bersedia ditampilkan.
           </p>
         </div>
       </div>
@@ -7542,6 +7543,14 @@
       return sampul.length ? sampul : FOTO_CONTOH;
     })();
 
+    // Cincin foto pada menu "E-katalog" memakai muka kartu tiap usaha, dengan
+    // cadangan yang sama seperti kartunya: foto contoh selama belum ada yang
+    // mengunggah muka kartu.
+    const FOTO_MENU_KATALOG = (() => {
+      const sampul = KATALOG.map(d => d.foto).filter(Boolean);
+      return sampul.length ? sampul : FOTO_CONTOH;
+    })();
+
     // Kegiatan warga tidak punya cadangan foto contoh: selama dokumentasinya
     // belum diunggah, lembar menunya tampil sebagai daftar selebar panel.
     const FOTO_MENU_KEGIATAN = KEGIATAN
@@ -7597,10 +7606,11 @@
         },
         katalog: {
           label: 'E-katalog',
-          judul: 'Tujuh belas usaha warga',
+          judul: 'Tujuh usaha warga',
           semua: 'Buka e-katalog', href: '#katalog',
-          ket: 'Cuplikan &middot; foto contoh',
-          foto: FOTO_CONTOH,
+          ket: FOTO_MENU_KATALOG === FOTO_CONTOH
+            ? 'Cuplikan &middot; foto contoh' : 'Cuplikan &middot; usaha warga',
+          foto: FOTO_MENU_KATALOG,
           butir: KATALOG.slice(0, 8).map((d, i) => ({ nama: d.judul, i }))
         },
         program: {

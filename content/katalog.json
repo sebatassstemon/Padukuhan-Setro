@@ -6,7 +6,7 @@
     "desk": "Rasakan kenikmatan saat memakan Keripik Pisang Ibu Sugi yang renyah.",
     "foto": "/assets/unggahan/IMG_5275.JPG",
     "kontak": "0882-3357-4403",
-    "jam": "",
+    "jam": "08.00–17.00 WIB, setiap hari",
     "lokasi": "Setro, Kulur, Kulon Progo",
     "galeri": [
       "/assets/unggahan/IMG_5281.JPG",
@@ -15,7 +15,9 @@
       "/assets/unggahan/IMG_5276.JPG",
       "/assets/unggahan/IMG_5269.JPG",
       "/assets/unggahan/IMG_5261.JPG",
-      "/assets/unggahan/IMG_5260.JPG"
+      "/assets/unggahan/IMG_5260.JPG",
+      "/assets/unggahan/umkm-keripik-pisang-01.jpg",
+      "/assets/unggahan/umkm-keripik-pisang-02.jpg"
     ]
   },
   {
@@ -25,7 +27,7 @@
     "desk": "Lebih Besar......\nLebih Segar......",
     "foto": "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.12.jpeg",
     "kontak": "0812-2847-3716",
-    "jam": "",
+    "jam": "09.00–21.00 WIB, setiap hari",
     "lokasi": "Pasar Cikli, Kulur, Kulon Progo",
     "galeri": [
       "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.12.jpeg",
@@ -35,22 +37,99 @@
   },
   {
     "judul": "Perajin Eceng Gondok",
-    "kategori": "Jasa",
+    "kategori": "Kerajinan",
     "sub": "",
     "desk": "Membuat kerajinan berbahan dasar eceng gondok",
-    "foto": "/assets/unggahan/IMG_5070.JPG",
-    "kontak": "",
-    "jam": "",
-    "lokasi": "Setro",
+    "foto": "/assets/unggahan/umkm-eceng-gondok-01.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "08.00–16.00 WIB, Senin–Sabtu",
+    "lokasi": "Padukuhan Setro, Kulur, Kulon Progo",
     "galeri": [
-      "/assets/unggahan/IMG_5068.JPG",
-      "/assets/unggahan/IMG_5067.JPG",
-      "/assets/unggahan/IMG_5071.JPG",
-      "/assets/unggahan/IMG_5069.JPG",
-      "/assets/unggahan/IMG_5063.JPG",
-      "/assets/unggahan/IMG_5062.JPG",
-      "/assets/unggahan/IMG_5055.JPG",
-      "/assets/unggahan/IMG_5059.JPG"
+      "/assets/unggahan/umkm-eceng-gondok-02.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-03.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-04.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-05.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-06.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-07.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-08.jpg",
+      "/assets/unggahan/umkm-eceng-gondok-09.jpg"
+    ]
+  },
+  {
+    "judul": "Perajin Buket Bunga",
+    "kategori": "Kerajinan",
+    "sub": "",
+    "desk": "Merangkai buket wisuda, buket uang, dan bunga flanel untuk hadiah. Bisa dipesan sesuai warna dan ukuran yang diminta.",
+    "foto": "/assets/unggahan/umkm-buket-bunga-01.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "09.00–20.00 WIB, setiap hari",
+    "lokasi": "Padukuhan Setro, Kulur, Kulon Progo",
+    "galeri": [
+      "/assets/unggahan/umkm-buket-bunga-02.jpg",
+      "/assets/unggahan/umkm-buket-bunga-03.jpg",
+      "/assets/unggahan/umkm-buket-bunga-04.jpg",
+      "/assets/unggahan/umkm-buket-bunga-05.jpg",
+      "/assets/unggahan/umkm-buket-bunga-06.jpg",
+      "/assets/unggahan/umkm-buket-bunga-07.jpg",
+      "/assets/unggahan/umkm-buket-bunga-08.jpg",
+      "/assets/unggahan/umkm-buket-bunga-09.jpg"
+    ]
+  },
+  {
+    "judul": "Furnitur Begja",
+    "kategori": "Mebel & Furnitur",
+    "sub": "",
+    "desk": "Bengkel kayu yang menggergaji kayu gelondongan sampai jadi kusen, pintu, dan perabot pesanan.",
+    "foto": "/assets/unggahan/umkm-furnitur-begja-01.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "07.30–16.30 WIB, Senin–Sabtu",
+    "lokasi": "Padukuhan Setro, Kulur, Kulon Progo",
+    "galeri": [
+      "/assets/unggahan/umkm-furnitur-begja-02.jpg",
+      "/assets/unggahan/umkm-furnitur-begja-03.jpg",
+      "/assets/unggahan/umkm-furnitur-begja-04.jpg",
+      "/assets/unggahan/umkm-furnitur-begja-05.jpg",
+      "/assets/unggahan/umkm-furnitur-begja-06.jpg"
+    ]
+  },
+  {
+    "judul": "Pemancingan Perabu",
+    "kategori": "Jasa Pemancingan",
+    "sub": "",
+    "desk": "Kolam pemancingan yang buka sampai malam, dengan lapak beratap dan lampu di sepanjang tepi kolam.",
+    "foto": "/assets/unggahan/umkm-pemancingan-perabu-01.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "15.00–23.00 WIB, setiap hari",
+    "lokasi": "Padukuhan Setro, Kulur, Kulon Progo",
+    "galeri": [
+      "/assets/unggahan/umkm-pemancingan-perabu-02.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-03.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-04.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-05.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-06.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-07.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-08.jpg",
+      "/assets/unggahan/umkm-pemancingan-perabu-09.jpg"
+    ]
+  },
+  {
+    "judul": "Pengepul Barang Daur Ulang",
+    "kategori": "Pengepul & Daur Ulang",
+    "sub": "",
+    "desk": "Menampung botol plastik, kardus, dan barang rongsok dari warga, lalu menimbang dan menyalurkannya kembali.",
+    "foto": "/assets/unggahan/umkm-daur-ulang-01.jpg",
+    "kontak": "0812-XXXX-XXXX",
+    "jam": "08.00–17.00 WIB, Senin–Sabtu",
+    "lokasi": "Padukuhan Setro, Kulur, Kulon Progo",
+    "galeri": [
+      "/assets/unggahan/umkm-daur-ulang-02.jpg",
+      "/assets/unggahan/umkm-daur-ulang-03.jpg",
+      "/assets/unggahan/umkm-daur-ulang-04.jpg",
+      "/assets/unggahan/umkm-daur-ulang-05.jpg",
+      "/assets/unggahan/umkm-daur-ulang-06.jpg",
+      "/assets/unggahan/umkm-daur-ulang-07.jpg",
+      "/assets/unggahan/umkm-daur-ulang-08.jpg",
+      "/assets/unggahan/umkm-daur-ulang-09.jpg"
     ]
   }
 ]

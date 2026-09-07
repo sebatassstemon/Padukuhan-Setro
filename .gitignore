@@ -34,3 +34,8 @@ _lama.html
 # HEIC yang tidak bisa ditampilkan peramban. 235 MB, tidak perlu ikut ke repo --
 # salinan siap pakainya sudah ada di assets/unggahan/
 /Materi Program Kerja/
+
+# foto mentah UMKM dari observasi: 215 MB, sebagian HEIC yang tidak bisa
+# ditampilkan peramban. Salinan siap pakainya ada di assets/unggahan/
+# dengan nama umkm-*.jpg
+/UMKM/
