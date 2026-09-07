@@ -3013,6 +3013,10 @@
       font-size: 1rem;
       line-height: 1.34;
       letter-spacing: -.012em;
+      /* nama kegiatan panjang dan kotaknya sempit; tanpa ini baris terakhir
+         kerap tersisa satu kata dan nama bertanda hubung seperti "Al-Huda"
+         terbelah di tengah */
+      text-wrap: balance;
     }
 
     .cincin__tanda {
@@ -3023,6 +3027,40 @@
       letter-spacing: .16em;
       text-transform: uppercase;
       color: var(--padilembut);
+    }
+
+    /* Kegiatan yang dokumentasinya belum diunggah. Kepingnya tidak memakai foto
+       pinjaman -- agendanya nyata, jadi foto milik kegiatan lain akan
+       menyesatkan. Bentuk, ukuran, dan letak judulnya sama persis dengan keping
+       berfoto, jadi cincin tetap satu irama begitu sebagian kegiatan terisi. */
+    .cincin__kartu--nanti {
+      background: linear-gradient(158deg, var(--sawah) 0%, var(--pekat) 76%);
+    }
+
+    .cincin__kartu--nanti .cincin__tanda {
+      color: rgba(255, 255, 255, .44);
+    }
+
+    /* Isinya dipusatkan tegak, tidak ditumpuk di kaki keping seperti judul di
+       atas foto: tanpa foto, judul di kaki menyisakan bidang kosong sepertiga
+       keping di atasnya yang terbaca sebagai gambar gagal muat. */
+    .cincin__papan {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.15rem 1.25rem;
+      color: #fff;
+    }
+
+    /* petak amber yang sama dengan label seksi di atasnya */
+    .cincin__tera {
+      width: 11px;
+      height: 11px;
+      margin-bottom: .95rem;
+      background: var(--padi);
     }
 
     /* hemat gerak: cincin diratakan jadi petak biasa, tanpa putaran */
@@ -3050,8 +3088,14 @@
         margin-inline: auto;
       }
 
+      /* relative, bukan static: isi keping (pemicu foto atau papan nama) diletak
+         dengan inset:0, jadi tanpa poros di sini semuanya jatuh ke
+         .cincin__bingkai dan sepuluh keping menumpuk di satu titik. 'inset:auto'
+         wajib menyertainya: left/top:50% dari cincin 3D tidak diabaikan lagi
+         begitu keping punya posisi, dan tiap petak melar setengah kotaknya. */
       .cincin__kartu {
-        position: static;
+        position: relative;
+        inset: auto;
         width: auto;
         height: 270px;
         margin: 0;
@@ -4188,8 +4232,15 @@
 
     /* --- cuplikan foto: cincin yang berputar selama menu terbuka --- */
     /* menu tanpa cuplikan foto: indeks bagian, satu kolom penuh */
-    .tm__lembar--indeks {
+    .tm__lembar--indeks,
+    .tm__lembar--tanpafoto {
       grid-template-columns: 1fr;
+    }
+
+    /* daftar selebar panel: tiga kolom supaya namanya tidak berjauhan dari
+       nama di sebelahnya, bukan dua kolom yang direntangkan */
+    .tm__lembar--tanpafoto .tm__kisi {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .tm__daftar {
@@ -5222,7 +5273,6 @@
       <div class="galeri__kepala">
         <span class="chip chip-est !text-[.72rem]">Kegiatan warga</span>
         <h2 class="galeri__judul" id="kegiatan-judul" data-kegiatan-judul></h2>
-        <p class="galeri__catatan">Foto contoh. Dokumentasi asli dipasang setelah kegiatan berlangsung.</p>
       </div>
 
       <div class="korsel">
@@ -5468,19 +5518,15 @@
       ['Hukum &amp; Kemasyarakatan', 'Sosialisasi Perlindungan Data Pribadi &amp; Mitigasi Scamming', 'Sosialisasi interaktif bagi siswa sekolah dasar dan karang taruna mengenai perlindungan data pribadi, pengenalan modus penipuan daring, serta dasar hukum UU Perlindungan Data Pribadi.', 'Poster Anti-Scam &amp; Materi UU PDP']
     ];
 
-    // Judul kegiatan; enam pertama dari pendataan, sisanya sementara sampai
-    // pengelola dusun mengganti dengan agenda yang benar-benar berjalan.
+    // Sepuluh agenda yang benar-benar berjalan di Setro. Fotonya belum ada:
+    // pengelola dusun mengunggahnya sendiri lewat /admin, per kegiatan.
     let KEGIATAN = [
-      'Kerja Bakti Bersih Lingkungan', 'Posyandu Balita dan Lansia',
-      'Pengajian Rutin Ibu-Ibu', 'Panen Raya Padi',
-      'Pelatihan UMKM bersama KKN UII', 'Rapat Koordinasi Warga',
-      'Ronda Malam Bergilir', 'Pertemuan Rutin PKK Dusun',
-      'Latihan Karang Taruna', 'Perawatan Saluran Irigasi',
-      'Penyuluhan Pertanian Padi', 'Senam Sehat Lansia',
-      'Kerja Bakti Perbaikan Jalan Dusun', 'Pengelolaan PAMSIMAS Dusun',
-      'Anyaman Eceng Gondok Bersama', 'Peringatan Hari Kemerdekaan',
-      'Bersih Makam Menjelang Ruwahan', 'Pembagian Pakan Ternak Bersama',
-      'Tadarus dan Buka Bersama', 'Musyawarah Rencana Pembangunan Dusun'
+      'Malam Tirakatan Hari Kemerdekaan', 'Pengajian Yasin dan Tahlil Rutin',
+      'Lomba Peringatan Hari Kemerdekaan RI', 'Kerja Bakti Lingkungan Posyandu',
+      'Kerja Bakti Pemeliharaan Makam Sanon',
+      'Upacara Peringatan Hari Kemerdekaan di Makam Sanon',
+      'Pertemuan Rutin Karang Taruna', 'Senam Pagi Bersama Ibu-Ibu PKK Bojong',
+      'Peringatan Maulid Nabi Muhammad SAW', 'Revitalisasi Musala Al-Huda'
     ];
 
     let MITRA = [
@@ -5654,10 +5700,10 @@
       'Skrining asam urat', 'Data pribadi &amp; scam'
     ];
     let RINGKAS_KEGIATAN = [
-      'Kerja bakti lingkungan', 'Posyandu balita &amp; lansia',
-      'Pengajian rutin ibu-ibu', 'Panen raya padi',
-      'Pelatihan UMKM', 'Rapat koordinasi warga',
-      'Ronda malam bergilir', 'Pertemuan PKK dusun'
+      'Malam tirakatan', 'Yasinan rutin warga',
+      'Lomba kemerdekaan', 'Kerja bakti posyandu',
+      'Kerja bakti Makam Sanon', 'Upacara kemerdekaan',
+      'Pertemuan karang taruna', 'Senam pagi PKK Bojong'
     ];
     let RINGKAS_MITRA = [
       'Hama &amp; penyakit', 'Akses pupuk', 'Irigasi &amp; saluran',
@@ -6142,8 +6188,9 @@
 
     /* ============ GALERI DOKUMENTASI: KARTU MENGIPAS ============ */
     // Foto contoh dipakai selama pengelola belum mengunggah dokumentasi asli
-    // lewat /admin. Begitu foto asli terisi, penanda "Foto contoh" pada kartu,
-    // cincin, dan galeri ikut hilang dengan sendirinya.
+    // lewat /admin. Begitu foto asli terisi, penanda "Foto contoh" pada kartu
+    // dan galeri ikut hilang dengan sendirinya. Kegiatan warga dikecualikan:
+    // lihat DOKUMENTASI_KEGIATAN di bawah.
     const FOTO_CONTOH = [1, 2, 3, 4, 5, 6, 7]
       .map(n => `foto%20produk%20dummy/produk%20dummy%20${n}.jpg`);
     const adaFoto = (d) => Array.isArray(d) && d.length > 0;
@@ -6152,9 +6199,12 @@
     const DOKUMENTASI = PROGRAM.map((_, i) =>
       adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i] : contohDigeser(i));
     const CONTOH_PROGRAM = PROGRAM.map((_, i) => !adaFoto(FOTO_PROGRAM[i]));
+    // Kegiatan warga sengaja TIDAK memakai foto contoh: agendanya nyata, jadi
+    // foto orang lain di sana akan menyesatkan. Selama kosong, kepingnya tampil
+    // sebagai bidang hijau bernama kegiatan, dan galerinya tidak bisa dibuka.
     const DOKUMENTASI_KEGIATAN = KEGIATAN.map((_, i) =>
-      adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i] : contohDigeser(i));
-    const CONTOH_KEGIATAN = KEGIATAN.map((_, i) => !adaFoto(FOTO_KEGIATAN[i]));
+      adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i] : []);
+    const NANTI_KEGIATAN = KEGIATAN.map((_, i) => !adaFoto(FOTO_KEGIATAN[i]));
 
     /* ============ GALERI FOTO: KORSEL COVERFLOW ============ */
     // Satu korsel melayani dua galeri — dokumentasi program kerja dan kegiatan
@@ -6344,7 +6394,7 @@
     const GALERI_KEGIATAN = siapkanKorsel('galeri-kegiatan', (i) => {
       const nama = KEGIATAN[i];
       document.querySelector('[data-kegiatan-judul]').textContent = nama;
-      return { daftar: DOKUMENTASI_KEGIATAN[i], nama, contoh: CONTOH_KEGIATAN[i] };
+      return { daftar: DOKUMENTASI_KEGIATAN[i], nama, contoh: false };
     });
 
     /* ============ PANEL BERKAS PANDUAN ============ */
@@ -6848,20 +6898,29 @@
       const total = KEGIATAN.length;
       const sudutItem = 360 / total;
 
-      panggung.innerHTML = KEGIATAN.map((nama, i) => `
-  <li class="cincin__kartu" style="--sudut:${(i * sudutItem).toFixed(2)}deg">
-    <button type="button" class="cincin__pemicu" data-kegiatan="${i}"
-      aria-label="Buka galeri dokumentasi: ${nama}">
-      <img class="cincin__foto" src="${DOKUMENTASI_KEGIATAN[i][0]}" loading="lazy" decoding="async" alt="">
-      <span class="cincin__tirai"></span>
-      <span class="cincin__petunjuk"><em>Buka Galeri
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5l7 7-7 7m7-7H3"/></svg>
-      </em></span>
-      <span class="cincin__isi">
+      // Dua bentuk keping: yang fotonya sudah diunggah bisa ditekan untuk
+      // membuka galeri, yang belum hanya papan nama kegiatan -- bukan tombol,
+      // supaya tidak menjanjikan galeri yang isinya kosong.
+      const keping = (nama, i) => NANTI_KEGIATAN[i] ? `
+      <span class="cincin__papan">
+        <i class="cincin__tera" aria-hidden="true"></i>
         <span class="cincin__judul">${nama}</span>
-        ${CONTOH_KEGIATAN[i] ? '<span class="cincin__tanda">Foto contoh</span>' : ''}
-      </span>
-    </button>
+        <span class="cincin__tanda">Dokumentasi menyusul</span>
+      </span>` : `
+      <button type="button" class="cincin__pemicu" data-kegiatan="${i}"
+        aria-label="Buka galeri dokumentasi: ${nama}">
+        <img class="cincin__foto" src="${DOKUMENTASI_KEGIATAN[i][0]}" loading="lazy" decoding="async" alt="">
+        <span class="cincin__tirai"></span>
+        <span class="cincin__petunjuk"><em>Buka Galeri
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5l7 7-7 7m7-7H3"/></svg>
+        </em></span>
+        <span class="cincin__isi">
+          <span class="cincin__judul">${nama}</span>
+        </span>
+      </button>`;
+
+      panggung.innerHTML = KEGIATAN.map((nama, i) => `
+  <li class="cincin__kartu${NANTI_KEGIATAN[i] ? ' cincin__kartu--nanti' : ''}" style="--sudut:${(i * sudutItem).toFixed(2)}deg">${keping(nama, i)}
   </li>`).join('');
 
       panggung.querySelectorAll('[data-kegiatan]').forEach(t => t.addEventListener('click', () => {
@@ -7482,6 +7541,12 @@
       return sampul.length ? sampul : FOTO_CONTOH;
     })();
 
+    // Kegiatan warga tidak punya cadangan foto contoh: selama dokumentasinya
+    // belum diunggah, lembar menunya tampil sebagai daftar selebar panel.
+    const FOTO_MENU_KEGIATAN = KEGIATAN
+      .map((_, i) => adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i][0] : null)
+      .filter(Boolean);
+
     /* Tab berbagi satu panel: yang berpindah hanya isinya, selalu masuk dari
        kanan ke kiri ke mana pun kursor bergerak. Tiap tautan langsung memilih
        kartu yang sesuai di bagian tujuan, jadi menu ini memotong jalan, bukan
@@ -7548,10 +7613,10 @@
         },
         kegiatan: {
           label: 'Kegiatan warga',
-          judul: 'Dua puluh agenda warga',
+          judul: 'Sepuluh agenda warga',
           semua: 'Lihat semua kegiatan', href: '#kegiatan',
-          ket: 'Dokumentasi &middot; foto contoh',
-          foto: FOTO_CONTOH,
+          ket: 'Dokumentasi &middot; kegiatan warga',
+          foto: FOTO_MENU_KEGIATAN,
           butir: RINGKAS_KEGIATAN.map((nama, i) => ({ nama, i }))
         },
         kemitraan: {
@@ -7603,11 +7668,23 @@
     </div>
   </div>`;
 
-      // bentuk galeri: daftar dua kolom + cincin foto yang berputar
+      // bentuk galeri: daftar dua kolom + cincin foto yang berputar. Cincin
+      // baru masuk akal mulai tiga keping -- di bawah itu jari-jarinya
+      // meledak -- jadi menu yang fotonya belum diunggah memakai daftarnya
+      // saja selebar panel, bukan keping kosong atau foto pinjaman.
       const lembarGaleri = (k, m) => {
         const n = m.foto.length;
+        const kanan = n < 3 ? '' : `
+    <div class="tm__kanan">
+      <div class="tm__cincin" style="--sudut:${(360 / n).toFixed(3)}deg; --jari:${jariJari(n)}px">
+        <div class="tm__orbit">
+          ${m.foto.map((f, i) => `<span class="tm__keping" style="--i:${i}"><img src="${f}" alt="" loading="lazy" decoding="async"></span>`).join('')}
+        </div>
+      </div>
+      <p class="tm__ket">${m.ket}</p>
+    </div>`;
         return `
-  <div class="tm__lembar" data-lembar="${k}">
+  <div class="tm__lembar${kanan ? '' : ' tm__lembar--tanpafoto'}" data-lembar="${k}">
     <div class="tm__kiri">
       <p class="tm__label">${m.label}</p>
       <p class="tm__judul">${m.judul}</p>
@@ -7618,15 +7695,7 @@
           ${b.angka ? `<b class="tm__angka">${b.angka}</b>` : ''}
         </a>`).join('')}
       </div>${kaki(m)}
-    </div>
-    <div class="tm__kanan">
-      <div class="tm__cincin" style="--sudut:${(360 / n).toFixed(3)}deg; --jari:${jariJari(n)}px">
-        <div class="tm__orbit">
-          ${m.foto.map((f, i) => `<span class="tm__keping" style="--i:${i}"><img src="${f}" alt="" loading="lazy" decoding="async"></span>`).join('')}
-        </div>
-      </div>
-      <p class="tm__ket">${m.ket}</p>
-    </div>
+    </div>${kanan}
   </div>`;
       };
 

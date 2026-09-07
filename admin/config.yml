@@ -809,7 +809,7 @@ collections:
                 collapsed: true
                 field: { label: Foto, name: foto, widget: image }
                 hint: >-
-                  Foto yang tampil saat pengunjung menekan "Buka Galeri" pada kegiatan ini. Foto pertama juga dipakai sebagai gambar keping di cincin berputar. Selama masih kosong, situs memakai foto contoh dan memberi tanda "Foto contoh".
+                  Foto yang tampil saat pengunjung menekan "Buka Galeri" pada kegiatan ini. Foto pertama juga dipakai sebagai gambar keping di cincin berputar. Selama masih kosong, kepingnya tampil sebagai papan hijau bertuliskan nama kegiatan dan tanda "Dokumentasi menyusul" -- tanpa foto contoh -- dan galerinya belum bisa dibuka.
 
   # ===================================================================
   # 7. PELUANG KEMITRAAN
