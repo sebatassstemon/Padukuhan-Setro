@@ -190,20 +190,44 @@
     "berkas": ""
   },
   {
-    "bidang": "Hukum & Kemasyarakatan",
-    "judul": "Sosialisasi Perlindungan Data Pribadi & Mitigasi Scamming",
-    "deskripsi": "Lewat permainan kartu dan simulasi chat dari akun yang mengaku admin game, siswa kelas 4–6 mengenali tanda penipuan daring: permintaan kata sandi, kode OTP, tautan mencurigakan, dan ajakan menyimpan rahasia dari orang tua.",
-    "panduan": "Materi Misi Anti-Scam",
+    "bidang": "Hukum & Perlindungan Anak",
+    "judul": "Sosialisasi Perlindungan Diri dan Data Pribadi Siswa SD",
+    "deskripsi": "Siswa kelas 1–3 SD Negeri dan SD Muhammadiyah Kulur mengenali batas tubuh pribadinya lewat tiga langkah TIDAK, PERGI, CERITA; kelas 4–6 membedah simulasi chat penipuan daring beserta tujuh tanda bahayanya.",
+    "panduan": "Panduan Tubuhku Milikku & Misi Anti-Scam",
     "lampiran": [
+      {
+        "nama": "Panduan tubuhku milikku untuk siswa kelas 1–3",
+        "berkas": "/assets/unggahan/panduan-tubuhku-milikku.pdf",
+        "rincian": "15 halaman · 2,5 MB"
+      },
       {
         "nama": "Misi anti-scam: mengenali modus penipuan daring",
         "berkas": "/assets/unggahan/misi-anti-scam.pdf",
         "rincian": "12 halaman · 2,0 MB"
       }
     ],
-    "ringkas": "Data pribadi & scam",
+    "ringkas": "Perlindungan siswa SD",
     "foto": [
+      "/assets/unggahan/dok-tubuhku-milikku-01.jpg",
       "/assets/unggahan/dok-data-pribadi-01.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-02.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-03.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-04.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-05.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-06.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-07.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-08.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-09.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-10.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-11.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-12.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-13.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-14.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-15.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-16.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-17.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-18.jpg",
+      "/assets/unggahan/dok-tubuhku-milikku-19.jpg",
       "/assets/unggahan/dok-data-pribadi-02.jpg",
       "/assets/unggahan/dok-data-pribadi-03.jpg",
       "/assets/unggahan/dok-data-pribadi-04.jpg",
@@ -222,38 +246,26 @@
     "berkas": ""
   },
   {
-    "bidang": "Perlindungan Anak",
-    "judul": "Sosialisasi Perlindungan Diri bagi Siswa Kelas 1–3",
-    "deskripsi": "Siswa kelas 1–3 mengenali batas tubuh pribadinya lewat permainan Lampu Sentuhan, membedakan rahasia baik dari rahasia buruk, lalu memperagakan tiga langkah: TIDAK, PERGI, CERITA.",
-    "panduan": "Panduan Tubuhku Milikku",
+    "bidang": "Statistika & Data Wilayah",
+    "judul": "Pemetaan Potensi Padukuhan Setro Berbasis Sensus Warga",
+    "deskripsi": "Sensus dari rumah ke rumah di tujuh RT mendata 164 jiwa beserta lahan, ternak, dan usaha keluarga. Hasil tabulasinya menjadi buku data profil sekaligus mengisi angka dan grafik di halaman website ini.",
+    "panduan": "Buku Data Profil dan Potensi Padukuhan Setro",
     "lampiran": [
       {
-        "nama": "Panduan tubuhku milikku untuk siswa kelas 1–3",
-        "berkas": "/assets/unggahan/panduan-tubuhku-milikku.pdf",
-        "rincian": "15 halaman · 2,5 MB"
+        "nama": "Buku data profil dan potensi Padukuhan Setro",
+        "berkas": "/assets/unggahan/buku-data-profil-potensi-setro.pdf",
+        "rincian": "15 halaman · 1,1 MB"
       }
     ],
-    "ringkas": "Tubuhku milikku",
+    "ringkas": "Sensus warga Setro",
     "foto": [
-      "/assets/unggahan/dok-tubuhku-milikku-01.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-02.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-03.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-04.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-05.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-06.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-07.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-08.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-09.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-10.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-11.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-12.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-13.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-14.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-15.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-16.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-17.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-18.jpg",
-      "/assets/unggahan/dok-tubuhku-milikku-19.jpg"
+      "/assets/unggahan/dok-sensus-warga-01.jpg",
+      "/assets/unggahan/dok-sensus-warga-02.jpg",
+      "/assets/unggahan/dok-sensus-warga-03.jpg",
+      "/assets/unggahan/dok-sensus-warga-04.jpg",
+      "/assets/unggahan/dok-sensus-warga-05.jpg",
+      "/assets/unggahan/dok-sensus-warga-06.jpg",
+      "/assets/unggahan/dok-sensus-warga-07.jpg"
     ],
     "berkas": ""
   }
