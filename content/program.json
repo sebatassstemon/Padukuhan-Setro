@@ -13,11 +13,12 @@
     ],
     "ringkas": "Pembukuan UMKM",
     "foto": [
+      "/assets/unggahan/dok-pembukuan-umkm-03.jpg",
       "/assets/unggahan/dok-pembukuan-umkm-01.jpg",
       "/assets/unggahan/dok-pembukuan-umkm-02.jpg",
-      "/assets/unggahan/dok-pembukuan-umkm-03.jpg",
       "/assets/unggahan/dok-pembukuan-umkm-04.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Pemberdayaan Masyarakat",
@@ -40,7 +41,8 @@
       "/assets/unggahan/dok-majalah-profil-05.jpg",
       "/assets/unggahan/dok-majalah-profil-06.jpg",
       "/assets/unggahan/dok-majalah-profil-07.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Pendidikan Bahasa Asing",
@@ -49,30 +51,45 @@
     "panduan": "Modul Bahasa Inggris Dasar",
     "lampiran": [
       {
-        "nama": "Modul bahasa Inggris dasar, 10 unit setara A1–A2",
+        "nama": "Modul bahasa Inggris dasar",
         "berkas": "/assets/unggahan/modul-bahasa-inggris-dasar.pdf",
         "rincian": "59 halaman · 1,5 MB"
       }
     ],
     "ringkas": "Bahasa Inggris anak",
     "foto": [
+      "/assets/unggahan/dok-bahasa-inggris-03.jpg",
+      "/assets/unggahan/dok-bahasa-inggris-05.jpg",
       "/assets/unggahan/dok-bahasa-inggris-01.jpg",
       "/assets/unggahan/dok-bahasa-inggris-02.jpg",
-      "/assets/unggahan/dok-bahasa-inggris-03.jpg",
       "/assets/unggahan/dok-bahasa-inggris-04.jpg",
-      "/assets/unggahan/dok-bahasa-inggris-05.jpg",
       "/assets/unggahan/dok-bahasa-inggris-06.jpg",
       "/assets/unggahan/dok-bahasa-inggris-07.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Hukum",
     "judul": "Akselerasi Kesiapan Warga dalam PTSL Susulan",
-    "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara mandiri, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
+    "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara sistematik dan sporadik, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
     "panduan": "Panduan Pendaftaran & Konversi Tanah",
-    "lampiran": [],
+    "lampiran": [
+      {
+        "nama": "Panduan Pendaftaran Tanah",
+        "berkas": "/assets/unggahan/Mekanisme Pendaftaran dan Konversi Tanah.pdf",
+        "rincian": ""
+      }
+    ],
     "ringkas": "Kesiapan PTSL",
-    "foto": []
+    "foto": [
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (2).jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 14.21.27.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 14.41.13.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 14.35.29.jpeg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (1).jpeg"
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Manajemen Keuangan",
@@ -91,8 +108,10 @@
       "/assets/unggahan/dok-keuangan-keluarga-01.jpg",
       "/assets/unggahan/dok-keuangan-keluarga-02.jpg",
       "/assets/unggahan/dok-keuangan-keluarga-03.jpg",
-      "/assets/unggahan/dok-keuangan-keluarga-04.jpg"
-    ]
+      "/assets/unggahan/dok-keuangan-keluarga-04.jpg",
+      "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (1).jpeg"
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Lingkungan Hidup",
@@ -113,6 +132,7 @@
     ],
     "ringkas": "Komposter galon",
     "foto": [
+      "/assets/unggahan/dok-komposter-galon-15.jpg",
       "/assets/unggahan/dok-komposter-galon-01.jpg",
       "/assets/unggahan/dok-komposter-galon-02.jpg",
       "/assets/unggahan/dok-komposter-galon-03.jpg",
@@ -127,14 +147,14 @@
       "/assets/unggahan/dok-komposter-galon-12.jpg",
       "/assets/unggahan/dok-komposter-galon-13.jpg",
       "/assets/unggahan/dok-komposter-galon-14.jpg",
-      "/assets/unggahan/dok-komposter-galon-15.jpg",
       "/assets/unggahan/dok-komposter-galon-16.jpg",
       "/assets/unggahan/dok-komposter-galon-17.jpg",
       "/assets/unggahan/dok-komposter-galon-18.jpg",
       "/assets/unggahan/dok-komposter-galon-19.jpg",
       "/assets/unggahan/dok-komposter-galon-20.jpg",
       "/assets/unggahan/dok-komposter-galon-21.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Kesehatan Masyarakat & Gizi",
@@ -166,7 +186,8 @@
       "/assets/unggahan/dok-asam-urat-09.jpg",
       "/assets/unggahan/dok-asam-urat-10.jpg",
       "/assets/unggahan/dok-asam-urat-11.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Hukum & Kemasyarakatan",
@@ -197,7 +218,8 @@
       "/assets/unggahan/dok-data-pribadi-13.jpg",
       "/assets/unggahan/dok-data-pribadi-14.jpg",
       "/assets/unggahan/dok-data-pribadi-15.jpg"
-    ]
+    ],
+    "berkas": ""
   },
   {
     "bidang": "Perlindungan Anak",
@@ -232,6 +254,7 @@
       "/assets/unggahan/dok-tubuhku-milikku-17.jpg",
       "/assets/unggahan/dok-tubuhku-milikku-18.jpg",
       "/assets/unggahan/dok-tubuhku-milikku-19.jpg"
-    ]
+    ],
+    "berkas": ""
   }
 ]
