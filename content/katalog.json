@@ -1,61 +1,12 @@
 [
   {
-    "judul": "Keripik Pisang Bu Sugi",
-    "kategori": "Olahan Pangan",
-    "sub": "",
-    "desk": "Rasakan kenikmatan saat memakan Keripik Pisang Ibu Sugi yang renyah.",
-    "foto": "/assets/unggahan/IMG_5275.JPG",
-    "kontak": "0882-3357-4403",
-    "jam": "",
-    "lokasi": "Setro, Kulur, Kulon Progo",
-    "galeri": [
-      "/assets/unggahan/IMG_5281.JPG",
-      "/assets/unggahan/IMG_5280.JPG",
-      "/assets/unggahan/IMG_5279.JPG",
-      "/assets/unggahan/IMG_5276.JPG",
-      "/assets/unggahan/IMG_5269.JPG",
-      "/assets/unggahan/IMG_5261.JPG",
-      "/assets/unggahan/IMG_5260.JPG"
-    ]
-  },
-  {
     "judul": "Es Teh Saudagar",
-    "kategori": "Makanan & Minuman (F&B)",
+    "kategori": "Makanan & Minuman",
     "sub": "",
-    "desk": "Lebih Besar......\nLebih Segar......",
-    "foto": "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.12.jpeg",
-    "kontak": "0812-2847-3716",
+    "desk": "Es Teh Saudagar",
+    "foto": "",
+    "kontak": "",
     "jam": "",
-    "lokasi": "Pasar Cikli, Kulur, Kulon Progo",
-    "galeri": [
-      "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.12.jpeg",
-      "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.11.jpeg",
-      "/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.11 (1).jpeg"
-    ]
-  },
-  {
-    "judul": "Perajin Eceng Gondok",
-    "kategori": "Jasa",
-    "sub": "",
-    "desk": "Membuat kerajinan berbahan dasar eceng gondok",
-    "foto": "/assets/unggahan/IMG_5070.JPG",
-    "kontak": "0812-xxxx-xxxx",
-    "jam": "",
-    "lokasi": "Setro",
-    "galeri": [
-      "/assets/unggahan/IMG_5055.JPG",
-      "/assets/unggahan/IMG_5056.JPG",
-      "/assets/unggahan/IMG_5059.JPG",
-      "/assets/unggahan/IMG_5060.JPG",
-      "/assets/unggahan/IMG_5062.JPG",
-      "/assets/unggahan/IMG_5063.JPG",
-      "/assets/unggahan/IMG_5064.JPG",
-      "/assets/unggahan/IMG_5065.JPG",
-      "/assets/unggahan/IMG_5067.JPG",
-      "/assets/unggahan/IMG_5068.JPG",
-      "/assets/unggahan/IMG_5069.JPG",
-      "/assets/unggahan/IMG_5070.JPG",
-      "/assets/unggahan/IMG_5071.JPG"
-    ]
+    "lokasi": ""
   }
 ]
