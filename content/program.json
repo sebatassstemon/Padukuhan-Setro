@@ -71,9 +71,15 @@
   {
     "bidang": "Hukum",
     "judul": "Akselerasi Kesiapan Warga dalam PTSL Susulan",
-    "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara mandiri, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
+    "deskripsi": "Penyuluhan mengenai mekanisme pendaftaran dan konversi tanah secara sistematik dan sporadik, hak dan kewajiban pemegang hak milik atas tanah, serta kewajiban PBB, dilengkapi sesi konsultasi hukum bagi warga.",
     "panduan": "Panduan Pendaftaran & Konversi Tanah",
-    "lampiran": [],
+    "lampiran": [
+      {
+        "nama": "Panduan Pendaftaran Tanah",
+        "berkas": "/assets/unggahan/Mekanisme Pendaftaran dan Konversi Tanah.pdf",
+        "rincian": ""
+      }
+    ],
     "ringkas": "Kesiapan PTSL",
     "foto": [
       "/assets/unggahan/WhatsApp Image 2026-09-07 at 12.46.11 (2).jpeg",
