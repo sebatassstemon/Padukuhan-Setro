@@ -3264,11 +3264,15 @@
       outline-offset: 3px;
     }
 
-    /* titik halaman duduk di bawah korsel, rupanya sama dengan galeri lain */
+    /* titik halaman duduk di bawah korsel, rupanya sama dengan galeri lain.
+       Titiknya berukuran mati, jadi barisnya HARUS boleh patah: satu kegiatan
+       bisa punya tiga puluh foto lebih, dan di layar HP deretan sepanjang itu
+       terpotong di kedua tepi kalau dipaksa satu baris. */
     .korsel__titik {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       gap: .45rem;
       width: auto;
     }
