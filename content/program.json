@@ -33,7 +33,9 @@
       }
     ],
     "ringkas": "Majalah profil dusun",
-    "foto": [],
+    "foto": [
+      "/assets/unggahan/sensus.png"
+    ],
     "berkas": ""
   },
   {
