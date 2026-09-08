@@ -40,7 +40,9 @@
   {
     "judul": "Pengajian Yasin dan Tahlil Rutin",
     "ringkas": "Yasinan rutin warga",
-    "foto": []
+    "foto": [
+      "/assets/unggahan/yasinan.png"
+    ]
   },
   {
     "judul": "Lomba Peringatan Hari Kemerdekaan RI",
@@ -66,20 +68,7 @@
   },
   {
     "judul": "Pelayanan Kesehatan Posyandu Padukuhan Setro",
-    "ringkas": "Pemeriksaan kesehatan",
-    "foto": [
-      "/assets/unggahan/IMG_4050.jpg",
-      "/assets/unggahan/IMG_4061.jpg",
-      "/assets/unggahan/IMG_4066.jpg",
-      "/assets/unggahan/IMG_4067.jpg",
-      "/assets/unggahan/IMG_4073.jpg",
-      "/assets/unggahan/IMG_4077.jpg",
-      "/assets/unggahan/IMG_4082.jpg",
-      "/assets/unggahan/IMG_4133.jpg",
-      "/assets/unggahan/IMG_4150.jpg",
-      "/assets/unggahan/IMG_4152.jpg",
-      "/assets/unggahan/IMG_4171.jpg"
-    ]
+    "ringkas": "Pemeriksaan kesehatan"
   },
   {
     "judul": "Kerja Bakti Pemeliharaan Makam Sanon",
