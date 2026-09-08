@@ -113,14 +113,14 @@
     "panduan": "Panduan Komposter Galon Air Lindi",
     "lampiran": [
       {
-        "nama": "Poster panduan membuat komposter galon",
-        "berkas": "/assets/unggahan/poster-panduan-komposter-galon.pdf",
-        "rincian": "A3 siap cetak · 103 KB"
-      },
-      {
         "nama": "Resep praktis kelola sampah rumah tangga",
         "berkas": "/assets/unggahan/resep-praktis-kelola-sampah.pdf",
         "rincian": "21 halaman · 4,1 MB"
+      },
+      {
+        "nama": "Poster POC",
+        "berkas": "/assets/unggahan/Poster POC.png",
+        "rincian": "2,2 MB"
       }
     ],
     "ringkas": "Komposter galon",
@@ -163,7 +163,12 @@
       {
         "nama": "Poster B.E.B.A.S dari nyeri sendi",
         "berkas": "/assets/unggahan/poster-bebas-asam-urat.jpg",
-        "rincian": "siap cetak · 237 KB"
+        "rincian": "237 KB"
+      },
+      {
+        "nama": "Rekapitulasi PTM Padukuhan Setro",
+        "berkas": "/assets/unggahan/Rekapitulasi%20PTM%20Padukuhan%20Setro%20KKN%20UII%20220.pdf.pdf",
+        "rincian": "328 KB"
       }
     ],
     "ringkas": "Skrining asam urat",
