@@ -39,3 +39,7 @@ _lama.html
 # ditampilkan peramban. Salinan siap pakainya ada di assets/unggahan/
 # dengan nama umkm-*.jpg
 /UMKM/
+
+# foto mentah pemeriksaan kesehatan posyandu: 31 MB langsung dari kamera.
+# Salinan siap pakainya ada di assets/unggahan/ dengan nama dok-posyandu-*.jpg
+/pemeriksaan kesehatan posyandu/

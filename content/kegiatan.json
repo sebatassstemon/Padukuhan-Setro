@@ -68,7 +68,20 @@
   },
   {
     "judul": "Pelayanan Kesehatan Posyandu Padukuhan Setro",
-    "ringkas": "Pemeriksaan kesehatan"
+    "ringkas": "Pemeriksaan kesehatan",
+    "foto": [
+      "/assets/unggahan/dok-posyandu-01.jpg",
+      "/assets/unggahan/dok-posyandu-02.jpg",
+      "/assets/unggahan/dok-posyandu-03.jpg",
+      "/assets/unggahan/dok-posyandu-04.jpg",
+      "/assets/unggahan/dok-posyandu-05.jpg",
+      "/assets/unggahan/dok-posyandu-06.jpg",
+      "/assets/unggahan/dok-posyandu-07.jpg",
+      "/assets/unggahan/dok-posyandu-08.jpg",
+      "/assets/unggahan/dok-posyandu-09.jpg",
+      "/assets/unggahan/dok-posyandu-10.jpg",
+      "/assets/unggahan/dok-posyandu-11.jpg"
+    ]
   },
   {
     "judul": "Kerja Bakti Pemeliharaan Makam Sanon",
