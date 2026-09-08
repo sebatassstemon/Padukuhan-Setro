@@ -1,15 +1,15 @@
 {
   "panelWarga": {
     "label": "Potret warga Setro",
-    "judulBaris1": "Tenaganya cukup,",
-    "judulBaris2": "sarananya sudah ada.",
-    "lead": "Siapa yang tinggal di Setro, dari mana mereka hidup, dan sarana apa yang sudah berdiri. Buka tiap kotak untuk membaca datanya."
+    "judulBaris1": "Tenaganya ada,",
+    "judulBaris2": "sarananya tersedia.",
+    "lead": "Kenali warga Setro, sumber penghidupan mereka, serta berbagai sarana yang telah tersedia. Buka setiap kotak untuk melihat datanya."
   },
   "panelPotensi": {
     "label": "Potensi Setro",
     "judulBaris1": "Sawah, kandang,",
     "judulBaris2": "dan tangan warganya.",
-    "lead": "Tiga sumber penghasilan yang saling menyambung: hasil sawah, isi kandang, dan olahan tangan warga. Buka tiap kotak untuk membaca datanya."
+    "lead": "Tiga sumber penghasilan yang saling terhubung: hasil sawah, ternak, dan berbagai usaha yang dijalankan warga. Buka setiap kotak untuk melihat datanya."
   },
   "panelJembatan": {
     "judulBaris1": "Kini giliran",
@@ -33,13 +33,6 @@
     "satuan": "orang",
     "keterangan": "petani & buruh tani, dari 94 warga yang bekerja",
     "motifTajuk": "Pekerjaan terbanyak",
-    "lead": "Dari 94 warga yang bekerja, 36 di antaranya petani atau buruh tani. Sisanya tersebar di perdagangan, jasa, dan pekerjaan formal.",
-    "sorotAngka": 38.3,
-    "sorotDesimal": 1,
-    "sorotAkhiran": "%",
-    "sorotJudul": "Petani & buruh tani",
-    "sorotCatatan": "dari seluruh penduduk yang bekerja",
-    "widgetTajuk": "Sebaran pekerjaan warga",
     "motifButir": [
       {
         "nama": "Petani & buruh tani",
@@ -56,7 +49,14 @@
         "nilai": 12,
         "sorot": false
       }
-    ]
+    ],
+    "lead": "Dari 94 warga yang bekerja, 36 di antaranya petani atau buruh tani. Sisanya tersebar di perdagangan, jasa, dan pekerjaan formal.",
+    "sorotAngka": 38.3,
+    "sorotDesimal": 1,
+    "sorotAkhiran": "%",
+    "sorotJudul": "Petani & buruh tani",
+    "sorotCatatan": "dari seluruh penduduk yang bekerja",
+    "widgetTajuk": "Sebaran pekerjaan warga"
   },
   "infra": {
     "nama": "Infrastruktur dasar",
@@ -66,8 +66,6 @@
     "satuan": "",
     "keterangan": "rumah tangga sudah punya jamban sendiri",
     "motifTajuk": "Air bersih",
-    "lead": "Hampir seluruh rumah tangga memiliki jamban sendiri, dan sembilan dari sepuluh rumah sudah terhubung internet. Setro siap menerima layanan dan informasi digital.",
-    "widgetTajuk": "Sumber air bersih",
     "motifButir": [
       {
         "nama": "Sumur gali",
@@ -84,7 +82,9 @@
         "nilai": 9,
         "sorot": false
       }
-    ]
+    ],
+    "lead": "Hampir seluruh rumah tangga memiliki jamban sendiri, dan sembilan dari sepuluh rumah sudah terhubung internet. Setro siap menerima layanan dan informasi digital.",
+    "widgetTajuk": "Sumber air bersih"
   },
   "tani": {
     "nama": "Potensi pertanian",
@@ -111,12 +111,6 @@
     "satuan": "",
     "keterangan": "peternak sudah membuat pupuk organik sendiri",
     "motifTajuk": "Populasi ternak & ikan",
-    "lead": "Dua puluh satu dari dua puluh lima peternak sudah mengolah kotoran ternak menjadi pupuk organik. Siklus antara kandang dan sawah sudah berjalan sendiri.",
-    "sorotAngka": 84,
-    "sorotDesimal": 0,
-    "sorotAkhiran": "%",
-    "sorotJudul": "Peternak membuat pupuk organik mandiri",
-    "sorotCatatan": "",
     "motifButir": [
       {
         "nama": "Ikan lele",
@@ -133,7 +127,13 @@
         "nilai": 60,
         "sorot": false
       }
-    ]
+    ],
+    "lead": "Dua puluh satu dari dua puluh lima peternak sudah mengolah kotoran ternak menjadi pupuk organik. Siklus antara kandang dan sawah sudah berjalan sendiri.",
+    "sorotAngka": 84,
+    "sorotDesimal": 0,
+    "sorotAkhiran": "%",
+    "sorotJudul": "Peternak membuat pupuk organik mandiri",
+    "sorotCatatan": ""
   },
   "umkm": {
     "nama": "Usaha warga",
