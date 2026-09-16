@@ -7574,11 +7574,36 @@
       const kunci = tab.map(t => t.dataset.tm);
       const halus = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-      const FOTO_MITRA = [
-        'assets/hero-sawah.jpg',
-        'assets/hero-setro-poster.jpg',
-        ...FOTO_CONTOH.slice(0, 4)
-      ];
+      /* Cincin kemitraan memperlihatkan kerja sama yang sudah berjalan: dokumentasi
+         kegiatan warga berselang-seling dengan produk UMKM, bukan bentang lahan.
+         Pilihannya dikurasi -- hanya foto yang subjeknya masih terbaca pada keping
+         86px -- tapi tetap disaring terhadap isi CMS, jadi foto yang dicabut
+         pengelola lewat /admin ikut gugur di sini alih-alih jadi gambar rusak.
+         Kalau kurasinya habis, cincin jatuh ke sampul e-katalog dan kegiatan yang
+         diselang-seling, lalu ke foto contoh sebagai cadangan terakhir. */
+      const FOTO_MITRA = (() => {
+        const ada = new Set([
+          ...FOTO_KEGIATAN.flat(),
+          ...KATALOG.flatMap(d => [d.foto, ...(d.galeri || [])])
+        ].filter(Boolean));
+        const pilihan = [
+          '/assets/unggahan/umkm-keripik-pisang-02.jpg',
+          '/assets/unggahan/dok-lomba-kemerdekaan-09.jpg',
+          '/assets/unggahan/umkm-buket-bunga-01.jpg',
+          '/assets/unggahan/dok-posyandu-07.jpg',
+          '/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.11.jpeg',
+          '/assets/unggahan/dok-kerja-bakti-makam-sanon-01.jpg',
+          '/assets/unggahan/umkm-furnitur-begja-05.jpg',
+          '/assets/unggahan/dok-musala-al-huda-02.jpg'
+        ].filter(f => ada.has(f));
+        if (pilihan.length >= 3) return pilihan;
+        const selang = [];
+        for (let i = 0; i < Math.max(FOTO_MENU_KATALOG.length, FOTO_MENU_KEGIATAN.length); i++) {
+          if (FOTO_MENU_KATALOG[i]) selang.push(FOTO_MENU_KATALOG[i]);
+          if (FOTO_MENU_KEGIATAN[i]) selang.push(FOTO_MENU_KEGIATAN[i]);
+        }
+        return selang.length >= 3 ? selang.slice(0, 8) : FOTO_CONTOH;
+      })();
 
       // jari-jari cincin dihitung dari jumlah keping: r = (lebar/2) / tan(180/n)
       const LEBAR_KEPING = 86;
@@ -7638,7 +7663,7 @@
           label: 'Peluang kemitraan',
           judul: 'Enam bidang yang dibuka',
           semua: 'Ajukan kerja sama', href: '#kontak',
-          ket: 'Lahan &amp; usaha Setro',
+          ket: 'Kegiatan &amp; usaha warga',
           foto: FOTO_MITRA,
           butir: MITRA.map(([, angka], i) => ({ nama: RINGKAS_MITRA[i], angka, i }))
         }
