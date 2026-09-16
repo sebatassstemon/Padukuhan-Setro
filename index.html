@@ -19,6 +19,19 @@
        menghasilkan ~14 KB CSS, lalu menyisakan MutationObserver yang menyusun
        ulang CSS tiap kali skrip menambah elemen -- mahal sekali di HP kelas
        bawah. Hasil kompilasinya sekarang ditanam langsung di akhir <head>. -->
+  <!-- Peramban bawaannya memulihkan posisi gulir terakhir setiap halaman dimuat
+       ulang. Di halaman ini itu merugikan: hero dan hampir tiap seksi digerakkan
+       oleh posisi gulir, jadi pengunjung yang menyegarkan halaman mendarat di
+       tengah animasi yang belum sempat berjalan -- terbaca seperti halaman yang
+       tergulir sendiri. Ditambah tata letak yang masih bergeser saat gambar dan
+       font selesai dimuat, titik pulihnya pun meleset dari tempat semula.
+       Disetel di sini, bukan di skrip <body>, karena pemulihan sudah terjadi
+       sebelum skrip itu sempat jalan. Alamat ber-jangkar (#program dan
+       kawan-kawan) tidak terpengaruh: yang dimatikan hanya pemulihan posisi
+       tersimpan, bukan lompatan ke jangkar. -->
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
