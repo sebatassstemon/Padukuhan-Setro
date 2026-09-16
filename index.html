@@ -19,16 +19,13 @@
        menghasilkan ~14 KB CSS, lalu menyisakan MutationObserver yang menyusun
        ulang CSS tiap kali skrip menambah elemen -- mahal sekali di HP kelas
        bawah. Hasil kompilasinya sekarang ditanam langsung di akhir <head>. -->
-  <!-- Peramban bawaannya memulihkan posisi gulir terakhir setiap halaman dimuat
-       ulang. Di halaman ini itu merugikan: hero dan hampir tiap seksi digerakkan
-       oleh posisi gulir, jadi pengunjung yang menyegarkan halaman mendarat di
-       tengah animasi yang belum sempat berjalan -- terbaca seperti halaman yang
-       tergulir sendiri. Ditambah tata letak yang masih bergeser saat gambar dan
-       font selesai dimuat, titik pulihnya pun meleset dari tempat semula.
-       Disetel di sini, bukan di skrip <body>, karena pemulihan sudah terjadi
-       sebelum skrip itu sempat jalan. Alamat ber-jangkar (#program dan
-       kawan-kawan) tidak terpengaruh: yang dimatikan hanya pemulihan posisi
-       tersimpan, bukan lompatan ke jangkar. -->
+  <!-- Pemulihan gulir bawaan peramban dimatikan karena bentrok dengan ScrollTrigger:
+       peramban memulihkan posisi pada milidetik ke-36, jauh sebelum ScrollTrigger
+       memasang pin-spacer-nya, jadi angka itu dipakai di ruang koordinat yang
+       berbeda dengan ruang saat ia disimpan. Kesalahannya menumpuk tiap muat
+       ulang -- terukur 400 -> 554 -> 691 -> 813. Posisinya disimpan dan
+       dipulihkan sendiri oleh ingatGulir()/pulihkanGulir() di bawah, sesudah
+       ScrollTrigger.refresh() membuat tinggi halaman final. -->
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   </script>
@@ -7877,11 +7874,48 @@
       window.addEventListener('resize', () => { if (terbuka) taruhNub(kunci.indexOf(terbuka)); });
       window.addEventListener('scroll', () => { if (terbuka && !halus.matches) tutup(); }, { passive: true });
     })();
+    /* ---------- ingat posisi gulir antar muat ulang ---------- */
+    /* Pengunjung yang menyegarkan halaman harus mendarat di tempat yang sama
+       persis. Posisinya disimpan per alamat di sessionStorage -- bukan
+       localStorage: begitu tab ditutup, ingatannya ikut hilang, jadi kunjungan
+       baru selalu mulai dari hero. */
+    const KUNCI_GULIR = 'setro:gulir:' + location.pathname;
+    const simpanGulir = () => {
+      try { sessionStorage.setItem(KUNCI_GULIR, String(Math.round(window.scrollY))); } catch (e) { }
+    };
+    (function ingatGulir() {
+      let jam = 0;
+      window.addEventListener('scroll', () => {
+        clearTimeout(jam); jam = setTimeout(simpanGulir, 120);
+      }, { passive: true });
+      // pagehide menutup celah terakhir: gulir yang belum sempat tersimpan saat
+      // halaman ditinggalkan tetap terekam
+      window.addEventListener('pagehide', simpanGulir);
+    })();
+
+    function pulihkanGulir() {
+      // alamat ber-jangkar menang atas posisi tersimpan: pengunjung yang membuka
+      // /#katalog jelas meminta seksi itu, bukan tempat ia berhenti tadi
+      if (location.hash) return;
+      let y = 0;
+      try { y = parseInt(sessionStorage.getItem(KUNCI_GULIR) || '0', 10) || 0; } catch (e) { return; }
+      if (y < 1) return;
+      const batas = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      y = Math.min(y, batas);
+      // lewat Lenis supaya nilai dalamnya ikut berpindah; kalau tidak, sentuhan
+      // roda berikutnya akan melompat balik ke tempat Lenis mengira ia berada
+      if (window.__lenis) window.__lenis.scrollTo(y, { immediate: true, force: true });
+      else window.scrollTo(0, y);
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
+    }
+
     /* tinggi halaman baru mantap setelah semua modul memasang jalur gulirnya;
-       sekali hitung ulang di akhir menjaga posisi tiap pemicu tetap benar */
+       sekali hitung ulang di akhir menjaga posisi tiap pemicu tetap benar --
+       dan baru sesudah itu posisi tersimpan boleh dipakai, karena sebelum
+       pin-spacer terpasang angkanya menunjuk tempat yang lain */
     function segarkanPemicu() {
-      if (typeof ScrollTrigger === 'undefined') return;
-      ScrollTrigger.refresh();
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      pulihkanGulir();
     }
     if (document.readyState === 'complete') setTimeout(segarkanPemicu, 0);
     else window.addEventListener('load', segarkanPemicu);
