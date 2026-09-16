@@ -2180,6 +2180,16 @@
       border-bottom: 1px solid var(--garis);
     }
 
+    /* program yang dokumentasinya belum diunggah: bidang bernama, bukan tombol --
+       aturan yang sama dengan keping kegiatan warga */
+    .pk__foto--nanti {
+      color: #B9B0A0;
+      font-weight: 500;
+      font-size: .8125rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
     .pk__gambar {
       position: absolute;
       inset: 0;
@@ -2637,14 +2647,6 @@
       line-height: 1.3;
       letter-spacing: -.02em;
       margin-top: .8rem;
-    }
-
-    .galeri__catatan {
-      font-weight: 300;
-      font-size: .84rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, .6);
-      margin-top: .55rem;
     }
 
     .galeri__tutup {
@@ -3362,6 +3364,16 @@
        bersama tumpukan foto alih-alih tertinggal jauh di atasnya. Kartu
        pertama tersemat di (200px - 5vh); selisih di bawah menentukan berapa
        jauh label berdiri di atasnya. */
+    /* etalase usaha yang fotonya belum diunggah: satu baris keterangan, bukan
+       kartu kosong yang menjanjikan gambar */
+    .etalase__kosong {
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+      font-weight: 300;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .6);
+    }
+
     .etalase__label {
       position: sticky;
       top: calc(200px - 5vh - 5.4rem);
@@ -5322,7 +5334,6 @@
       <div class="galeri__kepala">
         <span class="chip chip-est !text-[.72rem]" data-galeri-bidang></span>
         <h2 class="galeri__judul" id="galeri-judul" data-galeri-judul></h2>
-        <p class="galeri__catatan">Foto contoh. Dokumentasi asli dipasang setelah program berjalan.</p>
       </div>
 
       <div class="korsel">
@@ -5434,8 +5445,8 @@
           </div>
 
           <p class="kios__nota">
-            Foto dan data contoh. Kontak pelaku usaha ditayangkan setelah yang bersangkutan
-            menyatakan bersedia.
+            Kontak pelaku usaha ditayangkan setelah yang bersangkutan menyatakan
+            bersedia.
           </p>
           </article>
         </div>
@@ -5548,126 +5559,127 @@
     // katalog: panggung coverflow 3D
     // Tujuh belas unit usaha dari survei, satu kartu untuk satu usaha.
     // Nama masih memakai pola "kategori + nomor" sampai nama toko
-    // terkumpul dari observasi. Foto memakai berkas contoh; kontak, jam,
-    // dan lokasi ditulis sebagai slot sampai pelaku usaha menyatakan
-    // bersedia ditampilkan (UU 27/2022 tentang PDP).
+    // terkumpul dari observasi. Daftar ini hanya dipakai bila content/katalog.json
+    // gagal dimuat, jadi kartunya sengaja tanpa foto; kontak, jam, dan lokasi
+    // ditulis sebagai slot sampai pelaku usaha menyatakan bersedia ditampilkan
+    // (UU 27/2022 tentang PDP).
     let KATALOG = [
       {
         judul: 'Kelontong 1', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Kelontong 2', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Kelontong 3', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Kelontong 4', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%204.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Kelontong 5', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%205.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Kelontong 6', kategori: 'Kelontong', sub: '&mdash; sembako harian',
         desk: 'Melayani kebutuhan pokok warga langsung dari teras rumah.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%206.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;21.00 WIB, setiap hari',
         lokasi: 'Teras rumah, RT 027&ndash;033'
       },
       {
         judul: 'Olahan pangan 1', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
         desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%207.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
         judul: 'Olahan pangan 2', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
         desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
         judul: 'Olahan pangan 3', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
         desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
         judul: 'Olahan pangan 4', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
         desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
         judul: 'Olahan pangan 5', kategori: 'Olahan pangan', sub: '&mdash; dapur rumahan',
         desk: 'Mengolah hasil kebun dan sawah jadi makanan dan minuman siap jual.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%204.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '07.00&ndash;16.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Dapur rumahan, RT 028 atau RT 031'
       },
       {
         judul: 'Hasil tani 1', kategori: 'Hasil tani', sub: '&mdash; gabah &amp; palawija',
         desk: 'Menampung gabah, jagung, dan palawija langsung dari petani Setro.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%205.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;15.00 WIB, menyesuaikan masa panen',
         lokasi: 'Gudang gabah, RT 027'
       },
       {
         judul: 'Hasil tani 2', kategori: 'Hasil tani', sub: '&mdash; gabah &amp; palawija',
         desk: 'Menampung gabah, jagung, dan palawija langsung dari petani Setro.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%206.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;15.00 WIB, menyesuaikan masa panen',
         lokasi: 'Gudang gabah, RT 027'
       },
       {
         judul: 'Eceng gondok', kategori: 'Eceng gondok', sub: '&mdash; anyaman tangan',
         desk: 'Kerajinan berbahan eceng gondok, satu-satunya di padukuhan.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%207.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;16.00 WIB, Senin&ndash;Jumat',
         lokasi: 'Rumah perajin, RT 030'
       },
       {
         judul: 'Mebel kayu', kategori: 'Mebel kayu', sub: '&mdash; pesanan warga',
         desk: 'Perabot kayu dikerjakan per pesanan, dari kusen sampai lemari.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%201.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;17.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Bengkel kayu, RT 029'
       },
       {
         judul: 'Pemancingan', kategori: 'Pemancingan', sub: '&mdash; kolam warga',
         desk: 'Kolam pancing milik warga yang dikelola sebagai usaha jasa.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%202.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '06.00&ndash;18.00 WIB, setiap hari',
         lokasi: 'Kolam warga, RT 032'
       },
       {
         judul: 'Rosok', kategori: 'Rosok', sub: '&mdash; daur ulang',
         desk: 'Mengumpulkan dan memilah barang bekas warga sebelum disalurkan kembali.',
-        foto: 'foto%20produk%20dummy/produk%20dummy%203.jpg',
+        foto: '',
         kontak: '0812-XXXX-XXXX', jam: '08.00&ndash;17.00 WIB, Senin&ndash;Sabtu',
         lokasi: 'Halaman pengepul, RT 033'
       }
@@ -5723,7 +5735,7 @@
     let TEKS_MENU = null;
 
     // foto dokumentasi per program dan per kegiatan, diisi dari content/*.json.
-    // Selama masih kosong, dipakai foto contoh seperti sebelumnya.
+    // Selama masih kosong, kartunya tampil sebagai bidang bernama tanpa galeri.
     let FOTO_PROGRAM = [];
     let FOTO_KEGIATAN = [];
     // satu program bisa membagikan lebih dari satu berkas panduan; tiap butir
@@ -6193,21 +6205,14 @@
     siapkanKatalog();
 
     /* ============ GALERI DOKUMENTASI: KARTU MENGIPAS ============ */
-    // Foto contoh dipakai selama pengelola belum mengunggah dokumentasi asli
-    // lewat /admin. Begitu foto asli terisi, penanda "Foto contoh" pada kartu
-    // dan galeri ikut hilang dengan sendirinya. Kegiatan warga dikecualikan:
-    // lihat DOKUMENTASI_KEGIATAN di bawah.
-    const FOTO_CONTOH = [1, 2, 3, 4, 5, 6, 7]
-      .map(n => `foto%20produk%20dummy/produk%20dummy%20${n}.jpg`);
+    // Seluruh dokumentasi di situs ini asli. Aturan yang dulu hanya berlaku bagi
+    // kegiatan warga kini berlaku di mana-mana: yang fotonya belum diunggah
+    // tampil sebagai bidang bernama, bukan foto pinjaman, dan galerinya tidak
+    // bisa dibuka -- foto milik orang lain di sana akan menyesatkan.
     const adaFoto = (d) => Array.isArray(d) && d.length > 0;
-    const contohDigeser = (i) =>
-      FOTO_CONTOH.map((_, j) => FOTO_CONTOH[(j + i) % FOTO_CONTOH.length]);
     const DOKUMENTASI = PROGRAM.map((_, i) =>
-      adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i] : contohDigeser(i));
-    const CONTOH_PROGRAM = PROGRAM.map((_, i) => !adaFoto(FOTO_PROGRAM[i]));
-    // Kegiatan warga sengaja TIDAK memakai foto contoh: agendanya nyata, jadi
-    // foto orang lain di sana akan menyesatkan. Selama kosong, kepingnya tampil
-    // sebagai bidang hijau bernama kegiatan, dan galerinya tidak bisa dibuka.
+      adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i] : []);
+    const NANTI_PROGRAM = PROGRAM.map((_, i) => !adaFoto(FOTO_PROGRAM[i]));
     const DOKUMENTASI_KEGIATAN = KEGIATAN.map((_, i) =>
       adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i] : []);
     const NANTI_KEGIATAN = KEGIATAN.map((_, i) => !adaFoto(FOTO_KEGIATAN[i]));
@@ -6340,16 +6345,13 @@
 
       async function buka(i, dari) {
         try { await muatSwiper(); } catch (e) { return; }
-        const { daftar, nama, contoh } = isiKepala(i);
+        const { daftar, nama } = isiKepala(i);
+        if (!daftar.length) return;      // tanpa dokumentasi, galeri tidak dibuka
         pemicu = dari || null;
-
-        // catatan "foto contoh" hanya relevan selama dokumentasi asli belum ada
-        const catatan = galeri.querySelector('.galeri__catatan');
-        if (catatan) catatan.hidden = !contoh;
 
         rel.innerHTML = daftar.map((foto, j) => `
   <div class="swiper-slide">
-    <img src="${foto}" loading="lazy" decoding="async" alt="${contoh ? 'Foto contoh' : 'Dokumentasi'} ${j + 1} dari ${daftar.length} untuk ${nama}">
+    <img src="${foto}" loading="lazy" decoding="async" alt="Dokumentasi ${j + 1} dari ${daftar.length} untuk ${nama}">
   </div>`).join('');
 
         galeri.hidden = false;
@@ -6394,13 +6396,13 @@
       const [bidang, judul] = PROGRAM[i];
       document.querySelector('[data-galeri-bidang]').innerHTML = bidang;
       document.querySelector('[data-galeri-judul]').innerHTML = judul;
-      return { daftar: DOKUMENTASI[i], nama: judul.replace(/&amp;/g, '&'), contoh: CONTOH_PROGRAM[i] };
+      return { daftar: DOKUMENTASI[i], nama: judul.replace(/&amp;/g, '&') };
     });
 
     const GALERI_KEGIATAN = siapkanKorsel('galeri-kegiatan', (i) => {
       const nama = KEGIATAN[i];
       document.querySelector('[data-kegiatan-judul]').textContent = nama;
-      return { daftar: DOKUMENTASI_KEGIATAN[i], nama, contoh: false };
+      return { daftar: DOKUMENTASI_KEGIATAN[i], nama };
     });
 
     /* ============ PANEL BERKAS PANDUAN ============ */
@@ -6494,11 +6496,9 @@
     const BERKAS_PANEL = siapkanBerkas();
 
     /* ============ E-KATALOG: LAYAR PRODUK ============ */
-    // foto etalase tiap usaha; selama pengelola belum mengunggah, dipakai
-    // tujuh foto contoh yang sama, digeser urutannya
-    const FOTO_KATALOG = KATALOG.map((d, i) =>
-      adaFoto(d.galeri) ? d.galeri : contohDigeser(i));
-    const CONTOH_KATALOG = KATALOG.map(d => !adaFoto(d.galeri));
+    // foto etalase tiap usaha; selama pengelola belum mengunggah, etalasenya
+    // tampil kosong bernama -- kartunya tetap bisa dibuka untuk membaca datanya
+    const FOTO_KATALOG = KATALOG.map(d => adaFoto(d.galeri) ? d.galeri : []);
 
     function siapkanProduk() {
       const galeri = document.getElementById('galeri-produk');
@@ -6516,13 +6516,13 @@
 
       // etalase produk memakai tumpukan kartu yang sama dengan galeri kegiatan
       // warga: foto polos yang mengendap satu di bawah yang lain saat digulir
-      function bangunEtalase(daftar, judul, contoh) {
-        jalur.innerHTML = daftar.map((foto, j) => `
+      function bangunEtalase(daftar, judul) {
+        jalur.innerHTML = daftar.length ? daftar.map((foto, j) => `
   <div class="tumpuk__lekat">
     <figure class="tumpuk__kartu" style="--turun:${200 + j * 15}px">
-      <img class="tumpuk__foto" src="${foto}" loading="lazy" decoding="async" alt="${contoh ? 'Foto contoh produk' : 'Foto produk'} ${j + 1} dari ${daftar.length}: ${judul}">
+      <img class="tumpuk__foto" src="${foto}" loading="lazy" decoding="async" alt="Foto produk ${j + 1} dari ${daftar.length}: ${judul}">
     </figure>
-  </div>`).join('');
+  </div>`).join('') : '<p class="etalase__kosong">Foto produk belum diunggah.</p>';
         kartuEtalase = [...jalur.querySelectorAll('.tumpuk__kartu')];
       }
 
@@ -6563,7 +6563,7 @@
         isi.jam.innerHTML = d.jam;
         isi.lokasi.innerHTML = d.lokasi;
 
-        bangunEtalase(FOTO_KATALOG[i], d.judul, CONTOH_KATALOG[i]);
+        bangunEtalase(FOTO_KATALOG[i], d.judul);
         galeri.hidden = false;
         galeri.dataset.gulir = 'false';
         document.body.style.overflow = 'hidden';
@@ -6670,14 +6670,14 @@
       dek.innerHTML = PROGRAM.map(([bidang, judul, desk, unduh], i) => `
   <article class="pk__kartu" data-i="${i}" aria-roledescription="slide"
     aria-label="Program ${i + 1} dari ${total}: ${judul}">
-    <button type="button" class="pk__foto" data-galeri-buka="${i}"
+    ${NANTI_PROGRAM[i] ? `<span class="pk__foto pk__foto--nanti">Dokumentasi menyusul</span>`
+          : `<button type="button" class="pk__foto" data-galeri-buka="${i}"
       aria-label="Buka galeri dokumentasi: ${judul}">
       <img class="pk__gambar" src="${DOKUMENTASI[i][0]}" loading="lazy" decoding="async" alt="">
-      ${CONTOH_PROGRAM[i] ? '<span class="chip chip-soon !text-[.7rem]">Foto contoh</span>' : ''}
       <span class="pk__petunjuk"><em>Buka Galeri
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5l7 7-7 7m7-7H3"/></svg>
       </em></span>
-    </button>
+    </button>`}
     <div class="pk__isi">
       <span class="chip chip-est self-start !text-[.72rem]">${bidang}</span>
       <h3 class="pk__judul">${judul}</h3>
@@ -7537,26 +7537,15 @@
     });
 
     /* ---------- menu turun bergeser + cuplikan foto berputar ---------- */
-    // Cincin foto pada menu "Program kerja" memakai satu foto sampul tiap
-    // program. Selama pengelola belum mengunggah dokumentasi apa pun, cincin
-    // jatuh kembali ke foto contoh -- sama seperti kartu dan galerinya.
-    const FOTO_MENU_PROGRAM = (() => {
-      const sampul = PROGRAM
-        .map((_, i) => adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i][0] : null)
-        .filter(Boolean);
-      return sampul.length ? sampul : FOTO_CONTOH;
-    })();
+    // Cincin foto tiap menu memakai satu foto sampul per butir. Tidak ada
+    // cadangan foto contoh: lembar yang fotonya kurang dari tiga tampil sebagai
+    // daftar selebar panel, bukan keping pinjaman.
+    const FOTO_MENU_PROGRAM = PROGRAM
+      .map((_, i) => adaFoto(FOTO_PROGRAM[i]) ? FOTO_PROGRAM[i][0] : null)
+      .filter(Boolean);
 
-    // Cincin foto pada menu "E-katalog" memakai muka kartu tiap usaha, dengan
-    // cadangan yang sama seperti kartunya: foto contoh selama belum ada yang
-    // mengunggah muka kartu.
-    const FOTO_MENU_KATALOG = (() => {
-      const sampul = KATALOG.map(d => d.foto).filter(Boolean);
-      return sampul.length ? sampul : FOTO_CONTOH;
-    })();
+    const FOTO_MENU_KATALOG = KATALOG.map(d => d.foto).filter(Boolean);
 
-    // Kegiatan warga tidak punya cadangan foto contoh: selama dokumentasinya
-    // belum diunggah, lembar menunya tampil sebagai daftar selebar panel.
     const FOTO_MENU_KEGIATAN = KEGIATAN
       .map((_, i) => adaFoto(FOTO_KEGIATAN[i]) ? FOTO_KEGIATAN[i][0] : null)
       .filter(Boolean);
@@ -7580,7 +7569,8 @@
          86px -- tapi tetap disaring terhadap isi CMS, jadi foto yang dicabut
          pengelola lewat /admin ikut gugur di sini alih-alih jadi gambar rusak.
          Kalau kurasinya habis, cincin jatuh ke sampul e-katalog dan kegiatan yang
-         diselang-seling, lalu ke foto contoh sebagai cadangan terakhir. */
+         diselang-seling; kalau itu pun kurang dari tiga, lembarnya tampil sebagai
+         daftar selebar panel. */
       const FOTO_MITRA = (() => {
         const ada = new Set([
           ...FOTO_KEGIATAN.flat(),
@@ -7602,7 +7592,7 @@
           if (FOTO_MENU_KATALOG[i]) selang.push(FOTO_MENU_KATALOG[i]);
           if (FOTO_MENU_KEGIATAN[i]) selang.push(FOTO_MENU_KEGIATAN[i]);
         }
-        return selang.length >= 3 ? selang.slice(0, 8) : FOTO_CONTOH;
+        return selang.slice(0, 8);
       })();
 
       // jari-jari cincin dihitung dari jumlah keping: r = (lebar/2) / tan(180/n)
@@ -7637,8 +7627,7 @@
           label: 'E-katalog',
           judul: 'Tujuh usaha warga',
           semua: 'Buka e-katalog', href: '#katalog',
-          ket: FOTO_MENU_KATALOG === FOTO_CONTOH
-            ? 'Cuplikan &middot; foto contoh' : 'Cuplikan &middot; usaha warga',
+          ket: 'Cuplikan &middot; usaha warga',
           foto: FOTO_MENU_KATALOG,
           butir: KATALOG.slice(0, 8).map((d, i) => ({ nama: d.judul, i }))
         },
@@ -7646,8 +7635,7 @@
           label: 'Program kerja',
           judul: 'Sembilan program KKN Unit 220',
           semua: 'Lihat semua program', href: '#program',
-          ket: FOTO_MENU_PROGRAM === FOTO_CONTOH
-            ? 'Cuplikan &middot; foto contoh' : 'Dokumentasi &middot; program kerja',
+          ket: 'Dokumentasi &middot; program kerja',
           foto: FOTO_MENU_PROGRAM,
           butir: RINGKAS_PROGRAM.map((nama, i) => ({ nama, i }))
         },
