@@ -4098,11 +4098,14 @@
       border-radius: 9px;
     }
 
+    /* Semua lembar berbagi satu tinggi supaya panel tidak berubah ukuran saat tab
+       berpindah. Nilainya diukur dari lembar tertinggi oleh samakanTinggiLembar()
+       di bawah; 228px hanya cadangan sebelum pengukuran pertama selesai. */
     .tm__lembar {
       display: none;
       grid-template-columns: 1fr 264px;
       gap: 1.3rem;
-      height: 228px;
+      height: var(--tm-tinggi, 228px);
     }
 
     .tm__lembar.tampil {
@@ -7734,6 +7737,39 @@
         MENU[k].indeks ? lembarIndeks(k, MENU[k]) : lembarGaleri(k, MENU[k])).join('');
 
       const lembar = kunci.map(k => isi.querySelector(`[data-lembar="${k}"]`));
+
+      /* Tinggi lembar dulu ditulis mati 228px. Jumlah butir tiap menu ikut isi
+         CMS, jadi angka mati itu memotong sendiri begitu satu menu tumbuh: menu
+         "Program kerja" dengan sembilan program butuh lima baris daftar (263px),
+         dan 35px yang lebih itu menelan keterangan cincin sekaligus tautan
+         "Lihat semua program" -- keduanya terpotong .tm__isi{overflow:hidden}.
+         Sekarang tingginya diukur dari lembar yang paling butuh, sekali di awal
+         lalu tiap kali pembungkusan teks bisa berubah (font selesai dimuat,
+         lebar panel berubah). Satu nilai untuk semua lembar, jadi panel tetap
+         tidak berkedip saat tab berpindah. */
+      function samakanTinggiLembar() {
+        isi.style.removeProperty('--tm-tinggi');
+        let perlu = 0;
+        lembar.forEach(l => {
+          const tampil = l.classList.contains('tampil');
+          l.style.height = 'auto';
+          if (!tampil) l.style.display = 'grid';
+          perlu = Math.max(perlu, l.scrollHeight);
+          if (!tampil) l.style.display = '';
+          l.style.height = '';
+        });
+        if (perlu) isi.style.setProperty('--tm-tinggi', Math.ceil(perlu) + 'px');
+      }
+      samakanTinggiLembar();
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(samakanTinggiLembar).catch(() => { });
+      }
+      let jamTinggi;
+      window.addEventListener('resize', () => {
+        clearTimeout(jamTinggi);
+        jamTinggi = setTimeout(samakanTinggiLembar, 150);
+      });
+
       let terbuka = null, jamTutup = null, capEscape = 0;
 
       function taruhNub(i) {
