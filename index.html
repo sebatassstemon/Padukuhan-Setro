@@ -7563,8 +7563,8 @@
       const kunci = tab.map(t => t.dataset.tm);
       const halus = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-      /* Cincin kemitraan memperlihatkan kerja sama yang sudah berjalan: dokumentasi
-         kegiatan warga berselang-seling dengan produk UMKM, bukan bentang lahan.
+      /* Cincin kemitraan memperlihatkan kerja sama yang sudah berjalan: lima muka
+         usaha warga diselingi tiga dokumentasi kegiatan, bukan bentang lahan.
          Pilihannya dikurasi -- hanya foto yang subjeknya masih terbaca pada keping
          86px -- tapi tetap disaring terhadap isi CMS, jadi foto yang dicabut
          pengelola lewat /admin ikut gugur di sini alih-alih jadi gambar rusak.
@@ -7576,15 +7576,18 @@
           ...FOTO_KEGIATAN.flat(),
           ...KATALOG.flatMap(d => [d.foto, ...(d.galeri || [])])
         ].filter(Boolean));
+        // Urutannya bukan abjad: keping yang gelap atau kalem (pemancingan malam,
+        // muka bengkel Begja) sengaja diapit yang terang supaya tidak ada dua
+        // bidang redup berdampingan saat cincin berputar.
         const pilihan = [
           '/assets/unggahan/umkm-keripik-pisang-02.jpg',
           '/assets/unggahan/dok-lomba-kemerdekaan-09.jpg',
           '/assets/unggahan/umkm-buket-bunga-01.jpg',
           '/assets/unggahan/dok-posyandu-07.jpg',
+          '/assets/unggahan/umkm-pemancingan-perabu-02.jpg',
           '/assets/unggahan/WhatsApp Image 2026-09-07 at 22.27.11.jpeg',
           '/assets/unggahan/dok-kerja-bakti-makam-sanon-01.jpg',
-          '/assets/unggahan/umkm-furnitur-begja-05.jpg',
-          '/assets/unggahan/dok-musala-al-huda-02.jpg'
+          '/assets/unggahan/umkm-furnitur-begja-05.jpg'
         ].filter(f => ada.has(f));
         if (pilihan.length >= 3) return pilihan;
         const selang = [];
